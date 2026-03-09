@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>수강 신청 | Vichea Leaders Forum</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+    <style>
+        .step-flow { display: flex; align-items: center; gap: 0; margin-bottom: 40px; flex-wrap: wrap; }
+        .step-item { display: flex; flex-direction: column; align-items: center; gap: 8px; flex: 1; min-width: 100px; }
+        .step-num { width: 48px; height: 48px; border-radius: 50%; background: var(--color-navy); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 16px; font-weight: 700; }
+        .step-text { font-size: 13px; color: var(--color-charcoal); font-weight: 500; text-align: center; }
+        .step-arrow { color: var(--color-gray-300); font-size: 20px; margin: 0 4px; padding-top: 0; }
+        .apply-table { width: 100%; border-collapse: collapse; margin-bottom: 32px; }
+        .apply-table tr { border-bottom: 1px solid var(--color-gray-100); }
+        .apply-table th { text-align: left; padding: 14px 20px; font-size: 14px; font-weight: 600; color: var(--color-charcoal); background: var(--color-gray-50); width: 160px; }
+        .apply-table td { padding: 14px 20px; font-size: 14px; color: var(--color-gray-700); }
+        @media (max-width: 768px) { .step-flow { flex-direction: column; gap: 8px; } .step-arrow { transform: rotate(90deg); } }
+
+        /* 신청 폼 */
+        .apply-form { margin-top: 24px; }
+        .form-group { margin-bottom: 24px; }
+        .form-label { display: block; font-size: 14px; font-weight: 600; color: var(--color-charcoal); margin-bottom: 8px; }
+        .form-label .required { color: #c0392b; }
+        .form-input { width: 100%; padding: 12px 16px; border: 1px solid var(--color-gray-200); border-radius: 4px; font-size: 14px; font-family: var(--font-kr); color: var(--color-charcoal); transition: border-color 0.2s; }
+        .form-input:focus { outline: none; border-color: var(--color-navy); }
+        .form-radio-group { display: flex; flex-direction: column; gap: 10px; }
+        .form-radio { display: flex; align-items: center; gap: 8px; font-size: 14px; color: var(--color-gray-700); cursor: pointer; }
+        .form-radio input { accent-color: var(--color-navy); }
+        .form-file { width: 100%; padding: 10px; border: 1px dashed var(--color-gray-200); border-radius: 4px; font-size: 13px; color: var(--color-gray-500); background: var(--color-gray-50); }
+        .form-textarea { width: 100%; height: 120px; padding: 12px 16px; border: 1px solid var(--color-gray-200); border-radius: 4px; font-size: 13px; font-family: var(--font-kr); color: var(--color-gray-500); resize: none; background: var(--color-gray-50); margin-bottom: 12px; }
+        .form-checkbox { display: flex; align-items: center; gap: 8px; font-size: 14px; color: var(--color-charcoal); cursor: pointer; }
+        .form-checkbox input { accent-color: var(--color-navy); }
+        .form-submit { display: block; width: 100%; padding: 16px; background: var(--color-navy); color: #fff; border: none; border-radius: 4px; font-size: 16px; font-weight: 600; font-family: var(--font-kr); cursor: pointer; margin-top: 32px; transition: background 0.2s; }
+        .form-submit:hover { background: var(--color-navy-light); }
+    </style>
+</head>
+<body>
+    <header class="header scrolled" id="header">
+        <div class="header-inner">
+            <a href="../index.html" class="logo">
+                <span class="logo-main">VICHEA</span>
+                <span class="logo-sub">LEADERS FORUM</span>
+            </a>
+            <nav class="gnb">
+                <ul>
+                    <li class="has-sub">
+                        <a href="#">About</a>
+                        <ul class="sub-menu">
+                            <li><a href="about.html">비채리더스포럼 소개</a></li>
+                            <li><a href="members.html">비채회원</a></li>
+                        </ul>
+                    </li>
+                    <li class="has-sub">
+                        <a href="#">Forum</a>
+                        <ul class="sub-menu">
+                            <li><a href="forum.html">19기 안내</a></li>
+                            <li><a href="gallery.html">갤러리</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="program.html">Program</a></li>
+                    <li class="has-sub">
+                        <a href="#">Apply</a>
+                        <ul class="sub-menu">
+                            <li><a href="apply.html">수강 신청</a></li>
+                            <li><a href="faq.html">FAQ</a></li>
+                        </ul>
+                    </li>
+                    <li class="has-sub">
+                        <a href="#">Archive</a>
+                        <ul class="sub-menu">
+                            <li><a href="archive.html">지난 포럼</a></li>
+                            <li><a href="history.html">History</a></li>
+                            <li><a href="books.html">Books</a></li>
+                            <li><a href="notice.html">공지사항</a></li>
+                            <li><a href="news.html">News</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="메뉴 열기">
+        <span></span><span></span><span></span>
+    </button>
+    <div class="mobile-menu" id="mobileMenu">
+        <ul>
+            <li><a href="../index.html">HOME</a></li>
+            <li class="mobile-has-sub">
+                <a href="#" class="mobile-sub-toggle">About <span class="arrow"></span></a>
+                <ul class="mobile-sub">
+                    <li><a href="about.html">비채리더스포럼 소개</a></li>
+                    <li><a href="members.html">비채회원</a></li>
+                </ul>
+            </li>
+            <li class="mobile-has-sub">
+                <a href="#" class="mobile-sub-toggle">Forum <span class="arrow"></span></a>
+                <ul class="mobile-sub">
+                    <li><a href="forum.html">19기 안내</a></li>
+                    <li><a href="gallery.html">갤러리</a></li>
+                </ul>
+            </li>
+            <li><a href="program.html">Program</a></li>
+            <li class="mobile-has-sub">
+                <a href="#" class="mobile-sub-toggle">Apply <span class="arrow"></span></a>
+                <ul class="mobile-sub">
+                    <li><a href="apply.html">수강 신청</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                </ul>
+            </li>
+            <li class="mobile-has-sub">
+                <a href="#" class="mobile-sub-toggle">Archive <span class="arrow"></span></a>
+                <ul class="mobile-sub">
+                    <li><a href="archive.html">지난 포럼</a></li>
+                    <li><a href="history.html">History</a></li>
+                    <li><a href="books.html">Books</a></li>
+                    <li><a href="notice.html">공지사항</a></li>
+                    <li><a href="news.html">News</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Page Banner -->
+    <section class="page-banner">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">HOME</a>
+                <span class="sep">&rsaquo;</span>
+                <span>Apply</span>
+                <span class="sep">&rsaquo;</span>
+                <span class="current">수강 신청</span>
+            </div>
+            <h1 class="page-banner-title">수강 신청</h1>
+            <p class="page-banner-desc">비채리더스포럼 19기 수강 신청 안내</p>
+        </div>
+    </section>
+
+    <!-- Page Body -->
+    <div class="page-body">
+        <div class="container">
+            <div class="page-layout">
+                <!-- Sidebar -->
+                <aside class="page-sidebar">
+                    <p class="sidebar-menu-title">Apply</p>
+                    <ul class="sidebar-menu">
+                        <li><a href="apply.html" class="active">수강 신청</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                    </ul>
+                </aside>
+
+                <!-- Main Content -->
+                <main class="page-content">
+                    <!-- 01 신청 절차 -->
+                    <div class="content-section" data-aos="fade-up">
+                        <p class="content-section-label">01</p>
+                        <h3>신청 절차</h3>
+                        <div class="step-flow">
+                            <div class="step-item">
+                                <span class="step-num">1</span>
+                                <span class="step-text">홈페이지 접수</span>
+                            </div>
+                            <span class="step-arrow">&rsaquo;</span>
+                            <div class="step-item">
+                                <span class="step-num">2</span>
+                                <span class="step-text">신청서 작성</span>
+                            </div>
+                            <span class="step-arrow">&rsaquo;</span>
+                            <div class="step-item">
+                                <span class="step-num">3</span>
+                                <span class="step-text">교육비 납부</span>
+                            </div>
+                            <span class="step-arrow">&rsaquo;</span>
+                            <div class="step-item">
+                                <span class="step-num">4</span>
+                                <span class="step-text">서류 제출</span>
+                            </div>
+                            <span class="step-arrow">&rsaquo;</span>
+                            <div class="step-item">
+                                <span class="step-num">5</span>
+                                <span class="step-text">등록 완료</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 02 교육비 안내 -->
+                    <div class="content-section" data-aos="fade-up">
+                        <p class="content-section-label">02</p>
+                        <h3>교육비 안내</h3>
+                        <table class="apply-table">
+                            <tr>
+                                <th>정규 교육비</th>
+                                <td>150만원 (부가세 별도)</td>
+                            </tr>
+                            <tr>
+                                <th>얼리버드</th>
+                                <td>120만원 (선착순 5명, 20% 할인)</td>
+                            </tr>
+                            <tr>
+                                <th>입금계좌</th>
+                                <td>국민은행 479001-01-244998 / 예금주: 엘앤에이(주)</td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <!-- 03 제출서류 -->
+                    <div class="content-section" data-aos="fade-up">
+                        <p class="content-section-label">03</p>
+                        <h3>제출서류</h3>
+                        <ul class="content-list">
+                            <li>사업자등록증 사본</li>
+                            <li>명함</li>
+                            <li>프로필 사진 (증명사진 또는 반명함판)</li>
+                            <li>제출처: lnabiz@naver.com</li>
+                        </ul>
+                    </div>
+
+                    <!-- 04 문의 -->
+                    <div class="content-section" data-aos="fade-up">
+                        <p class="content-section-label">04</p>
+                        <h3>문의</h3>
+                        <div style="background: var(--color-gray-50); border: 1px solid var(--color-gray-200); padding: 28px 32px; border-radius: 4px; font-size: 15px; color: var(--color-gray-700); line-height: 1.8;">
+                            <p>전화: <strong>070-7839-3002</strong></p>
+                            <p>이메일: <strong>lnabiz@naver.com</strong></p>
+                        </div>
+                    </div>
+
+                    <!-- 05 신청서 작성 -->
+                    <div class="content-section" data-aos="fade-up">
+                        <p class="content-section-label">05</p>
+                        <h3>신청서 작성</h3>
+                        <form class="apply-form" onsubmit="event.preventDefault(); alert('신청이 완료되었습니다. 확인 후 연락드리겠습니다.');">
+                            <div class="form-group">
+                                <label class="form-label">이름 <span class="required">*</span></label>
+                                <input type="text" class="form-input" placeholder="실명으로 작성해 주세요" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">휴대전화 <span class="required">*</span></label>
+                                <input type="tel" class="form-input" placeholder="010-0000-0000" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">이메일 <span class="required">*</span></label>
+                                <input type="email" class="form-input" placeholder="example@email.com" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">소속 / 직함 <span class="required">*</span></label>
+                                <input type="text" class="form-input" placeholder="회사명 및 직위" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">결제방법 <span class="required">*</span></label>
+                                <div class="form-radio-group">
+                                    <label class="form-radio"><input type="radio" name="payment" value="계좌이체-계산서 발행" required> 계좌이체 - 계산서 발행</label>
+                                    <label class="form-radio"><input type="radio" name="payment" value="계좌이체-현금영수증"> 계좌이체 - 현금영수증</label>
+                                    <label class="form-radio"><input type="radio" name="payment" value="카드결제-담당자 안내"> 카드결제 - 담당자 안내</label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">도서 배송 주소 <span class="required">*</span></label>
+                                <input type="text" class="form-input" placeholder="도서를 받으실 주소를 입력해 주세요" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">회계담당자 성명 / 연락처</label>
+                                <input type="text" class="form-input" placeholder="별도 담당자가 있을 경우 입력">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">명함 첨부</label>
+                                <input type="file" class="form-file" accept=".jpg,.png,.pdf">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">사업자등록증 첨부</label>
+                                <input type="file" class="form-file" accept=".jpg,.png,.pdf">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">사진 첨부</label>
+                                <input type="file" class="form-file" accept=".jpg,.png,.pdf">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">개인정보 수집 및 이용 동의 <span class="required">*</span></label>
+                                <textarea class="form-textarea" readonly>엘앤에이(주)는 비채리더스포럼 수강 신청을 위해 아래와 같이 개인정보를 수집·이용합니다.
+
+1. 수집 항목: 이름, 휴대전화, 이메일, 소속/직함, 도서 배송 주소
+2. 수집 목적: 수강 신청 접수 및 안내, 교육 운영, 도서 배송
+3. 보유 기간: 수집일로부터 1년 (목적 달성 후 즉시 파기)
+4. 동의를 거부할 권리가 있으며, 거부 시 수강 신청이 제한됩니다.</textarea>
+                                <label class="form-checkbox">
+                                    <input type="checkbox" required> 개인정보 수집 및 이용에 동의합니다.
+                                </label>
+                            </div>
+                            <button type="submit" class="form-submit">신청서 보내기</button>
+                        </form>
+                    </div>
+                </main>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-inner">
+                <div class="footer-brand">
+                    <span class="footer-logo">VICHEA LEADERS FORUM</span>
+                    <p>리더의 통찰, 책에서 시작됩니다.</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-col">
+                        <h4>MENU</h4>
+                        <ul>
+                            <li><a href="about.html">About</a></li>
+                            <li><a href="forum.html">Forum</a></li>
+                            <li><a href="apply.html">Apply</a></li>
+                            <li><a href="archive.html">Archive</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>CONTACT</h4>
+                        <ul>
+                            <li>Tel. 070-7839-3002</li>
+                            <li>Email. lnabiz@naver.com</li>
+                            <li>서울특별시 관악구 관악로 168(봉천동)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 VICHEA LEADERS FORUM. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 700, once: true, offset: 60 });
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenuBtn.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+            document.body.classList.toggle('no-scroll');
+        });
+        mobileMenu.querySelectorAll('a:not(.mobile-sub-toggle)').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenuBtn.classList.remove('active');
+                mobileMenu.classList.remove('active');
+                document.body.classList.remove('no-scroll');
+            });
+        });
+        mobileMenu.querySelectorAll('.mobile-sub-toggle').forEach(toggle => {
+            toggle.addEventListener('click', (e) => {
+                e.preventDefault();
+                const parent = toggle.parentElement;
+                const sub = parent.querySelector('.mobile-sub');
+                parent.classList.toggle('open');
+                sub.classList.toggle('open');
+            });
+        });
+    </script>
+</body>
+</html>
