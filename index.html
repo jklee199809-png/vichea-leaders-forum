@@ -283,12 +283,16 @@
             });
         }, observerOptions);
 
-        document.querySelectorAll('.section, .review-card, .program-item, .step').forEach(el => {
+        document.querySelectorAll('.section, .step').forEach(el => {
             observer.observe(el);
         });
-        // 데이터 로드
-        loadPrograms('main');
-        loadReviews('main');
+        // 데이터 로드 후 동적 요소에 observer 등록
+        loadPrograms('main').then(function() {
+            document.querySelectorAll('.program-item').forEach(el => observer.observe(el));
+        });
+        loadReviews('main').then(function() {
+            document.querySelectorAll('.review-card').forEach(el => observer.observe(el));
+        });
     </script>
 
 </body>

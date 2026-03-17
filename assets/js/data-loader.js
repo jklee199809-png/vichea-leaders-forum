@@ -25,7 +25,7 @@ function fetchJSON(filename) {
 // 프로그램 렌더링
 // ========================================
 function loadPrograms(mode) {
-    fetchJSON('programs.json').then(function(data) {
+    return fetchJSON('programs.json').then(function(data) {
         if (mode === 'main') {
             renderProgramsMain(data);
         } else if (mode === 'sub') {
@@ -114,7 +114,7 @@ function renderProgramsGrid(data) {
 // 리뷰 렌더링
 // ========================================
 function loadReviews(mode) {
-    fetchJSON('reviews.json').then(function(data) {
+    return fetchJSON('reviews.json').then(function(data) {
         if (mode === 'main') {
             renderReviewsMain(data);
         } else if (mode === 'sub') {
