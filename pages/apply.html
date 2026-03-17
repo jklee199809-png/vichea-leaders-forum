@@ -159,7 +159,12 @@
                             </div>
                             <div class="form-group">
                                 <label class="form-label">도서배송주소 <span class="required">*</span></label>
-                                <input type="text" class="form-input" required>
+                                <div style="display: flex; gap: 8px; margin-bottom: 8px;">
+                                    <input type="text" class="form-input" id="postcode" placeholder="우편번호" readonly required style="flex: 1; background: #f9f9f9; cursor: pointer;" onclick="searchAddress()">
+                                    <button type="button" onclick="searchAddress()" style="padding: 12px 20px; background: var(--color-navy); color: #fff; border: none; border-radius: 4px; font-size: 14px; font-family: var(--font-kr); cursor: pointer; white-space: nowrap; transition: background 0.2s;" onmouseover="this.style.background='var(--color-navy-light)'" onmouseout="this.style.background='var(--color-navy)'">주소 검색</button>
+                                </div>
+                                <input type="text" class="form-input" id="address" placeholder="기본주소" readonly style="margin-bottom: 8px; background: #f9f9f9;">
+                                <input type="text" class="form-input" id="addressDetail" placeholder="상세주소를 입력해 주세요">
                             </div>
                             <div class="privacy-box">
                                 <h4 style="font-size: 15px; font-weight: 600; color: var(--color-charcoal); margin-bottom: 12px;">개인정보 수집 및 이용</h4>
@@ -206,6 +211,7 @@
             <div class="footer-bottom"><p>&copy; 2026 VICHEA LEADERS FORUM. All rights reserved.</p></div>
         </div>
     </footer>
+    <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script>
         AOS.init({ duration: 700, once: true, offset: 60 });
@@ -214,6 +220,15 @@
         mobileMenuBtn.addEventListener('click', () => { mobileMenuBtn.classList.toggle('active'); mobileMenu.classList.toggle('active'); document.body.classList.toggle('no-scroll'); });
         mobileMenu.querySelectorAll('a:not(.mobile-sub-toggle)').forEach(link => { link.addEventListener('click', () => { mobileMenuBtn.classList.remove('active'); mobileMenu.classList.remove('active'); document.body.classList.remove('no-scroll'); }); });
         mobileMenu.querySelectorAll('.mobile-sub-toggle').forEach(toggle => { toggle.addEventListener('click', (e) => { e.preventDefault(); const parent = toggle.parentElement; const sub = parent.querySelector('.mobile-sub'); parent.classList.toggle('open'); sub.classList.toggle('open'); }); });
+        function searchAddress() {
+            new daum.Postcode({
+                oncomplete: function(data) {
+                    document.getElementById('postcode').value = data.zonecode;
+                    document.getElementById('address').value = data.roadAddress || data.jibunAddress;
+                    document.getElementById('addressDetail').focus();
+                }
+            }).open();
+        }
     </script>
 </body>
 </html>
