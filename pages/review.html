@@ -105,48 +105,7 @@
                 </aside>
 
                 <!-- Main Content -->
-                <main class="page-content">
-                    <div class="review-item" data-aos="fade-up">
-                        <div class="review-thumb">강의 장면 이미지 영역</div>
-                        <div class="review-body">
-                            <span class="review-date">날짜 영역</span>
-                            <h4>강의 제목 영역</h4>
-                            <p>강의 요약 내용이 들어갈 자리입니다. 리뷰 콘텐츠가 추후 제공됩니다.</p>
-                        </div>
-                    </div>
-                    <div class="review-item" data-aos="fade-up">
-                        <div class="review-thumb">강의 장면 이미지 영역</div>
-                        <div class="review-body">
-                            <span class="review-date">날짜 영역</span>
-                            <h4>강의 제목 영역</h4>
-                            <p>강의 요약 내용이 들어갈 자리입니다. 리뷰 콘텐츠가 추후 제공됩니다.</p>
-                        </div>
-                    </div>
-                    <div class="review-item" data-aos="fade-up">
-                        <div class="review-thumb">강의 장면 이미지 영역</div>
-                        <div class="review-body">
-                            <span class="review-date">날짜 영역</span>
-                            <h4>강의 제목 영역</h4>
-                            <p>강의 요약 내용이 들어갈 자리입니다. 리뷰 콘텐츠가 추후 제공됩니다.</p>
-                        </div>
-                    </div>
-                    <div class="review-item" data-aos="fade-up">
-                        <div class="review-thumb">강의 장면 이미지 영역</div>
-                        <div class="review-body">
-                            <span class="review-date">날짜 영역</span>
-                            <h4>강의 제목 영역</h4>
-                            <p>강의 요약 내용이 들어갈 자리입니다. 리뷰 콘텐츠가 추후 제공됩니다.</p>
-                        </div>
-                    </div>
-                    <div class="review-item" data-aos="fade-up">
-                        <div class="review-thumb">강의 장면 이미지 영역</div>
-                        <div class="review-body">
-                            <span class="review-date">날짜 영역</span>
-                            <h4>강의 제목 영역</h4>
-                            <p>강의 요약 내용이 들어갈 자리입니다. 리뷰 콘텐츠가 추후 제공됩니다.</p>
-                        </div>
-                    </div>
-                </main>
+                <main class="page-content" id="reviewList"></main>
             </div>
         </div>
     </div>
@@ -176,6 +135,7 @@
         </div>
     </footer>
 
+    <script src="../assets/js/data-loader.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script>
         AOS.init({ duration: 700, once: true, offset: 60 });
@@ -184,6 +144,7 @@
         mobileMenuBtn.addEventListener('click', () => { mobileMenuBtn.classList.toggle('active'); mobileMenu.classList.toggle('active'); document.body.classList.toggle('no-scroll'); });
         mobileMenu.querySelectorAll('a:not(.mobile-sub-toggle)').forEach(link => { link.addEventListener('click', () => { mobileMenuBtn.classList.remove('active'); mobileMenu.classList.remove('active'); document.body.classList.remove('no-scroll'); }); });
         mobileMenu.querySelectorAll('.mobile-sub-toggle').forEach(toggle => { toggle.addEventListener('click', (e) => { e.preventDefault(); const parent = toggle.parentElement; const sub = parent.querySelector('.mobile-sub'); parent.classList.toggle('open'); sub.classList.toggle('open'); }); });
+        loadReviews('sub');
     </script>
 </body>
 </html>

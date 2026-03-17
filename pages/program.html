@@ -110,32 +110,7 @@
                 </div>
 
                 <!-- 프로그램 목록 -->
-                <div class="program-grid" data-aos="fade-up">
-                    <div class="program-box">
-                        <span class="program-box-badge open">모집중</span>
-                        <h3>비채리더스포럼 19기</h3>
-                        <p>경영, 경제 및 인문학 분야의 명사 특강과 비즈니스 네트워킹</p>
-                        <a href="program-19.html" class="program-box-btn">상세보기</a>
-                    </div>
-                    <div class="program-box">
-                        <span class="program-box-badge preparing">준비중</span>
-                        <h3>숙명 미래혁신 최고경영자과정 1기</h3>
-                        <p>기업과 조직의 지속 가능한 성장을 이끄는 최고경영자를 위한 프리미엄 교육과정</p>
-                        <a href="program-ceo.html" class="program-box-btn">상세보기</a>
-                    </div>
-                    <div class="program-box">
-                        <span class="program-box-badge preparing">준비중</span>
-                        <h3>숙명 차세대 리더최고위과정</h3>
-                        <p>상세 내용 준비 중입니다.</p>
-                        <a href="program-leader.html" class="program-box-btn">상세보기</a>
-                    </div>
-                    <div class="program-box">
-                        <span class="program-box-badge closed">신청마감</span>
-                        <h3>비채 아카데미 슬기로운 직장생활 ABC</h3>
-                        <p>직장생활의 기본 예절과 자세, 상사와의 관계, 업무관리의 기초</p>
-                        <a href="program-academy.html" class="program-box-btn">상세보기</a>
-                    </div>
-                </div>
+                <div class="program-grid" data-aos="fade-up"></div>
             </main>
         </div>
     </div>
@@ -172,6 +147,7 @@
             </div>
         </div>
     </footer>
+    <script src="../assets/js/data-loader.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script>
         AOS.init({ duration: 700, once: true, offset: 60 });
@@ -198,6 +174,7 @@
                 sub.classList.toggle('open');
             });
         });
+        loadPrograms('grid');
     </script>
 </body>
 </html>
