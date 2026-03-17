@@ -1613,7 +1613,7 @@ img {
     content: '';
     display: block;
     width: 40px;
-    height: 1px;
+    height: 2px;
     background: var(--color-accent-light);
 }
 
@@ -1778,5 +1778,15 @@ img {
 
     .program-meta span::after {
         display: none;
+    }
+
+    .content-section p,
+    .footer-col li {
+        word-break: keep-all;
+        overflow-wrap: break-word;
+    }
+
+    .hero-desc {
+        font-size: 14px;
     }
 }
