@@ -10,13 +10,18 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
     <style>
         .notice-table { width: 100%; border-collapse: collapse; }
-        .notice-table thead th { padding: 14px 16px; font-size: 13px; font-weight: 600; color: var(--color-charcoal); background: var(--color-gray-50); border-bottom: 2px solid var(--color-charcoal); text-align: left; }
-        .notice-table thead th.center { text-align: center; }
-        .notice-table tbody td { padding: 14px 16px; font-size: 14px; color: var(--color-gray-700); border-bottom: 1px solid var(--color-gray-100); }
-        .notice-table tbody td.center { text-align: center; }
-        .notice-table tbody td.title a { color: var(--color-charcoal); text-decoration: none; }
-        .notice-table tbody td.title a:hover { color: var(--color-navy); }
-        .notice-badge { display: inline-block; background: var(--color-navy); color: #fff; font-size: 11px; padding: 2px 8px; border-radius: 2px; margin-right: 8px; }
+        .notice-table th { padding: 14px 16px; font-size: 13px; font-weight: 600; color: var(--color-gray-500); border-bottom: 2px solid var(--color-charcoal); text-align: left; letter-spacing: 0.5px; }
+        .notice-table td { padding: 16px; font-size: 14px; color: var(--color-gray-700); border-bottom: 1px solid var(--color-gray-100); }
+        .notice-table .notice-title-link { color: var(--color-charcoal); font-weight: 500; cursor: pointer; transition: color 0.2s; }
+        .notice-table .notice-title-link:hover { color: var(--color-navy); }
+        .notice-detail { margin-top: 40px; padding: 40px; background: var(--color-gray-50); border: 1px solid var(--color-gray-200); border-radius: 4px; display: none; }
+        .notice-detail.show { display: block; }
+        .notice-detail h3 { font-size: 22px; font-weight: 700; color: var(--color-charcoal); margin-bottom: 16px; }
+        .notice-detail .notice-meta { font-size: 13px; color: var(--color-gray-500); margin-bottom: 24px; padding-bottom: 16px; border-bottom: 1px solid var(--color-gray-200); }
+        .notice-detail-body { font-size: 15px; color: var(--color-gray-700); line-height: 2; }
+        .notice-detail-body h4 { font-size: 16px; font-weight: 600; color: var(--color-charcoal); margin: 20px 0 8px; }
+        .notice-detail-body ul { margin: 8px 0; padding-left: 20px; }
+        .notice-detail-body ul li { margin-bottom: 4px; }
     </style>
 </head>
 <body>
@@ -28,25 +33,11 @@
             </a>
             <nav class="gnb">
                 <ul>
-                    <li class="has-sub">
-                        <a href="#">About</a>
-                        <ul class="sub-menu">
-                            <li><a href="about.html">비채리더스포럼 소개</a></li>
-                            <li><a href="members.html">비채회원</a></li>
-                        </ul>
-                    </li>
-                    <li class="has-sub">
-                        <a href="#">Forum</a>
-                        <ul class="sub-menu">
-                            <li><a href="forum.html">19기 안내</a></li>
-                            <li><a href="gallery.html">갤러리</a></li>
-                        </ul>
-                    </li>
+                    <li><a href="about.html">About</a></li>
                     <li><a href="program.html">Program</a></li>
                     <li class="has-sub">
                         <a href="#">Apply</a>
                         <ul class="sub-menu">
-                            <li><a href="apply-info.html">수강신청 안내</a></li>
                             <li><a href="apply.html">수강 신청</a></li>
                             <li><a href="faq.html">FAQ</a></li>
                         </ul>
@@ -54,42 +45,25 @@
                     <li class="has-sub">
                         <a href="#">Archive</a>
                         <ul class="sub-menu">
-                            <li><a href="archive.html">지난 포럼</a></li>
+                            <li><a href="review.html">Review</a></li>
                             <li><a href="history.html">History</a></li>
                             <li><a href="books.html">Books</a></li>
                             <li><a href="notice.html">공지사항</a></li>
-                            <li><a href="news.html">News</a></li>
                         </ul>
                     </li>
                 </ul>
             </nav>
         </div>
     </header>
-    <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="메뉴 열기">
-        <span></span><span></span><span></span>
-    </button>
+    <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="메뉴 열기"><span></span><span></span><span></span></button>
     <div class="mobile-menu" id="mobileMenu">
         <ul>
             <li><a href="../index.html">HOME</a></li>
-            <li class="mobile-has-sub">
-                <a href="#" class="mobile-sub-toggle">About <span class="arrow"></span></a>
-                <ul class="mobile-sub">
-                    <li><a href="about.html">비채리더스포럼 소개</a></li>
-                    <li><a href="members.html">비채회원</a></li>
-                </ul>
-            </li>
-            <li class="mobile-has-sub">
-                <a href="#" class="mobile-sub-toggle">Forum <span class="arrow"></span></a>
-                <ul class="mobile-sub">
-                    <li><a href="forum.html">19기 안내</a></li>
-                    <li><a href="gallery.html">갤러리</a></li>
-                </ul>
-            </li>
+            <li><a href="about.html">About</a></li>
             <li><a href="program.html">Program</a></li>
             <li class="mobile-has-sub">
                 <a href="#" class="mobile-sub-toggle">Apply <span class="arrow"></span></a>
                 <ul class="mobile-sub">
-                    <li><a href="apply-info.html">수강신청 안내</a></li>
                     <li><a href="apply.html">수강 신청</a></li>
                     <li><a href="faq.html">FAQ</a></li>
                 </ul>
@@ -97,11 +71,10 @@
             <li class="mobile-has-sub">
                 <a href="#" class="mobile-sub-toggle">Archive <span class="arrow"></span></a>
                 <ul class="mobile-sub">
-                    <li><a href="archive.html">지난 포럼</a></li>
+                    <li><a href="review.html">Review</a></li>
                     <li><a href="history.html">History</a></li>
                     <li><a href="books.html">Books</a></li>
                     <li><a href="notice.html">공지사항</a></li>
-                    <li><a href="news.html">News</a></li>
                 </ul>
             </li>
         </ul>
@@ -112,13 +85,13 @@
         <div class="container">
             <div class="breadcrumb">
                 <a href="../index.html">HOME</a>
-                <span class="sep">›</span>
+                <span class="sep">&rsaquo;</span>
                 <span>Archive</span>
-                <span class="sep">›</span>
+                <span class="sep">&rsaquo;</span>
                 <span class="current">공지사항</span>
             </div>
             <h1 class="page-banner-title">공지사항</h1>
-            <p class="page-banner-desc">비채리더스포럼 공지사항</p>
+            <p class="page-banner-desc">강의 안내 및 기타 공지사항</p>
         </div>
     </section>
 
@@ -130,11 +103,10 @@
                 <aside class="page-sidebar">
                     <p class="sidebar-menu-title">Archive</p>
                     <ul class="sidebar-menu">
-                        <li><a href="archive.html">지난 포럼</a></li>
+                        <li><a href="review.html">Review</a></li>
                         <li><a href="history.html">History</a></li>
                         <li><a href="books.html">Books</a></li>
                         <li><a href="notice.html" class="active">공지사항</a></li>
-                        <li><a href="news.html">News</a></li>
                     </ul>
                 </aside>
 
@@ -143,63 +115,79 @@
                     <table class="notice-table">
                         <thead>
                             <tr>
-                                <th class="center" style="width: 60px;">번호</th>
+                                <th style="width: 60px; text-align: center;">번호</th>
                                 <th>제목</th>
-                                <th class="center" style="width: 120px;">작성일</th>
-                                <th class="center" style="width: 60px;">조회</th>
+                                <th style="width: 120px; text-align: center;">작성일</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td class="center">8</td>
-                                <td class="title"><a href="#"><span class="notice-badge">공지</span>비채리더스포럼 19기 모집 안내</a></td>
-                                <td class="center">2026.03.01</td>
-                                <td class="center">152</td>
-                            </tr>
-                            <tr>
-                                <td class="center">7</td>
-                                <td class="title"><a href="#"><span class="notice-badge">공지</span>2026년 상반기 교육 일정 안내</a></td>
-                                <td class="center">2026.02.15</td>
-                                <td class="center">98</td>
-                            </tr>
-                            <tr>
-                                <td class="center">6</td>
-                                <td class="title"><a href="#">18기 종강식 안내</a></td>
-                                <td class="center">2025.06.05</td>
-                                <td class="center">87</td>
-                            </tr>
-                            <tr>
-                                <td class="center">5</td>
-                                <td class="title"><a href="#">18기 워크샵 일정 안내</a></td>
-                                <td class="center">2025.05.20</td>
-                                <td class="center">76</td>
-                            </tr>
-                            <tr>
-                                <td class="center">4</td>
-                                <td class="title"><a href="#">18기 5주차 강연 장소 변경 안내</a></td>
-                                <td class="center">2025.05.10</td>
-                                <td class="center">65</td>
-                            </tr>
-                            <tr>
-                                <td class="center">3</td>
-                                <td class="title"><a href="#"><span class="notice-badge">공지</span>비채리더스포럼 18기 모집 안내</a></td>
-                                <td class="center">2025.02.28</td>
-                                <td class="center">134</td>
-                            </tr>
-                            <tr>
-                                <td class="center">2</td>
-                                <td class="title"><a href="#">17기 졸업여행 후기</a></td>
-                                <td class="center">2024.07.15</td>
-                                <td class="center">112</td>
-                            </tr>
-                            <tr>
-                                <td class="center">1</td>
-                                <td class="title"><a href="#"><span class="notice-badge">공지</span>비채리더스포럼 17기 모집 안내</a></td>
-                                <td class="center">2024.02.20</td>
-                                <td class="center">145</td>
+                                <td style="text-align: center;">1</td>
+                                <td><span class="notice-title-link" id="noticeToggle">비채리더스포럼 19기 모집 안내</span></td>
+                                <td style="text-align: center;">2026.03.17</td>
                             </tr>
                         </tbody>
                     </table>
+
+                    <!-- Notice Detail -->
+                    <div class="notice-detail" id="noticeDetail">
+                        <h3>비채리더스포럼 19기 모집 안내</h3>
+                        <p class="notice-meta">작성일: 2026.03.17</p>
+                        <div class="notice-detail-body">
+                            <p>8년간 18기를 운영하며 검증된 비채리더스포럼이 19기를 맞이합니다.<br>이번 19기는 서울에서 새롭게 시작합니다.</p>
+
+                            <h4>운영 일정</h4>
+                            <ul>
+                                <li>기간: 2026년 4월 09일(목) ~ 6월 11일(목), 총 10주</li>
+                                <li>시간: 매주 목요일 오후 19시 ~ 21시 ( 석식 : 18시~19시 )</li>
+                                <li>장소: 서울 (추후 안내)</li>
+                            </ul>
+
+                            <h4>주요 프로그램</h4>
+                            <ul>
+                                <li>저자 직강 - 최신 도서의 저자가 직접 전하는 강연과 인사이트</li>
+                                <li>명사 특강 - 시대를 이끄는 명사의 생생한 경험과 통찰</li>
+                                <li>비즈니스 네트워킹 - 경험을 나누고 협력 기회를 여는 소중한 자리</li>
+                            </ul>
+
+                            <h4>참여 대상</h4>
+                            <ul>
+                                <li>경영자 및 임원으로서 리더십을 강화하고 싶은 분</li>
+                                <li>창업가 및 예비 창업가로서 새로운 관점을 얻고 싶은 분</li>
+                                <li>전문직 종사자로서 지속적인 자기 성장을 추구하는 분</li>
+                                <li>조직의 리더로서 팀과 조직을 이끌어가는 분</li>
+                                <li>독서를 통한 배움과 성찰을 즐기는 분</li>
+                                <li>좋은 사람들과의 의미 있는 만남을 원하는 분</li>
+                                <li>더 나은 사회와 미래를 함께 만들어가고 싶은 분</li>
+                            </ul>
+
+                            <h4>수강료</h4>
+                            <ul>
+                                <li>얼리버드: 120만원 (선착순 5명)</li>
+                                <li>정규: 150만원 (vat 별도, 도서 포함)</li>
+                                <li>※ 도서 제공, 매회 저녁 식사(간편식) 및 다과 포함</li>
+                            </ul>
+
+                            <h4>신청 방법</h4>
+                            <ul>
+                                <li>모집 인원: 35명 선착순 마감</li>
+                                <li>신청 기간: 2026년 3월 27일(금) 까지</li>
+                                <li>신청 방법: 홈페이지 온라인 <a href="apply.html" style="color: var(--color-navy); font-weight: 600; text-decoration: underline;">신청하기</a></li>
+                                <li>문의: 070-7839-3002</li>
+                            </ul>
+
+                            <h4>비채리더스포럼이 특별한 이유</h4>
+                            <ul>
+                                <li>저자가 직접 전합니다 - 책에서 다루지 못한 깊이 있는 이야기와 인사이트</li>
+                                <li>8년간 18기 운영 - 2017년부터 지속된 검증된 프로그램</li>
+                                <li>실질적인 네트워킹 - 같은 관심사를 가진 리더들과의 깊이 있는 교류</li>
+                                <li>편안한 분위기 - 저녁 식사와 다과를 함께하며 자연스럽게 이어지는 대화</li>
+                            </ul>
+
+                            <p style="margin-top: 24px;">19기에서 새로운 인사이트와 소중한 인연을 만나보세요.<br>많은 관심과 참여 부탁드립니다.<br>함께하는 모든 순간이 여러분의 성장과 통찰로 이어지기를 기대합니다.</p>
+                            <p style="margin-top: 16px; font-weight: 500;">비채 드림</p>
+                        </div>
+                    </div>
                 </main>
             </div>
         </div>
@@ -213,55 +201,37 @@
                     <p>리더의 통찰, 책에서 시작됩니다.</p>
                 </div>
                 <div class="footer-links">
-                    <div class="footer-col">
-                        <h4>MENU</h4>
-                        <ul>
-                            <li><a href="about.html">About</a></li>
-                            <li><a href="forum.html">Forum</a></li>
-                            <li><a href="apply.html">Apply</a></li>
-                            <li><a href="archive.html">Archive</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-col">
-                        <h4>CONTACT</h4>
-                        <ul>
-                            <li>Tel. 070-7839-3002</li>
-                            <li>Email. lnabiz@naver.com</li>
-                            <li>서울특별시 관악구 관악로 168(봉천동)</li>
-                        </ul>
-                    </div>
+                    <div class="footer-col"><h4>MENU</h4><ul>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="program.html">Program</a></li>
+                        <li><a href="apply.html">Apply</a></li>
+                        <li><a href="review.html">Archive</a></li>
+                    </ul></div>
+                    <div class="footer-col"><h4>CONTACT</h4><ul>
+                        <li>Tel. 070-7839-3002</li>
+                        <li>Email. lnabiz@naver.com</li>
+                        <li>서울특별시 관악구 관악로 168(봉천동)</li>
+                    </ul></div>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 VICHEA LEADERS FORUM. All rights reserved.</p>
-            </div>
+            <div class="footer-bottom"><p>&copy; 2026 VICHEA LEADERS FORUM. All rights reserved.</p></div>
         </div>
     </footer>
+
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script>
         AOS.init({ duration: 700, once: true, offset: 60 });
         const mobileMenuBtn = document.getElementById('mobileMenuBtn');
         const mobileMenu = document.getElementById('mobileMenu');
-        mobileMenuBtn.addEventListener('click', () => {
-            mobileMenuBtn.classList.toggle('active');
-            mobileMenu.classList.toggle('active');
-            document.body.classList.toggle('no-scroll');
-        });
-        mobileMenu.querySelectorAll('a:not(.mobile-sub-toggle)').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenuBtn.classList.remove('active');
-                mobileMenu.classList.remove('active');
-                document.body.classList.remove('no-scroll');
-            });
-        });
-        mobileMenu.querySelectorAll('.mobile-sub-toggle').forEach(toggle => {
-            toggle.addEventListener('click', (e) => {
-                e.preventDefault();
-                const parent = toggle.parentElement;
-                const sub = parent.querySelector('.mobile-sub');
-                parent.classList.toggle('open');
-                sub.classList.toggle('open');
-            });
+        mobileMenuBtn.addEventListener('click', () => { mobileMenuBtn.classList.toggle('active'); mobileMenu.classList.toggle('active'); document.body.classList.toggle('no-scroll'); });
+        mobileMenu.querySelectorAll('a:not(.mobile-sub-toggle)').forEach(link => { link.addEventListener('click', () => { mobileMenuBtn.classList.remove('active'); mobileMenu.classList.remove('active'); document.body.classList.remove('no-scroll'); }); });
+        mobileMenu.querySelectorAll('.mobile-sub-toggle').forEach(toggle => { toggle.addEventListener('click', (e) => { e.preventDefault(); const parent = toggle.parentElement; const sub = parent.querySelector('.mobile-sub'); parent.classList.toggle('open'); sub.classList.toggle('open'); }); });
+
+        // Notice detail toggle
+        const noticeToggle = document.getElementById('noticeToggle');
+        const noticeDetail = document.getElementById('noticeDetail');
+        noticeToggle.addEventListener('click', () => {
+            noticeDetail.classList.toggle('show');
         });
     </script>
 </body>

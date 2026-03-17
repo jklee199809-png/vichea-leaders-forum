@@ -3,19 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Books | Vichea Leaders Forum</title>
+    <title>Review | Vichea Leaders Forum</title>
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
     <style>
-        .book-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 20px; margin-top: 24px; }
-        .book-item { text-align: center; }
-        .book-cover { width: 100%; aspect-ratio: 3/4; background: linear-gradient(135deg, var(--color-navy) 0%, var(--color-charcoal) 100%); display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,0.4); font-size: 13px; border: 1px solid var(--color-gray-200); margin-bottom: 8px; transition: all 0.3s ease; }
-        .book-cover:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(0,0,0,0.08); }
-        .book-title { font-size: 13px; font-weight: 500; color: var(--color-charcoal); line-height: 1.4; }
-        @media (max-width: 768px) { .book-grid { grid-template-columns: repeat(3, 1fr); } }
-        @media (max-width: 480px) { .book-grid { grid-template-columns: repeat(2, 1fr); } }
+        .review-item { display: grid; grid-template-columns: 280px 1fr; gap: 32px; padding: 32px 0; border-bottom: 1px solid var(--color-gray-100); }
+        .review-item:last-child { border-bottom: none; }
+        .review-thumb { width: 100%; height: 180px; background: linear-gradient(135deg, var(--color-navy) 0%, var(--color-charcoal) 100%); display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,0.3); font-size: 14px; }
+        .review-body h4 { font-size: 18px; font-weight: 600; color: var(--color-charcoal); margin-bottom: 8px; }
+        .review-body .review-date { font-size: 12px; color: var(--color-accent); letter-spacing: 1px; margin-bottom: 12px; display: block; }
+        .review-body p { font-size: 15px; color: var(--color-gray-700); line-height: 1.8; }
+        @media (max-width: 768px) { .review-item { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
@@ -82,10 +82,10 @@
                 <span class="sep">&rsaquo;</span>
                 <span>Archive</span>
                 <span class="sep">&rsaquo;</span>
-                <span class="current">Books</span>
+                <span class="current">Review</span>
             </div>
-            <h1 class="page-banner-title">Books</h1>
-            <p class="page-banner-desc">교육에 사용된 도서 갤러리</p>
+            <h1 class="page-banner-title">Review</h1>
+            <p class="page-banner-desc">프로그램 리뷰</p>
         </div>
     </section>
 
@@ -97,75 +97,53 @@
                 <aside class="page-sidebar">
                     <p class="sidebar-menu-title">Archive</p>
                     <ul class="sidebar-menu">
-                        <li><a href="review.html">Review</a></li>
+                        <li><a href="review.html" class="active">Review</a></li>
                         <li><a href="history.html">History</a></li>
-                        <li><a href="books.html" class="active">Books</a></li>
+                        <li><a href="books.html">Books</a></li>
                         <li><a href="notice.html">공지사항</a></li>
                     </ul>
                 </aside>
 
                 <!-- Main Content -->
                 <main class="page-content">
-                    <div class="book-grid">
-                        <div class="book-item" data-aos="fade-up">
-                            <div class="book-cover">도서 이미지 영역</div>
-                            <p class="book-title">도서명 영역</p>
+                    <div class="review-item" data-aos="fade-up">
+                        <div class="review-thumb">강의 장면 이미지 영역</div>
+                        <div class="review-body">
+                            <span class="review-date">날짜 영역</span>
+                            <h4>강의 제목 영역</h4>
+                            <p>강의 요약 내용이 들어갈 자리입니다. 리뷰 콘텐츠가 추후 제공됩니다.</p>
                         </div>
-                        <div class="book-item" data-aos="fade-up">
-                            <div class="book-cover">도서 이미지 영역</div>
-                            <p class="book-title">도서명 영역</p>
+                    </div>
+                    <div class="review-item" data-aos="fade-up">
+                        <div class="review-thumb">강의 장면 이미지 영역</div>
+                        <div class="review-body">
+                            <span class="review-date">날짜 영역</span>
+                            <h4>강의 제목 영역</h4>
+                            <p>강의 요약 내용이 들어갈 자리입니다. 리뷰 콘텐츠가 추후 제공됩니다.</p>
                         </div>
-                        <div class="book-item" data-aos="fade-up">
-                            <div class="book-cover">도서 이미지 영역</div>
-                            <p class="book-title">도서명 영역</p>
+                    </div>
+                    <div class="review-item" data-aos="fade-up">
+                        <div class="review-thumb">강의 장면 이미지 영역</div>
+                        <div class="review-body">
+                            <span class="review-date">날짜 영역</span>
+                            <h4>강의 제목 영역</h4>
+                            <p>강의 요약 내용이 들어갈 자리입니다. 리뷰 콘텐츠가 추후 제공됩니다.</p>
                         </div>
-                        <div class="book-item" data-aos="fade-up">
-                            <div class="book-cover">도서 이미지 영역</div>
-                            <p class="book-title">도서명 영역</p>
+                    </div>
+                    <div class="review-item" data-aos="fade-up">
+                        <div class="review-thumb">강의 장면 이미지 영역</div>
+                        <div class="review-body">
+                            <span class="review-date">날짜 영역</span>
+                            <h4>강의 제목 영역</h4>
+                            <p>강의 요약 내용이 들어갈 자리입니다. 리뷰 콘텐츠가 추후 제공됩니다.</p>
                         </div>
-                        <div class="book-item" data-aos="fade-up">
-                            <div class="book-cover">도서 이미지 영역</div>
-                            <p class="book-title">도서명 영역</p>
-                        </div>
-                        <div class="book-item" data-aos="fade-up">
-                            <div class="book-cover">도서 이미지 영역</div>
-                            <p class="book-title">도서명 영역</p>
-                        </div>
-                        <div class="book-item" data-aos="fade-up">
-                            <div class="book-cover">도서 이미지 영역</div>
-                            <p class="book-title">도서명 영역</p>
-                        </div>
-                        <div class="book-item" data-aos="fade-up">
-                            <div class="book-cover">도서 이미지 영역</div>
-                            <p class="book-title">도서명 영역</p>
-                        </div>
-                        <div class="book-item" data-aos="fade-up">
-                            <div class="book-cover">도서 이미지 영역</div>
-                            <p class="book-title">도서명 영역</p>
-                        </div>
-                        <div class="book-item" data-aos="fade-up">
-                            <div class="book-cover">도서 이미지 영역</div>
-                            <p class="book-title">도서명 영역</p>
-                        </div>
-                        <div class="book-item" data-aos="fade-up">
-                            <div class="book-cover">도서 이미지 영역</div>
-                            <p class="book-title">도서명 영역</p>
-                        </div>
-                        <div class="book-item" data-aos="fade-up">
-                            <div class="book-cover">도서 이미지 영역</div>
-                            <p class="book-title">도서명 영역</p>
-                        </div>
-                        <div class="book-item" data-aos="fade-up">
-                            <div class="book-cover">도서 이미지 영역</div>
-                            <p class="book-title">도서명 영역</p>
-                        </div>
-                        <div class="book-item" data-aos="fade-up">
-                            <div class="book-cover">도서 이미지 영역</div>
-                            <p class="book-title">도서명 영역</p>
-                        </div>
-                        <div class="book-item" data-aos="fade-up">
-                            <div class="book-cover">도서 이미지 영역</div>
-                            <p class="book-title">도서명 영역</p>
+                    </div>
+                    <div class="review-item" data-aos="fade-up">
+                        <div class="review-thumb">강의 장면 이미지 영역</div>
+                        <div class="review-body">
+                            <span class="review-date">날짜 영역</span>
+                            <h4>강의 제목 영역</h4>
+                            <p>강의 요약 내용이 들어갈 자리입니다. 리뷰 콘텐츠가 추후 제공됩니다.</p>
                         </div>
                     </div>
                 </main>

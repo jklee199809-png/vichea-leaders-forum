@@ -9,14 +9,19 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
     <style>
+        .faq-list { margin-top: 8px; }
         .faq-item { border-bottom: 1px solid var(--color-gray-100); }
-        .faq-question { display: flex; align-items: center; justify-content: space-between; padding: 20px 0; cursor: pointer; }
-        .faq-question h3 { font-size: 15px; font-weight: 600; color: var(--color-charcoal); display: flex; align-items: center; gap: 12px; }
-        .faq-question .q-badge { background: var(--color-navy); color: #fff; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; flex-shrink: 0; }
-        .faq-question .arrow { font-size: 14px; color: var(--color-gray-400); transition: transform 0.3s; }
-        .faq-item.open .faq-question .arrow { transform: rotate(180deg); }
-        .faq-answer { padding: 0 0 20px 40px; font-size: 14px; color: var(--color-gray-600); line-height: 1.8; display: none; }
-        .faq-item.open .faq-answer { display: block; }
+        .faq-q { display: flex; justify-content: space-between; align-items: center; padding: 20px 0; cursor: pointer; font-size: 16px; font-weight: 600; color: var(--color-charcoal); transition: color 0.2s; }
+        .faq-q:hover { color: var(--color-navy); }
+        .faq-q .icon { font-size: 20px; color: var(--color-gray-300); transition: transform 0.3s; flex-shrink: 0; margin-left: 16px; }
+        .faq-item.open .faq-q .icon { transform: rotate(45deg); color: var(--color-navy); }
+        .faq-a { max-height: 0; overflow: hidden; transition: max-height 0.4s ease, padding 0.4s ease; }
+        .faq-item.open .faq-a { max-height: 600px; }
+        .faq-a-inner { padding: 0 0 24px; font-size: 15px; color: var(--color-gray-700); line-height: 1.9; }
+        .faq-a-inner p { margin-bottom: 8px; }
+        .faq-a-inner table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 13px; }
+        .faq-a-inner table th, .faq-a-inner table td { padding: 8px 12px; border: 1px solid var(--color-gray-200); text-align: left; }
+        .faq-a-inner table th { background: var(--color-gray-50); font-weight: 600; }
     </style>
 </head>
 <body>
@@ -28,25 +33,11 @@
             </a>
             <nav class="gnb">
                 <ul>
-                    <li class="has-sub">
-                        <a href="#">About</a>
-                        <ul class="sub-menu">
-                            <li><a href="about.html">비채리더스포럼 소개</a></li>
-                            <li><a href="members.html">비채회원</a></li>
-                        </ul>
-                    </li>
-                    <li class="has-sub">
-                        <a href="#">Forum</a>
-                        <ul class="sub-menu">
-                            <li><a href="forum.html">19기 안내</a></li>
-                            <li><a href="gallery.html">갤러리</a></li>
-                        </ul>
-                    </li>
+                    <li><a href="about.html">About</a></li>
                     <li><a href="program.html">Program</a></li>
                     <li class="has-sub">
                         <a href="#">Apply</a>
                         <ul class="sub-menu">
-                            <li><a href="apply-info.html">수강신청 안내</a></li>
                             <li><a href="apply.html">수강 신청</a></li>
                             <li><a href="faq.html">FAQ</a></li>
                         </ul>
@@ -54,42 +45,25 @@
                     <li class="has-sub">
                         <a href="#">Archive</a>
                         <ul class="sub-menu">
-                            <li><a href="archive.html">지난 포럼</a></li>
+                            <li><a href="review.html">Review</a></li>
                             <li><a href="history.html">History</a></li>
                             <li><a href="books.html">Books</a></li>
                             <li><a href="notice.html">공지사항</a></li>
-                            <li><a href="news.html">News</a></li>
                         </ul>
                     </li>
                 </ul>
             </nav>
         </div>
     </header>
-    <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="메뉴 열기">
-        <span></span><span></span><span></span>
-    </button>
+    <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="메뉴 열기"><span></span><span></span><span></span></button>
     <div class="mobile-menu" id="mobileMenu">
         <ul>
             <li><a href="../index.html">HOME</a></li>
-            <li class="mobile-has-sub">
-                <a href="#" class="mobile-sub-toggle">About <span class="arrow"></span></a>
-                <ul class="mobile-sub">
-                    <li><a href="about.html">비채리더스포럼 소개</a></li>
-                    <li><a href="members.html">비채회원</a></li>
-                </ul>
-            </li>
-            <li class="mobile-has-sub">
-                <a href="#" class="mobile-sub-toggle">Forum <span class="arrow"></span></a>
-                <ul class="mobile-sub">
-                    <li><a href="forum.html">19기 안내</a></li>
-                    <li><a href="gallery.html">갤러리</a></li>
-                </ul>
-            </li>
+            <li><a href="about.html">About</a></li>
             <li><a href="program.html">Program</a></li>
             <li class="mobile-has-sub">
                 <a href="#" class="mobile-sub-toggle">Apply <span class="arrow"></span></a>
                 <ul class="mobile-sub">
-                    <li><a href="apply-info.html">수강신청 안내</a></li>
                     <li><a href="apply.html">수강 신청</a></li>
                     <li><a href="faq.html">FAQ</a></li>
                 </ul>
@@ -97,11 +71,10 @@
             <li class="mobile-has-sub">
                 <a href="#" class="mobile-sub-toggle">Archive <span class="arrow"></span></a>
                 <ul class="mobile-sub">
-                    <li><a href="archive.html">지난 포럼</a></li>
+                    <li><a href="review.html">Review</a></li>
                     <li><a href="history.html">History</a></li>
                     <li><a href="books.html">Books</a></li>
                     <li><a href="notice.html">공지사항</a></li>
-                    <li><a href="news.html">News</a></li>
                 </ul>
             </li>
         </ul>
@@ -130,7 +103,6 @@
                 <aside class="page-sidebar">
                     <p class="sidebar-menu-title">Apply</p>
                     <ul class="sidebar-menu">
-                        <li><a href="apply-info.html">수강신청 안내</a></li>
                         <li><a href="apply.html">수강 신청</a></li>
                         <li><a href="faq.html" class="active">FAQ</a></li>
                     </ul>
@@ -139,82 +111,91 @@
                 <!-- Main Content -->
                 <main class="page-content">
                     <div class="content-section" data-aos="fade-up">
-                        <div class="faq-item">
-                            <div class="faq-question">
-                                <h3><span class="q-badge">Q</span>비채리더스포럼은 어떤 프로그램인가요?</h3>
-                                <span class="arrow">&#9660;</span>
+                        <div class="faq-list">
+                            <!-- FAQ 1 -->
+                            <div class="faq-item">
+                                <div class="faq-q"><span>어떤 저자들이 오나요?</span><span class="icon">+</span></div>
+                                <div class="faq-a"><div class="faq-a-inner">
+                                    <p>개강 2주 전 확정된 저자 라인업을 공지해드립니다. 베스트셀러 저자 및 각 분야 전문가로 구성됩니다.</p>
+                                </div></div>
                             </div>
-                            <div class="faq-answer">경영, 경제 및 인문학 분야의 명사특강과 비즈니스 네트워킹을 통해 리더들의 성장을 돕는 10주 과정의 프리미엄 교육 프로그램입니다.</div>
-                        </div>
-                        <div class="faq-item">
-                            <div class="faq-question">
-                                <h3><span class="q-badge">Q</span>교육 대상은 누구인가요?</h3>
-                                <span class="arrow">&#9660;</span>
+                            <!-- FAQ 2 -->
+                            <div class="faq-item">
+                                <div class="faq-q"><span>결석하면 어떻게 되나요?</span><span class="icon">+</span></div>
+                                <div class="faq-a"><div class="faq-a-inner">
+                                    <p>불가피한 사정으로 결석 시 사전 통보 부탁드립니다. 별도 보강이나 회비 반환은 없습니다. 사전에 연락 주시면 지인 대리 참석이 가능합니다.</p>
+                                </div></div>
                             </div>
-                            <div class="faq-answer">중소기업·벤처·스타트업 경영자, 임원 및 전문직 종사자를 대상으로 합니다.</div>
-                        </div>
-                        <div class="faq-item">
-                            <div class="faq-question">
-                                <h3><span class="q-badge">Q</span>교육비는 얼마인가요?</h3>
-                                <span class="arrow">&#9660;</span>
+                            <!-- FAQ 3 -->
+                            <div class="faq-item">
+                                <div class="faq-q"><span>수료 기준이 있나요?</span><span class="icon">+</span></div>
+                                <div class="faq-a"><div class="faq-a-inner">
+                                    <p>70% 이상 출석 시 수료증을 발급해드립니다. (10회 중 7회 이상)</p>
+                                </div></div>
                             </div>
-                            <div class="faq-answer">정규 교육비는 150만원(부가세 별도)이며, 얼리버드 할인 시 120만원(선착순 5명)입니다.</div>
-                        </div>
-                        <div class="faq-item">
-                            <div class="faq-question">
-                                <h3><span class="q-badge">Q</span>교육 일정은 어떻게 되나요?</h3>
-                                <span class="arrow">&#9660;</span>
+                            <!-- FAQ 4 -->
+                            <div class="faq-item">
+                                <div class="faq-q"><span>도서는 언제 받나요?</span><span class="icon">+</span></div>
+                                <div class="faq-a"><div class="faq-a-inner">
+                                    <p>개강식 전 등록하신 주소로 일괄 배송해드립니다.</p>
+                                </div></div>
                             </div>
-                            <div class="faq-answer">매주 목요일 저녁에 진행됩니다. 석식 18:00~19:00, 1교시 19:00~20:20, 2교시 20:30~21:00, 이후 네트워킹 시간이 있습니다.</div>
-                        </div>
-                        <div class="faq-item">
-                            <div class="faq-question">
-                                <h3><span class="q-badge">Q</span>교육 장소는 어디인가요?</h3>
-                                <span class="arrow">&#9660;</span>
+                            <!-- FAQ 5 -->
+                            <div class="faq-item">
+                                <div class="faq-q"><span>도서를 이미 가지고 있는데요?</span><span class="icon">+</span></div>
+                                <div class="faq-a"><div class="faq-a-inner">
+                                    <p>프로그램 특성상 모든 참가자에게 동일하게 제공되며, 개별 차감은 어렵습니다.</p>
+                                </div></div>
                             </div>
-                            <div class="faq-answer">서울시 서초구 서초대로40길 49 B2에 위치한 라이프비즈니스센터에서 진행됩니다.</div>
-                        </div>
-                        <div class="faq-item">
-                            <div class="faq-question">
-                                <h3><span class="q-badge">Q</span>주차가 가능한가요?</h3>
-                                <span class="arrow">&#9660;</span>
+                            <!-- FAQ 6 -->
+                            <div class="faq-item">
+                                <div class="faq-q"><span>주차는 가능한가요?</span><span class="icon">+</span></div>
+                                <div class="faq-a"><div class="faq-a-inner">
+                                    <p><strong>교통 안내</strong><br>교육장 건물 내 주차 불가 — 가급적 대중교통을 이용해 주세요.<br>지하철: 서초역 3번·4번 출구에서 도보 약 4분</p>
+                                    <p><strong>주변 주차장 안내</strong></p>
+                                    <table>
+                                        <thead>
+                                            <tr><th>주차장명</th><th>주소</th></tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr><td>대호아이알빌딩 주차장</td><td>서울 서초구 서초대로40길 41</td></tr>
+                                            <tr><td>어반포트 서초역 서초꽃마을주얼리 주차장</td><td>서울 서초구 반포대로27길 13</td></tr>
+                                            <tr><td>투루파킹 서초역파크빌딩 주차장</td><td>서울 서초구 반포대로27길 16</td></tr>
+                                            <tr><td>삼성 민영주차장</td><td>서울 서초구 서초대로40길 91</td></tr>
+                                        </tbody>
+                                    </table>
+                                </div></div>
                             </div>
-                            <div class="faq-answer">건물 내 주차장 이용이 가능합니다. 자세한 사항은 사무국에 문의해 주세요.</div>
-                        </div>
-                        <div class="faq-item">
-                            <div class="faq-question">
-                                <h3><span class="q-badge">Q</span>식사가 제공되나요?</h3>
-                                <span class="arrow">&#9660;</span>
+                            <!-- FAQ 7 -->
+                            <div class="faq-item">
+                                <div class="faq-q"><span>환불 규정이 어떻게 되나요?</span><span class="icon">+</span></div>
+                                <div class="faq-a"><div class="faq-a-inner">
+                                    <p>개강 2주 전까지: 100% 환불<br>개강 1주 전까지: 50% 환불<br>개강 이후: 환불 불가</p>
+                                    <p>도서 배송 완료, 저자료 지급, 식사 준비, 프로그램 준비등 실비용 발생으로 인해 환불이 어렵습니다. 개인 사정으로 참석이 어려운 경우 지인 대리 참석이 가능합니다.</p>
+                                    <p>단, 불가항력적 사유 (장기 입원, 해외 발령 등) 발생 시 개별 협의 가능합니다.</p>
+                                </div></div>
                             </div>
-                            <div class="faq-answer">네, 매회 석식이 제공됩니다. 18:00~19:00 사이에 함께 식사하며 네트워킹 시간을 갖습니다.</div>
-                        </div>
-                        <div class="faq-item">
-                            <div class="faq-question">
-                                <h3><span class="q-badge">Q</span>개강식에 꼭 참석해야 하나요?</h3>
-                                <span class="arrow">&#9660;</span>
+                            <!-- FAQ 8 -->
+                            <div class="faq-item">
+                                <div class="faq-q"><span>법인카드 결제 가능한가요?</span><span class="icon">+</span></div>
+                                <div class="faq-a"><div class="faq-a-inner">
+                                    <p>네, 법인 카드 결제 가능합니다. 현금 결제시 요청사항에 기재해주시면 세금계산서를 발행해드립니다. (현금 결제 분할 납부 불가)</p>
+                                </div></div>
                             </div>
-                            <div class="faq-answer">네, 개강식에서 회원 소개 및 팀 배정이 이루어지므로 필수 참석입니다.</div>
-                        </div>
-                        <div class="faq-item">
-                            <div class="faq-question">
-                                <h3><span class="q-badge">Q</span>제출 서류는 무엇인가요?</h3>
-                                <span class="arrow">&#9660;</span>
+                            <!-- FAQ 9 -->
+                            <div class="faq-item">
+                                <div class="faq-q"><span>혼자 참여해도 괜찮을까요?</span><span class="icon">+</span></div>
+                                <div class="faq-a"><div class="faq-a-inner">
+                                    <p>대부분 개인으로 참여하시며, 개강식과 매회 네트워킹 시간을 통해 자연스럽게 친분을 쌓으실 수 있습니다.</p>
+                                </div></div>
                             </div>
-                            <div class="faq-answer">사업자등록증 사본, 명함, 프로필 사진을 lnabiz@naver.com으로 제출해 주세요.</div>
-                        </div>
-                        <div class="faq-item">
-                            <div class="faq-question">
-                                <h3><span class="q-badge">Q</span>세금계산서 발행이 가능한가요?</h3>
-                                <span class="arrow">&#9660;</span>
+                            <!-- FAQ 10 -->
+                            <div class="faq-item">
+                                <div class="faq-q"><span>기업 단체 신청 가능한가요?</span><span class="icon">+</span></div>
+                                <div class="faq-a"><div class="faq-a-inner">
+                                    <p>3인 이상 기업 단체 신청 시 별도 문의 부탁드립니다.</p>
+                                </div></div>
                             </div>
-                            <div class="faq-answer">네, 교육비 납부 후 세금계산서 발행이 가능합니다. 사업자등록증을 제출해 주세요.</div>
-                        </div>
-                        <div class="faq-item">
-                            <div class="faq-question">
-                                <h3><span class="q-badge">Q</span>문의는 어디로 하나요?</h3>
-                                <span class="arrow">&#9660;</span>
-                            </div>
-                            <div class="faq-answer">전화 070-7839-3002 또는 이메일 lnabiz@naver.com으로 문의해 주세요.</div>
                         </div>
                     </div>
                 </main>
@@ -230,28 +211,20 @@
                     <p>리더의 통찰, 책에서 시작됩니다.</p>
                 </div>
                 <div class="footer-links">
-                    <div class="footer-col">
-                        <h4>MENU</h4>
-                        <ul>
-                            <li><a href="about.html">About</a></li>
-                            <li><a href="forum.html">Forum</a></li>
-                            <li><a href="apply.html">Apply</a></li>
-                            <li><a href="archive.html">Archive</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-col">
-                        <h4>CONTACT</h4>
-                        <ul>
-                            <li>Tel. 070-7839-3002</li>
-                            <li>Email. lnabiz@naver.com</li>
-                            <li>서울특별시 관악구 관악로 168(봉천동)</li>
-                        </ul>
-                    </div>
+                    <div class="footer-col"><h4>MENU</h4><ul>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="program.html">Program</a></li>
+                        <li><a href="apply.html">Apply</a></li>
+                        <li><a href="review.html">Archive</a></li>
+                    </ul></div>
+                    <div class="footer-col"><h4>CONTACT</h4><ul>
+                        <li>Tel. 070-7839-3002</li>
+                        <li>Email. lnabiz@naver.com</li>
+                        <li>서울특별시 관악구 관악로 168(봉천동)</li>
+                    </ul></div>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 VICHEA LEADERS FORUM. All rights reserved.</p>
-            </div>
+            <div class="footer-bottom"><p>&copy; 2026 VICHEA LEADERS FORUM. All rights reserved.</p></div>
         </div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
@@ -259,34 +232,14 @@
         AOS.init({ duration: 700, once: true, offset: 60 });
         const mobileMenuBtn = document.getElementById('mobileMenuBtn');
         const mobileMenu = document.getElementById('mobileMenu');
-        mobileMenuBtn.addEventListener('click', () => {
-            mobileMenuBtn.classList.toggle('active');
-            mobileMenu.classList.toggle('active');
-            document.body.classList.toggle('no-scroll');
-        });
-        mobileMenu.querySelectorAll('a:not(.mobile-sub-toggle)').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenuBtn.classList.remove('active');
-                mobileMenu.classList.remove('active');
-                document.body.classList.remove('no-scroll');
-            });
-        });
-        mobileMenu.querySelectorAll('.mobile-sub-toggle').forEach(toggle => {
-            toggle.addEventListener('click', (e) => {
-                e.preventDefault();
-                const parent = toggle.parentElement;
-                const sub = parent.querySelector('.mobile-sub');
-                parent.classList.toggle('open');
-                sub.classList.toggle('open');
-            });
-        });
-        // FAQ accordion toggle
-        document.querySelectorAll('.faq-question').forEach(q => {
+        mobileMenuBtn.addEventListener('click', () => { mobileMenuBtn.classList.toggle('active'); mobileMenu.classList.toggle('active'); document.body.classList.toggle('no-scroll'); });
+        mobileMenu.querySelectorAll('a:not(.mobile-sub-toggle)').forEach(link => { link.addEventListener('click', () => { mobileMenuBtn.classList.remove('active'); mobileMenu.classList.remove('active'); document.body.classList.remove('no-scroll'); }); });
+        mobileMenu.querySelectorAll('.mobile-sub-toggle').forEach(toggle => { toggle.addEventListener('click', (e) => { e.preventDefault(); const parent = toggle.parentElement; const sub = parent.querySelector('.mobile-sub'); parent.classList.toggle('open'); sub.classList.toggle('open'); }); });
+        // FAQ toggle
+        document.querySelectorAll('.faq-q').forEach(q => {
             q.addEventListener('click', () => {
                 const item = q.parentElement;
-                const wasOpen = item.classList.contains('open');
-                document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
-                if (!wasOpen) item.classList.add('open');
+                item.classList.toggle('open');
             });
         });
     </script>
