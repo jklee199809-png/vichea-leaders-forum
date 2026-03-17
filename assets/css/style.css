@@ -835,6 +835,10 @@ img {
     overflow: hidden;
 }
 
+.section-apply .hero-btn {
+    margin-top: 32px;
+}
+
 .section-apply::before {
     content: '';
     position: absolute;
