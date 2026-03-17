@@ -47,6 +47,9 @@ body {
     -webkit-font-smoothing: antialiased;
     overflow-x: hidden;
     user-select: none;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 body.no-scroll {
@@ -979,6 +982,7 @@ img {
 .footer {
     background: var(--color-dark);
     padding: 60px 0 0;
+    margin-top: auto;
 }
 
 .footer-inner {
