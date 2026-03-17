@@ -213,7 +213,8 @@ img {
     background: var(--color-navy);
 }
 
-.mobile-menu-btn.active span {
+.mobile-menu-btn.active span,
+.header.scrolled ~ .mobile-menu-btn.active span {
     background: var(--color-white);
 }
 
