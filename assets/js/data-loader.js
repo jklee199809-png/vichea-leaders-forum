@@ -12,7 +12,13 @@ var DATA_BASE = (location.pathname.indexOf('/pages/') !== -1) ? '../data/' : 'da
 var PAGES_BASE = (location.pathname.indexOf('/pages/') !== -1) ? '' : 'pages/';
 
 function fetchJSON(filename) {
-    return fetch(DATA_BASE + filename).then(function(r) { return r.json(); });
+    return fetch(DATA_BASE + filename + '?v=' + Date.now()).then(function(r) {
+        if (!r.ok) throw new Error(filename + ' load failed: ' + r.status);
+        return r.json();
+    }).catch(function(e) {
+        console.error('[data-loader]', e);
+        return [];
+    });
 }
 
 // ========================================
