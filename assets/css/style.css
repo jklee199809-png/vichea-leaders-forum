@@ -118,9 +118,9 @@ img {
     font-size: 22px;
     font-weight: 700;
     color: var(--color-white);
-    letter-spacing: 8px;
     display: block;
-    text-align: left;
+    text-align: justify;
+    text-align-last: justify;
     transition: color var(--transition);
 }
 
