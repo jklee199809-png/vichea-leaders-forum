@@ -115,10 +115,10 @@
                 <main class="page-content">
                     <div class="content-section" data-aos="fade-up">
                         <h3>신청서 작성</h3>
-                        <form class="apply-form" onsubmit="event.preventDefault(); if(document.querySelector('input[name=privacy]:checked')?.value === 'disagree') { alert('개인정보 수집에 동의하셔야 신청이 가능합니다.'); return; } alert('신청이 완료되었습니다. 확인 후 연락드리겠습니다.');">
+                        <form class="apply-form" id="applyForm" onsubmit="submitForm(event)">
                             <div class="form-group">
                                 <label class="form-label">신청 프로그램 <span class="required">*</span></label>
-                                <select class="form-select" required>
+                                <select class="form-select" id="program" required>
                                     <option value="" disabled selected>프로그램을 선택해 주세요</option>
                                     <option value="비채리더스포럼 19기">비채리더스포럼 19기</option>
                                     <option value="숙명 미래혁신 최고경영자과정 1기">숙명 미래혁신 최고경영자과정 1기</option>
@@ -128,27 +128,27 @@
                             </div>
                             <div class="form-group">
                                 <label class="form-label">성명 <span class="required">*</span></label>
-                                <input type="text" class="form-input" required>
+                                <input type="text" class="form-input" id="name" required>
                             </div>
                             <div class="form-group">
                                 <label class="form-label">연락처 <span class="required">*</span></label>
-                                <input type="tel" class="form-input" placeholder="010-0000-0000" required>
+                                <input type="tel" class="form-input" id="phone" placeholder="010-0000-0000" required>
                             </div>
                             <div class="form-group">
                                 <label class="form-label">소속 <span class="required">*</span></label>
-                                <input type="text" class="form-input" required>
+                                <input type="text" class="form-input" id="company" required>
                             </div>
                             <div class="form-group">
                                 <label class="form-label">직함 <span class="required">*</span></label>
-                                <input type="text" class="form-input" required>
+                                <input type="text" class="form-input" id="position" required>
                             </div>
                             <div class="form-group">
                                 <label class="form-label">이메일 <span class="required">*</span></label>
-                                <input type="email" class="form-input" required>
+                                <input type="email" class="form-input" id="email" required>
                             </div>
                             <div class="form-group">
                                 <label class="form-label">자기소개</label>
-                                <textarea class="form-textarea" placeholder="간단한 자기소개를 작성해 주세요"></textarea>
+                                <textarea class="form-textarea" id="intro" placeholder="간단한 자기소개를 작성해 주세요"></textarea>
                             </div>
                             <div class="form-group">
                                 <label class="form-label">결제방법 <span class="required">*</span></label>
@@ -211,6 +211,7 @@
             <div class="footer-bottom"><p>&copy; 2026 VICHEA LEADERS FORUM. All rights reserved.</p></div>
         </div>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script>
@@ -220,6 +221,43 @@
         mobileMenuBtn.addEventListener('click', () => { mobileMenuBtn.classList.toggle('active'); mobileMenu.classList.toggle('active'); document.body.classList.toggle('no-scroll'); });
         mobileMenu.querySelectorAll('a:not(.mobile-sub-toggle)').forEach(link => { link.addEventListener('click', () => { mobileMenuBtn.classList.remove('active'); mobileMenu.classList.remove('active'); document.body.classList.remove('no-scroll'); }); });
         mobileMenu.querySelectorAll('.mobile-sub-toggle').forEach(toggle => { toggle.addEventListener('click', (e) => { e.preventDefault(); const parent = toggle.parentElement; const sub = parent.querySelector('.mobile-sub'); parent.classList.toggle('open'); sub.classList.toggle('open'); }); });
+        emailjs.init('k2zhLo7VI7098blP_');
+
+        function submitForm(e) {
+            e.preventDefault();
+            var privacyVal = document.querySelector('input[name=privacy]:checked');
+            if (!privacyVal || privacyVal.value === 'disagree') {
+                alert('개인정보 수집에 동의하셔야 신청이 가능합니다.');
+                return;
+            }
+            var btn = document.querySelector('.form-submit');
+            btn.disabled = true;
+            btn.textContent = '전송 중...';
+            emailjs.send('service_8pvgq6w', 'template_fu7xa1i', {
+                program: document.getElementById('program').value,
+                name: document.getElementById('name').value,
+                phone: document.getElementById('phone').value,
+                company: document.getElementById('company').value,
+                position: document.getElementById('position').value,
+                email: document.getElementById('email').value,
+                intro: document.getElementById('intro').value,
+                payment: document.querySelector('input[name=payment]:checked')?.value || '',
+                postcode: document.getElementById('postcode').value,
+                address: document.getElementById('address').value,
+                address_detail: document.getElementById('addressDetail').value,
+                privacy: privacyVal.value
+            }).then(function() {
+                alert('신청이 완료되었습니다. 확인 후 연락드리겠습니다.');
+                document.getElementById('applyForm').reset();
+                btn.disabled = false;
+                btn.textContent = '신청하기';
+            }, function(error) {
+                alert('전송에 실패했습니다. 잠시 후 다시 시도해 주세요.');
+                btn.disabled = false;
+                btn.textContent = '신청하기';
+            });
+        }
+
         function searchAddress() {
             new daum.Postcode({
                 oncomplete: function(data) {
