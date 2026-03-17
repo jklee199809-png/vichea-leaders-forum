@@ -261,7 +261,7 @@ img {
 }
 
 .mobile-menu a {
-    font-family: var(--font-en);
+    font-family: var(--font-kr);
     font-size: 28px;
     font-weight: 500;
     color: var(--color-white);
@@ -433,7 +433,7 @@ img {
 }
 
 .hero-eyebrow {
-    font-family: var(--font-en);
+    font-family: var(--font-kr);
     font-size: 13px;
     letter-spacing: 6px;
     color: var(--color-accent-light);
@@ -617,7 +617,7 @@ img {
 
 .stat-number {
     display: block;
-    font-family: var(--font-en);
+    font-family: var(--font-kr);
     font-size: 42px;
     font-weight: 600;
     color: var(--color-navy);
@@ -731,7 +731,7 @@ img {
 }
 
 .program-date .month {
-    font-family: var(--font-en);
+    font-family: var(--font-kr);
     font-size: 13px;
     letter-spacing: 2px;
     color: var(--color-accent);
@@ -739,7 +739,7 @@ img {
 }
 
 .program-date .day {
-    font-family: var(--font-en);
+    font-family: var(--font-kr);
     font-size: 36px;
     font-weight: 700;
     color: var(--color-navy);
@@ -885,7 +885,7 @@ img {
 }
 
 .step-num {
-    font-family: var(--font-en);
+    font-family: var(--font-kr);
     font-size: 28px;
     font-weight: 600;
     color: var(--color-accent-light);
@@ -948,7 +948,7 @@ img {
 }
 
 .archive-thumb-placeholder span {
-    font-family: var(--font-en);
+    font-family: var(--font-kr);
     font-size: 24px;
     font-weight: 300;
     color: rgba(255, 255, 255, 0.3);
@@ -996,7 +996,7 @@ img {
 }
 
 .footer-logo {
-    font-family: var(--font-en);
+    font-family: var(--font-kr);
     font-size: 18px;
     font-weight: 600;
     color: var(--color-white);
@@ -1302,7 +1302,7 @@ img {
     margin-bottom: 28px;
 }
 .program-card-num {
-    font-family: var(--font-en);
+    font-family: var(--font-kr);
     font-size: 12px;
     font-weight: 600;
     letter-spacing: 2px;
@@ -1349,7 +1349,7 @@ img {
 }
 .program-card-section ol li::before {
     content: counter(item, decimal-leading-zero);
-    font-family: var(--font-en);
+    font-family: var(--font-kr);
     font-size: 11px;
     font-weight: 600;
     color: var(--color-accent);
@@ -1375,7 +1375,7 @@ img {
     box-shadow: 0 8px 24px rgba(27,42,74,0.08);
 }
 .feature-card-num {
-    font-family: var(--font-en);
+    font-family: var(--font-kr);
     font-size: 28px;
     font-weight: 300;
     color: var(--color-gray-200);
@@ -1678,7 +1678,7 @@ img {
 }
 
 .service-card-num {
-    font-family: var(--font-en);
+    font-family: var(--font-kr);
     font-size: 36px;
     font-weight: 300;
     color: var(--color-gray-200);
