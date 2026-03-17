@@ -9,17 +9,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
     <style>
-        .step-flow { display: flex; align-items: center; gap: 0; margin-bottom: 40px; flex-wrap: wrap; }
-        .step-item { display: flex; flex-direction: column; align-items: center; gap: 8px; flex: 1; min-width: 100px; }
-        .step-num { width: 48px; height: 48px; border-radius: 50%; background: var(--color-navy); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 16px; font-weight: 700; }
-        .step-text { font-size: 13px; color: var(--color-charcoal); font-weight: 500; text-align: center; }
-        .step-arrow { color: var(--color-gray-300); font-size: 20px; margin: 0 4px; padding-top: 0; }
-        .apply-table { width: 100%; border-collapse: collapse; margin-bottom: 32px; }
-        .apply-table tr { border-bottom: 1px solid var(--color-gray-100); }
-        .apply-table th { text-align: left; padding: 14px 20px; font-size: 14px; font-weight: 600; color: var(--color-charcoal); background: var(--color-gray-50); width: 160px; }
-        .apply-table td { padding: 14px 20px; font-size: 14px; color: var(--color-gray-700); }
-        @media (max-width: 768px) { .step-flow { flex-direction: column; gap: 8px; } .step-arrow { transform: rotate(90deg); } }
-
         /* 신청 폼 */
         .apply-form { margin-top: 24px; }
         .form-group { margin-bottom: 24px; }
@@ -65,6 +54,7 @@
                     <li class="has-sub">
                         <a href="#">Apply</a>
                         <ul class="sub-menu">
+                            <li><a href="apply-info.html">수강신청 안내</a></li>
                             <li><a href="apply.html">수강 신청</a></li>
                             <li><a href="faq.html">FAQ</a></li>
                         </ul>
@@ -107,6 +97,7 @@
             <li class="mobile-has-sub">
                 <a href="#" class="mobile-sub-toggle">Apply <span class="arrow"></span></a>
                 <ul class="mobile-sub">
+                    <li><a href="apply-info.html">수강신청 안내</a></li>
                     <li><a href="apply.html">수강 신청</a></li>
                     <li><a href="faq.html">FAQ</a></li>
                 </ul>
@@ -135,7 +126,7 @@
                 <span class="current">수강 신청</span>
             </div>
             <h1 class="page-banner-title">수강 신청</h1>
-            <p class="page-banner-desc">비채리더스포럼 19기 수강 신청 안내</p>
+            <p class="page-banner-desc">비채리더스포럼 19기 신청서를 작성해 주세요</p>
         </div>
     </section>
 
@@ -147,6 +138,7 @@
                 <aside class="page-sidebar">
                     <p class="sidebar-menu-title">Apply</p>
                     <ul class="sidebar-menu">
+                        <li><a href="apply-info.html">수강신청 안내</a></li>
                         <li><a href="apply.html" class="active">수강 신청</a></li>
                         <li><a href="faq.html">FAQ</a></li>
                     </ul>
@@ -154,83 +146,8 @@
 
                 <!-- Main Content -->
                 <main class="page-content">
-                    <!-- 01 신청 절차 -->
+                    <!-- 신청서 작성 -->
                     <div class="content-section" data-aos="fade-up">
-                        <p class="content-section-label">01</p>
-                        <h3>신청 절차</h3>
-                        <div class="step-flow">
-                            <div class="step-item">
-                                <span class="step-num">1</span>
-                                <span class="step-text">홈페이지 접수</span>
-                            </div>
-                            <span class="step-arrow">&rsaquo;</span>
-                            <div class="step-item">
-                                <span class="step-num">2</span>
-                                <span class="step-text">신청서 작성</span>
-                            </div>
-                            <span class="step-arrow">&rsaquo;</span>
-                            <div class="step-item">
-                                <span class="step-num">3</span>
-                                <span class="step-text">교육비 납부</span>
-                            </div>
-                            <span class="step-arrow">&rsaquo;</span>
-                            <div class="step-item">
-                                <span class="step-num">4</span>
-                                <span class="step-text">서류 제출</span>
-                            </div>
-                            <span class="step-arrow">&rsaquo;</span>
-                            <div class="step-item">
-                                <span class="step-num">5</span>
-                                <span class="step-text">등록 완료</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- 02 교육비 안내 -->
-                    <div class="content-section" data-aos="fade-up">
-                        <p class="content-section-label">02</p>
-                        <h3>교육비 안내</h3>
-                        <table class="apply-table">
-                            <tr>
-                                <th>정규 교육비</th>
-                                <td>150만원 (부가세 별도)</td>
-                            </tr>
-                            <tr>
-                                <th>얼리버드</th>
-                                <td>120만원 (선착순 5명, 20% 할인)</td>
-                            </tr>
-                            <tr>
-                                <th>입금계좌</th>
-                                <td>국민은행 479001-01-244998 / 예금주: 엘앤에이(주)</td>
-                            </tr>
-                        </table>
-                    </div>
-
-                    <!-- 03 제출서류 -->
-                    <div class="content-section" data-aos="fade-up">
-                        <p class="content-section-label">03</p>
-                        <h3>제출서류</h3>
-                        <ul class="content-list">
-                            <li>사업자등록증 사본</li>
-                            <li>명함</li>
-                            <li>프로필 사진 (증명사진 또는 반명함판)</li>
-                            <li>제출처: lnabiz@naver.com</li>
-                        </ul>
-                    </div>
-
-                    <!-- 04 문의 -->
-                    <div class="content-section" data-aos="fade-up">
-                        <p class="content-section-label">04</p>
-                        <h3>문의</h3>
-                        <div style="background: var(--color-gray-50); border: 1px solid var(--color-gray-200); padding: 28px 32px; border-radius: 4px; font-size: 15px; color: var(--color-gray-700); line-height: 1.8;">
-                            <p>전화: <strong>070-7839-3002</strong></p>
-                            <p>이메일: <strong>lnabiz@naver.com</strong></p>
-                        </div>
-                    </div>
-
-                    <!-- 05 신청서 작성 -->
-                    <div class="content-section" data-aos="fade-up">
-                        <p class="content-section-label">05</p>
                         <h3>신청서 작성</h3>
                         <form class="apply-form" onsubmit="event.preventDefault(); alert('신청이 완료되었습니다. 확인 후 연락드리겠습니다.');">
                             <div class="form-group">
