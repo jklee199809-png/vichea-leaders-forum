@@ -525,8 +525,8 @@ img {
 }
 
 .section-label {
-    font-family: var(--font-en);
-    font-size: 13px;
+    font-family: var(--font-kr);
+    font-size: 15px;
     letter-spacing: 4px;
     color: var(--color-accent);
     margin-bottom: 24px;
