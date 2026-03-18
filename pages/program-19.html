@@ -188,8 +188,8 @@
                         <p>확정된 일정은 추후 안내</p>
                     </div>
 
-                    <!-- CTA -->
-                    <div class="cta-area" data-aos="fade-up">
+                    <!-- CTA (모집중일 때만 표시) -->
+                    <div class="cta-area" data-aos="fade-up" style="display:none;">
                         <a href="apply.html" class="cta-btn">신청하기</a>
                     </div>
                 </main>
@@ -229,9 +229,11 @@
             </div>
         </div>
     </footer>
+    <script src="../assets/js/data-loader.js?v=20260318"></script>
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script>
         AOS.init({ duration: 700, once: true, offset: 60 });
+        loadProgramCta('비채리더스포럼 19기');
         const mobileMenuBtn = document.getElementById('mobileMenuBtn');
         const mobileMenu = document.getElementById('mobileMenu');
         mobileMenuBtn.addEventListener('click', () => {

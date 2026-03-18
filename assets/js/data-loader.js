@@ -111,6 +111,22 @@ function renderProgramsGrid(data) {
 }
 
 // ========================================
+// 프로그램 상세 페이지 CTA 동적 표시
+// ========================================
+function loadProgramCta(programTitle) {
+    return fetchJSON('programs.json').then(function(data) {
+        var ctaArea = document.querySelector('.cta-area');
+        if (!ctaArea) return;
+        var found = data.find(function(p) { return p.title === programTitle; });
+        if (found && found.status === '모집중') {
+            ctaArea.style.display = '';
+        } else {
+            ctaArea.style.display = 'none';
+        }
+    });
+}
+
+// ========================================
 // 리뷰 렌더링
 // ========================================
 function loadReviews(mode) {
