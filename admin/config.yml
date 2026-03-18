@@ -107,6 +107,44 @@ collections:
               - { label: "본문", name: "body", widget: "text", hint: "공지 내용. 줄바꿈은 <br>, 굵은 글씨는 <strong>텍스트</strong>" }
 
   # ============================================
+  # 도서 갤러리 관리
+  # ============================================
+  - name: "books"
+    label: "도서 갤러리"
+    files:
+      - label: "도서 목록"
+        name: "books"
+        file: "data/books.json"
+        fields:
+          - label: "도서"
+            name: "items"
+            widget: "list"
+            label_singular: "도서"
+            hint: "Books 페이지에 표시되는 도서 표지 이미지 목록입니다. 새 도서는 '도서 추가 +' 버튼으로 추가하세요."
+            fields:
+              - { label: "도서명", name: "title", widget: "string", hint: "도서 이름. 예: CEO FIRST_이재연" }
+              - { label: "표지 이미지", name: "image", widget: "image", hint: "도서 표지 이미지. 클릭해서 파일을 선택하면 자동 업로드됩니다" }
+
+  # ============================================
+  # 포스터 갤러리 관리
+  # ============================================
+  - name: "posters"
+    label: "포스터 갤러리 (History)"
+    files:
+      - label: "포스터 목록"
+        name: "posters"
+        file: "data/posters.json"
+        fields:
+          - label: "포스터"
+            name: "items"
+            widget: "list"
+            label_singular: "포스터"
+            hint: "History 페이지에 표시되는 기수별 포스터 목록입니다. 위에 있는 포스터가 먼저 표시되므로, 최신 기수를 맨 위에 두세요."
+            fields:
+              - { label: "라벨", name: "label", widget: "string", hint: "포스터 아래 표시될 이름. 예: 비채 19기 포스터" }
+              - { label: "포스터 이미지", name: "image", widget: "image", hint: "포스터 이미지. 클릭해서 파일을 선택하면 자동 업로드됩니다" }
+
+  # ============================================
   # 사이트 설정
   # ============================================
   - name: "settings"

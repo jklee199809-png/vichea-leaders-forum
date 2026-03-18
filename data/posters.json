@@ -1,0 +1,80 @@
+{
+    "items": [
+        {
+            "label": "비채 19기 포스터",
+            "image": "/assets/images/posters/비채_19기_포스터.jpg"
+        },
+        {
+            "label": "비채 18기 포스터",
+            "image": "/assets/images/posters/비채_18기_포스터.jpg"
+        },
+        {
+            "label": "비채 17기 포스터",
+            "image": "/assets/images/posters/비채_17기_포스터.jpg"
+        },
+        {
+            "label": "비채 16기 포스터",
+            "image": "/assets/images/posters/비채_16기_포스터.jpg"
+        },
+        {
+            "label": "비채 15기 포스터",
+            "image": "/assets/images/posters/비채_15기_포스터.jpg"
+        },
+        {
+            "label": "비채 14기 포스터",
+            "image": "/assets/images/posters/비채_14기_포스터.jpg"
+        },
+        {
+            "label": "비채 13기 포스터",
+            "image": "/assets/images/posters/비채_13기_포스터.jpg"
+        },
+        {
+            "label": "비채 12기 포스터",
+            "image": "/assets/images/posters/비채_12기_포스터.jpg"
+        },
+        {
+            "label": "비채 11기 포스터",
+            "image": "/assets/images/posters/비채_11기_포스터.jpg"
+        },
+        {
+            "label": "비채 10기 포스터",
+            "image": "/assets/images/posters/비채_10기_포스터.jpg"
+        },
+        {
+            "label": "비채 9기 포스터",
+            "image": "/assets/images/posters/비채_9기_포스터.jpg"
+        },
+        {
+            "label": "비채 8기 포스터",
+            "image": "/assets/images/posters/비채_8기_포스터.jpg"
+        },
+        {
+            "label": "비채 7기 포스터",
+            "image": "/assets/images/posters/비채_7기_포스터.jpg"
+        },
+        {
+            "label": "비채 6기 포스터",
+            "image": "/assets/images/posters/비채_6기_포스터.jpg"
+        },
+        {
+            "label": "비채 5기 포스터",
+            "image": "/assets/images/posters/비채_5기_포스터.jpg"
+        },
+        {
+            "label": "비채 4기 포스터",
+            "image": "/assets/images/posters/비채_4기_포스터.jpg"
+        },
+        {
+            "label": "비채 3기 포스터",
+            "image": "/assets/images/posters/비채_3기_포스터.png"
+        },
+        {
+            "label": "비채 2기 포스터",
+            "image": "/assets/images/posters/비채_2기_포스터.jpg"
+        },
+        {
+            "label": "비채 1기 포스터",
+            "image": "/assets/images/posters/비채_1기_포스터.jpg"
+        }
+    ]
+}

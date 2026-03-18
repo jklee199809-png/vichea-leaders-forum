@@ -164,44 +164,10 @@
         mobileMenu.querySelectorAll('a:not(.mobile-sub-toggle)').forEach(link => { link.addEventListener('click', () => { mobileMenuBtn.classList.remove('active'); mobileMenu.classList.remove('active'); document.body.classList.remove('no-scroll'); }); });
         mobileMenu.querySelectorAll('.mobile-sub-toggle').forEach(toggle => { toggle.addEventListener('click', (e) => { e.preventDefault(); const parent = toggle.parentElement; const sub = parent.querySelector('.mobile-sub'); parent.classList.toggle('open'); sub.classList.toggle('open'); }); });
 
-        // Poster data: sorted newest first (19기 → 1기), plus 6기 초대장
+        loadPosters(8);
+
+        // Lightbox
         (function() {
-            var posters = [];
-            // 19기 down to 1기
-            for (var i = 19; i >= 1; i--) {
-                var ext = (i === 3) ? 'png' : 'jpg';
-                posters.push({
-                    src: '../assets/images/posters/비채_' + i + '기_포스터.' + ext,
-                    label: '비채 ' + i + '기 포스터'
-                });
-            }
-
-            var ITEMS_PER_PAGE = 8;
-            var shown = 0;
-            var grid = document.getElementById('posterGrid');
-            var btnMore = document.getElementById('btnMore');
-
-            function showMore() {
-                var end = Math.min(shown + ITEMS_PER_PAGE, posters.length);
-                for (var j = shown; j < end; j++) {
-                    var div = document.createElement('div');
-                    div.className = 'poster-item';
-                    div.setAttribute('data-aos', 'fade-up');
-                    div.innerHTML = '<img src="' + posters[j].src + '" alt="' + posters[j].label + '" loading="lazy"><span class="poster-label">' + posters[j].label + '</span>';
-                    div.addEventListener('click', (function(src) {
-                        return function() { openLightbox(src); };
-                    })(posters[j].src));
-                    grid.appendChild(div);
-                }
-                shown = end;
-                btnMore.style.display = (shown < posters.length) ? 'block' : 'none';
-                AOS.refresh();
-            }
-
-            showMore();
-            btnMore.addEventListener('click', showMore);
-
-            // Lightbox
             var lightbox = document.getElementById('lightbox');
             var lightboxImg = document.getElementById('lightboxImg');
             var lightboxClose = document.getElementById('lightboxClose');

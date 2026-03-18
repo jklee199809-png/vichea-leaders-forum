@@ -398,3 +398,71 @@ function loadProgramOptions() {
         });
     });
 }
+
+// ========================================
+// Books 갤러리 렌더링
+// ========================================
+function loadBooks(perPage) {
+    var ITEMS_PER_PAGE = perPage || 20;
+    return fetchJSON('books.json').then(function(data) {
+        var grid = document.getElementById('bookGrid');
+        var btnMore = document.getElementById('btnMore');
+        if (!grid) return;
+
+        var shown = 0;
+        function showMore() {
+            var end = Math.min(shown + ITEMS_PER_PAGE, data.length);
+            for (var j = shown; j < end; j++) {
+                var item = data[j];
+                var div = document.createElement('div');
+                div.className = 'book-item';
+                div.setAttribute('data-aos', 'fade-up');
+                var src = resolveImg(item.image);
+                div.innerHTML = '<img src="' + src + '" alt="' + (item.title || '') + '" loading="lazy">';
+                div.addEventListener('click', (function(s) {
+                    return function() { if (window.openLightbox) window.openLightbox(s); };
+                })(src));
+                grid.appendChild(div);
+            }
+            shown = end;
+            if (btnMore) btnMore.style.display = (shown < data.length) ? 'block' : 'none';
+            if (window.AOS) AOS.refresh();
+        }
+        showMore();
+        if (btnMore) btnMore.addEventListener('click', showMore);
+    });
+}
+
+// ========================================
+// Posters (History) 갤러리 렌더링
+// ========================================
+function loadPosters(perPage) {
+    var ITEMS_PER_PAGE = perPage || 8;
+    return fetchJSON('posters.json').then(function(data) {
+        var grid = document.getElementById('posterGrid');
+        var btnMore = document.getElementById('btnMore');
+        if (!grid) return;
+
+        var shown = 0;
+        function showMore() {
+            var end = Math.min(shown + ITEMS_PER_PAGE, data.length);
+            for (var j = shown; j < end; j++) {
+                var item = data[j];
+                var div = document.createElement('div');
+                div.className = 'poster-item';
+                div.setAttribute('data-aos', 'fade-up');
+                var src = resolveImg(item.image);
+                div.innerHTML = '<img src="' + src + '" alt="' + (item.label || '') + '" loading="lazy"><span class="poster-label">' + (item.label || '') + '</span>';
+                div.addEventListener('click', (function(s) {
+                    return function() { if (window.openLightbox) window.openLightbox(s); };
+                })(src));
+                grid.appendChild(div);
+            }
+            shown = end;
+            if (btnMore) btnMore.style.display = (shown < data.length) ? 'block' : 'none';
+            if (window.AOS) AOS.refresh();
+        }
+        showMore();
+        if (btnMore) btnMore.addEventListener('click', showMore);
+    });
+}

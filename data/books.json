@@ -1,0 +1,748 @@
+{
+    "items": [
+        {
+            "image": "/assets/images/books/18기_5회차.jpg",
+            "title": "18기_5회차"
+        },
+        {
+            "image": "/assets/images/books/18기_6회차.jpg",
+            "title": "18기_6회차"
+        },
+        {
+            "image": "/assets/images/books/18기_7회차.jpg",
+            "title": "18기_7회차"
+        },
+        {
+            "image": "/assets/images/books/1인자의 인문학(한국편)_신동준.jpg",
+            "title": "1인자의 인문학(한국편)_신동준"
+        },
+        {
+            "image": "/assets/images/books/1일 1강 논어강독_박재희.jpg",
+            "title": "1일 1강 논어강독_박재희"
+        },
+        {
+            "image": "/assets/images/books/1일 1강 도덕경 강독_박재희.jpg",
+            "title": "1일 1강 도덕경 강독_박재희"
+        },
+        {
+            "image": "/assets/images/books/2021년 경제전망_김광석.jpg",
+            "title": "2021년 경제전망_김광석"
+        },
+        {
+            "image": "/assets/images/books/3층서기실의 암호_태영호.jpg",
+            "title": "3층서기실의 암호_태영호"
+        },
+        {
+            "image": "/assets/images/books/4차산업혁명과 제조업의 귀환_김은외.jpg",
+            "title": "4차산업혁명과 제조업의 귀환_김은외"
+        },
+        {
+            "image": "/assets/images/books/AI리더십_오상진 교수.jpg",
+            "title": "AI리더십_오상진 교수"
+        },
+        {
+            "image": "/assets/images/books/B급 세계사_인물편_김상훈.jpg",
+            "title": "B급 세계사_인물편_김상훈"
+        },
+        {
+            "image": "/assets/images/books/CEO FIRST_이재연.jpg",
+            "title": "CEO FIRST_이재연"
+        },
+        {
+            "image": "/assets/images/books/X마케팅_서용구.jpg",
+            "title": "X마케팅_서용구"
+        },
+        {
+            "image": "/assets/images/books/감정을 팔아라_김해룡.jpg",
+            "title": "감정을 팔아라_김해룡"
+        },
+        {
+            "image": "/assets/images/books/개인주의를 권하다_이진우.jpg",
+            "title": "개인주의를 권하다_이진우"
+        },
+        {
+            "image": "/assets/images/books/거인의 말_안상헌.jpg",
+            "title": "거인의 말_안상헌"
+        },
+        {
+            "image": "/assets/images/books/겸손은 위선이다_박종진.jpg",
+            "title": "겸손은 위선이다_박종진"
+        },
+        {
+            "image": "/assets/images/books/경영을 넷플릭스하다_이학연.jpg",
+            "title": "경영을 넷플릭스하다_이학연"
+        },
+        {
+            "image": "/assets/images/books/경영의신_김진수.jpg",
+            "title": "경영의신_김진수"
+        },
+        {
+            "image": "/assets/images/books/귀족시대_임승휘.jpg",
+            "title": "귀족시대_임승휘"
+        },
+        {
+            "image": "/assets/images/books/그림의 힘_김선현.jpg",
+            "title": "그림의 힘_김선현"
+        },
+        {
+            "image": "/assets/images/books/기후위기 부의 대전환_홍종호 교수.jpg",
+            "title": "기후위기 부의 대전환_홍종호 교수"
+        },
+        {
+            "image": "/assets/images/books/긴축의 시대_김광석.jpg",
+            "title": "긴축의 시대_김광석"
+        },
+        {
+            "image": "/assets/images/books/김병조의 마음공부_김병조.jpg",
+            "title": "김병조의 마음공부_김병조"
+        },
+        {
+            "image": "/assets/images/books/김찬용의 아트내비게이션_김찬용.jpg",
+            "title": "김찬용의 아트내비게이션_김찬용"
+        },
+        {
+            "image": "/assets/images/books/나는 감이 아니라 데이터로 말한다_신현호.jpg",
+            "title": "나는 감이 아니라 데이터로 말한다_신현호"
+        },
+        {
+            "image": "/assets/images/books/나는 나무처럼 살고싶다_우종영.jpg",
+            "title": "나는 나무처럼 살고싶다_우종영"
+        },
+        {
+            "image": "/assets/images/books/나는 사기로 경영을 배웠다_김영수.jpg",
+            "title": "나는 사기로 경영을 배웠다_김영수"
+        },
+        {
+            "image": "/assets/images/books/나는 삶을 고치는 암 의사입니다_이병욱.jpg",
+            "title": "나는 삶을 고치는 암 의사입니다_이병욱"
+        },
+        {
+            "image": "/assets/images/books/나는 샤넬백 대신 그림을 산다_윤보형.jpg",
+            "title": "나는 샤넬백 대신 그림을 산다_윤보형"
+        },
+        {
+            "image": "/assets/images/books/나는 왜 괜찮은 아이디어가 없을가_오상진.jpg",
+            "title": "나는 왜 괜찮은 아이디어가 없을가_오상진"
+        },
+        {
+            "image": "/assets/images/books/나는 작은 회사의 사장입니다_강덕호.jpg",
+            "title": "나는 작은 회사의 사장입니다_강덕호"
+        },
+        {
+            "image": "/assets/images/books/남재현.jpg",
+            "title": "남재현"
+        },
+        {
+            "image": "/assets/images/books/내 나이가 나를 안아주었습니다_신은경.jpg",
+            "title": "내 나이가 나를 안아주었습니다_신은경"
+        },
+        {
+            "image": "/assets/images/books/내 편이 없는 자, 이방인을 위한 사회학_김광기.jpg",
+            "title": "내 편이 없는 자, 이방인을 위한 사회학_김광기"
+        },
+        {
+            "image": "/assets/images/books/내안의 역사_전우용.jpg",
+            "title": "내안의 역사_전우용"
+        },
+        {
+            "image": "/assets/images/books/네 명의 완벽주의자_이동귀외.jpg",
+            "title": "네 명의 완벽주의자_이동귀외"
+        },
+        {
+            "image": "/assets/images/books/넥스트 빌리언 달러_정두희.jpg",
+            "title": "넥스트 빌리언 달러_정두희"
+        },
+        {
+            "image": "/assets/images/books/노자 도덕경_김원중옮김.jpg",
+            "title": "노자 도덕경_김원중옮김"
+        },
+        {
+            "image": "/assets/images/books/뇌과학으로 경영하라_김경덕.jpg",
+            "title": "뇌과학으로 경영하라_김경덕"
+        },
+        {
+            "image": "/assets/images/books/다시 뜨는 아시아의 별 기회의 땅, 베트남_이광욱.jpg",
+            "title": "다시 뜨는 아시아의 별 기회의 땅, 베트남_이광욱"
+        },
+        {
+            "image": "/assets/images/books/당신의 성격, 5분이면 알 수 있다_김종구.jpg",
+            "title": "당신의 성격, 5분이면 알 수 있다_김종구"
+        },
+        {
+            "image": "/assets/images/books/대한민국리더를위한 유머손자병법_최규상.jpg",
+            "title": "대한민국리더를위한 유머손자병법_최규상"
+        },
+        {
+            "image": "/assets/images/books/더블 딥 시나리오_김광석.jpg",
+            "title": "더블 딥 시나리오_김광석"
+        },
+        {
+            "image": "/assets/images/books/돈의 감각_이명로.jpg",
+            "title": "돈의 감각_이명로"
+        },
+        {
+            "image": "/assets/images/books/디지털로 생각하라_이승윤.jpg",
+            "title": "디지털로 생각하라_이승윤"
+        },
+        {
+            "image": "/assets/images/books/딥스마트 _ 이정규.jpg",
+            "title": "딥스마트 _ 이정규"
+        },
+        {
+            "image": "/assets/images/books/땅,돈,힘_신환종.jpg",
+            "title": "땅,돈,힘_신환종"
+        },
+        {
+            "image": "/assets/images/books/뜻밖의 한국_유건재.jpg",
+            "title": "뜻밖의 한국_유건재"
+        },
+        {
+            "image": "/assets/images/books/리더라면 정조처럼_김준혁.jpg",
+            "title": "리더라면 정조처럼_김준혁"
+        },
+        {
+            "image": "/assets/images/books/리더라면 처칠처럼_윤상모.jpg",
+            "title": "리더라면 처칠처럼_윤상모"
+        },
+        {
+            "image": "/assets/images/books/리더를위한 인문학_이호건.jpg",
+            "title": "리더를위한 인문학_이호건"
+        },
+        {
+            "image": "/assets/images/books/리더십 난중일기에 묻다_김윤태.jpg",
+            "title": "리더십 난중일기에 묻다_김윤태"
+        },
+        {
+            "image": "/assets/images/books/리더십을 쓰다_최익성.jpg",
+            "title": "리더십을 쓰다_최익성"
+        },
+        {
+            "image": "/assets/images/books/리더의 명화수업_이주헌.jpg",
+            "title": "리더의 명화수업_이주헌"
+        },
+        {
+            "image": "/assets/images/books/리더의온도_김상임.jpg",
+            "title": "리더의온도_김상임"
+        },
+        {
+            "image": "/assets/images/books/리질리언스9_류종기.jpg",
+            "title": "리질리언스9_류종기"
+        },
+        {
+            "image": "/assets/images/books/마음오프너_최석규.jpg",
+            "title": "마음오프너_최석규"
+        },
+        {
+            "image": "/assets/images/books/마음을 얻는 미친 리더십_김민철.jpg",
+            "title": "마음을 얻는 미친 리더십_김민철"
+        },
+        {
+            "image": "/assets/images/books/만일 물리학으로 세상을 볼 수 있다면_정창욱 교수.jpg",
+            "title": "만일 물리학으로 세상을 볼 수 있다면_정창욱 교수"
+        },
+        {
+            "image": "/assets/images/books/말랑말랑 생각법_한명수 상무.jpg",
+            "title": "말랑말랑 생각법_한명수 상무"
+        },
+        {
+            "image": "/assets/images/books/말이 칼이 될 때_홍성수.jpg",
+            "title": "말이 칼이 될 때_홍성수"
+        },
+        {
+            "image": "/assets/images/books/메타리치의 시대_김상윤.jpg",
+            "title": "메타리치의 시대_김상윤"
+        },
+        {
+            "image": "/assets/images/books/메타버스의 시대_이시한.jpg",
+            "title": "메타버스의 시대_이시한"
+        },
+        {
+            "image": "/assets/images/books/물은 비밀을 알고있다_최종수.jpg",
+            "title": "물은 비밀을 알고있다_최종수"
+        },
+        {
+            "image": "/assets/images/books/미래사회 보고서_유기윤.jpg",
+            "title": "미래사회 보고서_유기윤"
+        },
+        {
+            "image": "/assets/images/books/미래시나리오 2021_김광석.jpg",
+            "title": "미래시나리오 2021_김광석"
+        },
+        {
+            "image": "/assets/images/books/미래시나리오2022_김상윤외.jpg",
+            "title": "미래시나리오2022_김상윤외"
+        },
+        {
+            "image": "/assets/images/books/바이든이펙트_홍장원.jpg",
+            "title": "바이든이펙트_홍장원"
+        },
+        {
+            "image": "/assets/images/books/반전의 품격_박재항.jpg",
+            "title": "반전의 품격_박재항"
+        },
+        {
+            "image": "/assets/images/books/밥벌이의 미래_이진오.jpg",
+            "title": "밥벌이의 미래_이진오"
+        },
+        {
+            "image": "/assets/images/books/밸런스_이인석.jpg",
+            "title": "밸런스_이인석"
+        },
+        {
+            "image": "/assets/images/books/벌거벗은 미술관_양정무.jpg",
+            "title": "벌거벗은 미술관_양정무"
+        },
+        {
+            "image": "/assets/images/books/베이징특파원 중국문화를 말하다_홍순도.jpg",
+            "title": "베이징특파원 중국문화를 말하다_홍순도"
+        },
+        {
+            "image": "/assets/images/books/별난대표의 경영일지_한동빈.jpg",
+            "title": "별난대표의 경영일지_한동빈"
+        },
+        {
+            "image": "/assets/images/books/병에걸리지 않는 생활습관병 건강백서_남재현.jpg",
+            "title": "병에걸리지 않는 생활습관병 건강백서_남재현"
+        },
+        {
+            "image": "/assets/images/books/부를 위한 기회, 에너지 전환과 모빌리티 투자_장문수.jpg",
+            "title": "부를 위한 기회, 에너지 전환과 모빌리티 투자_장문수"
+        },
+        {
+            "image": "/assets/images/books/부와 권력의 비밀 지도력_김이재.jpg",
+            "title": "부와 권력의 비밀 지도력_김이재"
+        },
+        {
+            "image": "/assets/images/books/부의 시나리오_오건영.jpg",
+            "title": "부의 시나리오_오건영"
+        },
+        {
+            "image": "/assets/images/books/부의 진리_이영주.jpg",
+            "title": "부의 진리_이영주"
+        },
+        {
+            "image": "/assets/images/books/부자들의 개인도서관_이상건.jpg",
+            "title": "부자들의 개인도서관_이상건"
+        },
+        {
+            "image": "/assets/images/books/부자의 글씨_구본진.jpg",
+            "title": "부자의 글씨_구본진"
+        },
+        {
+            "image": "/assets/images/books/불사조기업_김창주,서용구.jpg",
+            "title": "불사조기업_김창주,서용구"
+        },
+        {
+            "image": "/assets/images/books/비채_18기_5주차_초대의 글.jpg",
+            "title": "비채_18기_5주차_초대의 글"
+        },
+        {
+            "image": "/assets/images/books/사냥꾼의 눈_양은우.jpg",
+            "title": "사냥꾼의 눈_양은우"
+        },
+        {
+            "image": "/assets/images/books/사장을 위한 언택트 시대의 커뮤니케이션_김은성.jpg",
+            "title": "사장을 위한 언택트 시대의 커뮤니케이션_김은성"
+        },
+        {
+            "image": "/assets/images/books/사장이 가장 많이 겪는 회사 소송 33_김민철.jpg",
+            "title": "사장이 가장 많이 겪는 회사 소송 33_김민철"
+        },
+        {
+            "image": "/assets/images/books/사주경영학_김원.jpg",
+            "title": "사주경영학_김원"
+        },
+        {
+            "image": "/assets/images/books/삼국시대,진실과 번전의 역사_권오영.jpg",
+            "title": "삼국시대,진실과 번전의 역사_권오영"
+        },
+        {
+            "image": "/assets/images/books/삼시세끼, 무병장수 식사법, 완전소화_류은경.jpg",
+            "title": "삼시세끼, 무병장수 식사법, 완전소화_류은경"
+        },
+        {
+            "image": "/assets/images/books/삼십육계_김영수.jpg",
+            "title": "삼십육계_김영수"
+        },
+        {
+            "image": "/assets/images/books/상대는 모르고 나만 아는 협상 레버리지_이성대.jpg",
+            "title": "상대는 모르고 나만 아는 협상 레버리지_이성대"
+        },
+        {
+            "image": "/assets/images/books/생각수업_이희선.jpg",
+            "title": "생각수업_이희선"
+        },
+        {
+            "image": "/assets/images/books/생각의차이가 일류를 만든다_이동규.jpg",
+            "title": "생각의차이가 일류를 만든다_이동규"
+        },
+        {
+            "image": "/assets/images/books/성공에의 몰입2.jpg",
+            "title": "성공에의 몰입2"
+        },
+        {
+            "image": "/assets/images/books/세계지도를 펼치면 돈의 흐름이 보인다_박정호.jpg",
+            "title": "세계지도를 펼치면 돈의 흐름이 보인다_박정호"
+        },
+        {
+            "image": "/assets/images/books/세상을 뒤흔든 사상_김호기.jpg",
+            "title": "세상을 뒤흔든 사상_김호기"
+        },
+        {
+            "image": "/assets/images/books/세상을 움직이는 리더의비밀_최은수외.jpg",
+            "title": "세상을 움직이는 리더의비밀_최은수외"
+        },
+        {
+            "image": "/assets/images/books/셀트리오니즘_전예진.jpg",
+            "title": "셀트리오니즘_전예진"
+        },
+        {
+            "image": "/assets/images/books/셀프메디케이션_배현.jpg",
+            "title": "셀프메디케이션_배현"
+        },
+        {
+            "image": "/assets/images/books/순서파괴_유정식역.jpg",
+            "title": "순서파괴_유정식역"
+        },
+        {
+            "image": "/assets/images/books/술자리보다 재미있는 우리 술 이야기_이대형.jpg",
+            "title": "술자리보다 재미있는 우리 술 이야기_이대형"
+        },
+        {
+            "image": "/assets/images/books/숨은 혁신 찾기_안병민.jpg",
+            "title": "숨은 혁신 찾기_안병민"
+        },
+        {
+            "image": "/assets/images/books/쉬어도 피곤한 사람들_이시형.jpg",
+            "title": "쉬어도 피곤한 사람들_이시형"
+        },
+        {
+            "image": "/assets/images/books/스탠퍼드식 리더십 수업_스티븐 머피 시게마쓰.jpg",
+            "title": "스탠퍼드식 리더십 수업_스티븐 머피 시게마쓰"
+        },
+        {
+            "image": "/assets/images/books/스파이크_김병규.jpg",
+            "title": "스파이크_김병규"
+        },
+        {
+            "image": "/assets/images/books/스피치 나침판_김은성.jpg",
+            "title": "스피치 나침판_김은성"
+        },
+        {
+            "image": "/assets/images/books/시그니처_이항심.jpg",
+            "title": "시그니처_이항심"
+        },
+        {
+            "image": "/assets/images/books/실리콘밸리로 간 노자_박영규.jpg",
+            "title": "실리콘밸리로 간 노자_박영규"
+        },
+        {
+            "image": "/assets/images/books/아베 그는 왜 한국을 무너뜨리려 하는가_호사카유지.jpg",
+            "title": "아베 그는 왜 한국을 무너뜨리려 하는가_호사카유지"
+        },
+        {
+            "image": "/assets/images/books/아트경영_홍대순.jpg",
+            "title": "아트경영_홍대순"
+        },
+        {
+            "image": "/assets/images/books/알리바바가 온다_임정훈.jpg",
+            "title": "알리바바가 온다_임정훈"
+        },
+        {
+            "image": "/assets/images/books/약이되는칭찬 독이되는칭찬_김범준.jpg",
+            "title": "약이되는칭찬 독이되는칭찬_김범준"
+        },
+        {
+            "image": "/assets/images/books/어른답게 말합니다_강원국.jpg",
+            "title": "어른답게 말합니다_강원국"
+        },
+        {
+            "image": "/assets/images/books/어른이 되면 괜찮을줄 알았다_박종석.jpg",
+            "title": "어른이 되면 괜찮을줄 알았다_박종석"
+        },
+        {
+            "image": "/assets/images/books/언리시_조용민.jpg",
+            "title": "언리시_조용민"
+        },
+        {
+            "image": "/assets/images/books/언바운드_조용민.jpg",
+            "title": "언바운드_조용민"
+        },
+        {
+            "image": "/assets/images/books/영업은 사라지지 않는다_임진환.jpg",
+            "title": "영업은 사라지지 않는다_임진환"
+        },
+        {
+            "image": "/assets/images/books/영화관에 간 클래식_김태용.jpg",
+            "title": "영화관에 간 클래식_김태용"
+        },
+        {
+            "image": "/assets/images/books/영화와 신화로 읽는 심리학_김상준.jpg",
+            "title": "영화와 신화로 읽는 심리학_김상준"
+        },
+        {
+            "image": "/assets/images/books/오십에 읽는 주역_강기진.jpg",
+            "title": "오십에 읽는 주역_강기진"
+        },
+        {
+            "image": "/assets/images/books/왕으로 산다는 것_신병주.jpg",
+            "title": "왕으로 산다는 것_신병주"
+        },
+        {
+            "image": "/assets/images/books/요즘것들_허두영.jpg",
+            "title": "요즘것들_허두영"
+        },
+        {
+            "image": "/assets/images/books/요즘애들,요즘어른들_김용섭.jpg",
+            "title": "요즘애들,요즘어른들_김용섭"
+        },
+        {
+            "image": "/assets/images/books/운명을 바꾸는 관상 리더십_김동완.jpg",
+            "title": "운명을 바꾸는 관상 리더십_김동완"
+        },
+        {
+            "image": "/assets/images/books/워킹브레인_양은우.jpg",
+            "title": "워킹브레인_양은우"
+        },
+        {
+            "image": "/assets/images/books/유머가이긴다_신상훈.jpg",
+            "title": "유머가이긴다_신상훈"
+        },
+        {
+            "image": "/assets/images/books/유인촌의 명불허전.jpg",
+            "title": "유인촌의 명불허전"
+        },
+        {
+            "image": "/assets/images/books/이겨놓고 싸워라_임영서.jpg",
+            "title": "이겨놓고 싸워라_임영서"
+        },
+        {
+            "image": "/assets/images/books/이기는 게임_구자익.jpg",
+            "title": "이기는 게임_구자익"
+        },
+        {
+            "image": "/assets/images/books/이순신의 생애와 리더십_윤동한.jpg",
+            "title": "이순신의 생애와 리더십_윤동한"
+        },
+        {
+            "image": "/assets/images/books/이순신의 일상에서 리더십을 읽다_김헌식.jpg",
+            "title": "이순신의 일상에서 리더십을 읽다_김헌식"
+        },
+        {
+            "image": "/assets/images/books/이제 지난 성공의 기억과 이별 할 때_조준호.jpg",
+            "title": "이제 지난 성공의 기억과 이별 할 때_조준호"
+        },
+        {
+            "image": "/assets/images/books/이주향의 삼국유사_이주향.jpg",
+            "title": "이주향의 삼국유사_이주향"
+        },
+        {
+            "image": "/assets/images/books/이차전지 승자의 조건_정경윤외.jpg",
+            "title": "이차전지 승자의 조건_정경윤외"
+        },
+        {
+            "image": "/assets/images/books/인간혁명의 시대_윤석만.jpg",
+            "title": "인간혁명의 시대_윤석만"
+        },
+        {
+            "image": "/assets/images/books/인류 밖에서 찾은 완벽한 리더들_장이권교수.jpg",
+            "title": "인류 밖에서 찾은 완벽한 리더들_장이권교수"
+        },
+        {
+            "image": "/assets/images/books/인문학의 뿌리를 읽다_김헌.jpg",
+            "title": "인문학의 뿌리를 읽다_김헌"
+        },
+        {
+            "image": "/assets/images/books/인문학이 경영 안으로 들어왔다_윤동한.jpg",
+            "title": "인문학이 경영 안으로 들어왔다_윤동한"
+        },
+        {
+            "image": "/assets/images/books/인생뭐있다 표지 이미지.jpg",
+            "title": "인생뭐있다 표지 이미지"
+        },
+        {
+            "image": "/assets/images/books/일본 중소기업 진화생존기_오태헌.jpg",
+            "title": "일본 중소기업 진화생존기_오태헌"
+        },
+        {
+            "image": "/assets/images/books/일본 초격차 기업의 3가지 원칙_최원석.jpg",
+            "title": "일본 초격차 기업의 3가지 원칙_최원석"
+        },
+        {
+            "image": "/assets/images/books/일본이 온다_김현철.jpg",
+            "title": "일본이 온다_김현철"
+        },
+        {
+            "image": "/assets/images/books/일상이 명품이 되는 순간_최경원.jpg",
+            "title": "일상이 명품이 되는 순간_최경원"
+        },
+        {
+            "image": "/assets/images/books/일의 격_신수정.jpg",
+            "title": "일의 격_신수정"
+        },
+        {
+            "image": "/assets/images/books/자박자박 걸어요_김홍신.jpg",
+            "title": "자박자박 걸어요_김홍신"
+        },
+        {
+            "image": "/assets/images/books/잘 파는 사람은 이렇게 팝니다_황현진.jpg",
+            "title": "잘 파는 사람은 이렇게 팝니다_황현진"
+        },
+        {
+            "image": "/assets/images/books/제로이코노미_조영무.jpg",
+            "title": "제로이코노미_조영무"
+        },
+        {
+            "image": "/assets/images/books/주린이가 가장 알고 싶은 최자질문 TOP77_염승환.jpg",
+            "title": "주린이가 가장 알고 싶은 최자질문 TOP77_염승환"
+        },
+        {
+            "image": "/assets/images/books/중국의 파워엘리트_최형규.jpg",
+            "title": "중국의 파워엘리트_최형규"
+        },
+        {
+            "image": "/assets/images/books/중국이 이긴다_정유신.jpg",
+            "title": "중국이 이긴다_정유신"
+        },
+        {
+            "image": "/assets/images/books/지도자 본색_김덕수.jpg",
+            "title": "지도자 본색_김덕수"
+        },
+        {
+            "image": "/assets/images/books/지리학이 중요하다_김이재.jpg",
+            "title": "지리학이 중요하다_김이재"
+        },
+        {
+            "image": "/assets/images/books/지중해전쟁사_김시열.jpg",
+            "title": "지중해전쟁사_김시열"
+        },
+        {
+            "image": "/assets/images/books/진심을 팝니다_장인수.jpg",
+            "title": "진심을 팝니다_장인수"
+        },
+        {
+            "image": "/assets/images/books/쫓겨난 권력자_박천기.jpg",
+            "title": "쫓겨난 권력자_박천기"
+        },
+        {
+            "image": "/assets/images/books/차이를 만드는 CEO의 생각도구_조준호.jpg",
+            "title": "차이를 만드는 CEO의 생각도구_조준호"
+        },
+        {
+            "image": "/assets/images/books/착한 중국 나쁜 차이나_임대근.jpg",
+            "title": "착한 중국 나쁜 차이나_임대근"
+        },
+        {
+            "image": "/assets/images/books/철학툰_김필영.jpg",
+            "title": "철학툰_김필영"
+        },
+        {
+            "image": "/assets/images/books/초기업의 시대_천준범.jpg",
+            "title": "초기업의 시대_천준범"
+        },
+        {
+            "image": "/assets/images/books/초심력_임형재.jpg",
+            "title": "초심력_임형재"
+        },
+        {
+            "image": "/assets/images/books/최고의 선택_김형철2.jpg",
+            "title": "최고의 선택_김형철2"
+        },
+        {
+            "image": "/assets/images/books/커넥트파워_이원재.jpg",
+            "title": "커넥트파워_이원재"
+        },
+        {
+            "image": "/assets/images/books/커뮤니티는 어떻게 브랜드의 무기가 되는가_이승윤.jpg",
+            "title": "커뮤니티는 어떻게 브랜드의 무기가 되는가_이승윤"
+        },
+        {
+            "image": "/assets/images/books/클래식이 좋다_조희창.jpg",
+            "title": "클래식이 좋다_조희창"
+        },
+        {
+            "image": "/assets/images/books/테라 인코그니타_강인욱.jpg",
+            "title": "테라 인코그니타_강인욱"
+        },
+        {
+            "image": "/assets/images/books/톰 피터스의 비즈니스 인사이트_이재연.jpg",
+            "title": "톰 피터스의 비즈니스 인사이트_이재연"
+        },
+        {
+            "image": "/assets/images/books/트로이목마를 불태워라_김용태.jpg",
+            "title": "트로이목마를 불태워라_김용태"
+        },
+        {
+            "image": "/assets/images/books/트리즈로 정주영 넘어서기_오경철.jpg",
+            "title": "트리즈로 정주영 넘어서기_오경철"
+        },
+        {
+            "image": "/assets/images/books/트리즈씽킹_신정호.jpg",
+            "title": "트리즈씽킹_신정호"
+        },
+        {
+            "image": "/assets/images/books/판을읽어라_신봉호.jpg",
+            "title": "판을읽어라_신봉호"
+        },
+        {
+            "image": "/assets/images/books/퍼센트_안지현.jpg",
+            "title": "퍼센트_안지현"
+        },
+        {
+            "image": "/assets/images/books/퍼시스턴트 라이프_김영욱.jpg",
+            "title": "퍼시스턴트 라이프_김영욱"
+        },
+        {
+            "image": "/assets/images/books/퍼시스턴트라이프_김영욱.jpg",
+            "title": "퍼시스턴트라이프_김영욱"
+        },
+        {
+            "image": "/assets/images/books/퍼펙트 멘탈_이종철프로.jpg",
+            "title": "퍼펙트 멘탈_이종철프로"
+        },
+        {
+            "image": "/assets/images/books/평생 젊은 뇌_손유리.jpg",
+            "title": "평생 젊은 뇌_손유리"
+        },
+        {
+            "image": "/assets/images/books/포노사피엔스_최재붕.jpg",
+            "title": "포노사피엔스_최재붕"
+        },
+        {
+            "image": "/assets/images/books/플랫폼 경제와 공짜 점심_강성호.jpg",
+            "title": "플랫폼 경제와 공짜 점심_강성호"
+        },
+        {
+            "image": "/assets/images/books/플랫폼 임팩트2023_이원재외.jpg",
+            "title": "플랫폼 임팩트2023_이원재외"
+        },
+        {
+            "image": "/assets/images/books/피터드러커의 최고의질문_유정식역.jpg",
+            "title": "피터드러커의 최고의질문_유정식역"
+        },
+        {
+            "image": "/assets/images/books/한권으로 읽는 디지털 혁명_조원경.jpg",
+            "title": "한권으로 읽는 디지털 혁명_조원경"
+        },
+        {
+            "image": "/assets/images/books/한비자,관계의기술_김원중.jpg",
+            "title": "한비자,관계의기술_김원중"
+        },
+        {
+            "image": "/assets/images/books/한비자_김원중역.jpg",
+            "title": "한비자_김원중역"
+        },
+        {
+            "image": "/assets/images/books/한중일 힘의 대전환_우수근.jpg",
+            "title": "한중일 힘의 대전환_우수근"
+        },
+        {
+            "image": "/assets/images/books/현대자동차를 말한다_심정택.jpg",
+            "title": "현대자동차를 말한다_심정택"
+        },
+        {
+            "image": "/assets/images/books/호모 아딕투스_김병규 교수.jpg",
+            "title": "호모 아딕투스_김병규 교수"
+        }
+    ]
+}
