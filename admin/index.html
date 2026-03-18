@@ -6,22 +6,49 @@
     <title>비채 관리자</title>
     <style>body { font-family: 'Noto Sans KR', sans-serif; }</style>
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <script>window.CMS_MANUAL_INIT = true;</script>
 </head>
 <body>
     <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
     <script>
+    // Netlify Identity 초기화
     if (window.netlifyIdentity) {
-        window.netlifyIdentity.on('init', function(user) {
-            if (!user) {
-                window.netlifyIdentity.on('login', function() {
-                    document.location.href = '/vichea-leaders-forum/admin/index.html';
-                });
-            }
-        });
         window.netlifyIdentity.init({
             APIUrl: 'https://darling-snickerdoodle-c84e83.netlify.app/.netlify/identity'
         });
     }
+
+    // config.yml을 로드한 뒤 backend만 덮어쓰기
+    fetch('config.yml?v=' + Date.now()).then(function(r) {
+        return r.text();
+    }).then(function(yml) {
+        // jsyaml이 CMS와 함께 로드됨
+        var config = {};
+        if (window.jsyaml) {
+            try { config = window.jsyaml.load(yml); } catch(e) { console.warn('YAML parse error', e); }
+        }
+        // backend 강제 설정
+        config.backend = {
+            name: 'git-gateway',
+            branch: 'main',
+            identity_url: 'https://darling-snickerdoodle-c84e83.netlify.app/.netlify/identity',
+            gateway_url: 'https://darling-snickerdoodle-c84e83.netlify.app/.netlify/git'
+        };
+        window.CMS.init({ config: config });
+    }).catch(function(e) {
+        console.error('Config load failed, using minimal config', e);
+        window.CMS.init({ config: {
+            backend: {
+                name: 'git-gateway',
+                branch: 'main',
+                identity_url: 'https://darling-snickerdoodle-c84e83.netlify.app/.netlify/identity',
+                gateway_url: 'https://darling-snickerdoodle-c84e83.netlify.app/.netlify/git'
+            },
+            media_folder: 'assets/images',
+            public_folder: '/assets/images',
+            locale: 'ko'
+        }});
+    });
     </script>
 </body>
 </html>
