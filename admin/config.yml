@@ -3,6 +3,7 @@ backend:
   repo: jklee199809-png/vichea-leaders-forum
   branch: main
   base_url: https://api.netlify.com
+  auth_endpoint: auth
   site_id: darling-snickerdoodle-c84e83.netlify.app
 
 media_folder: "assets/images"
