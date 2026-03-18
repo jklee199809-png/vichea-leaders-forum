@@ -290,6 +290,9 @@ function loadNotices() {
         var detailContainer = document.getElementById('noticeDetailContainer');
         if (!tbody) return;
 
+        // 최신순 정렬 (번호 큰 순 → 날짜 최신순)
+        data.sort(function(a, b) { return b.id - a.id; });
+
         var tbodyHtml = '';
         var detailHtml = '';
         data.forEach(function(n, i) {

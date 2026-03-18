@@ -101,8 +101,8 @@ collections:
             label_singular: "공지"
             hint: "공지사항 목록입니다. 새 공지 추가 시 번호를 이전 공지+1로 입력하세요."
             fields:
-              - { label: "번호", name: "id", widget: "number", hint: "공지 번호. 가장 최근 공지 번호보다 1 크게 입력. 예: 4" }
               - { label: "제목", name: "title", widget: "string", hint: "공지 제목. 예: 비채리더스포럼 19기 수강생 모집" }
+              - { label: "번호", name: "id", widget: "number", hint: "공지 번호. 가장 최근 공지 번호보다 1 크게 입력. 예: 4" }
               - { label: "작성일", name: "date", widget: "string", hint: "날짜 형식: 2026.03.17 (연도.월.일)" }
               - { label: "본문", name: "body", widget: "text", hint: "공지 내용. 줄바꿈은 <br>, 굵은 글씨는 <strong>텍스트</strong>" }
 
