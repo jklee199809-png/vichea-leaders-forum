@@ -4,11 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>비채 관리자</title>
-    <style>
-        body { font-family: 'Noto Sans KR', sans-serif; }
-    </style>
+    <style>body { font-family: 'Noto Sans KR', sans-serif; }</style>
+    <script>window.CMS_MANUAL_INIT = true;</script>
 </head>
 <body>
     <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+    <script>
+    fetch('config.yml').then(function(r){ return r.text(); }).then(function(yml){
+        // config.yml 파싱 후 backend 설정 강제 주입
+        var config = window.jsyaml ? window.jsyaml.load(yml) : {};
+        config.backend = {
+            name: 'github',
+            repo: 'jklee199809-png/vichea-leaders-forum',
+            branch: 'main',
+            base_url: 'https://api.netlify.com',
+            auth_endpoint: 'auth',
+            site_id: 'darling-snickerdoodle-c84e83.netlify.app'
+        };
+        window.CMS.init({ config: config });
+    }).catch(function(){
+        // config.yml 로드 실패시에도 직접 초기화
+        window.CMS.init({ config: {
+            backend: {
+                name: 'github',
+                repo: 'jklee199809-png/vichea-leaders-forum',
+                branch: 'main',
+                base_url: 'https://api.netlify.com',
+                auth_endpoint: 'auth',
+                site_id: 'darling-snickerdoodle-c84e83.netlify.app'
+            },
+            media_folder: 'assets/images',
+            public_folder: '/assets/images',
+            locale: 'ko'
+        }});
+    });
+    </script>
 </body>
 </html>
