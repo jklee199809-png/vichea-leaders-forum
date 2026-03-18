@@ -26,22 +26,23 @@ collections:
             name: "items"
             widget: "list"
             label_singular: "프로그램"
+            hint: "현재 운영 중이거나 예정된 프로그램 목록입니다. 새 프로그램 추가는 아래 '프로그램 추가' 버튼을 눌러주세요."
             fields:
-              - { label: "월 (영문)", name: "month", widget: "string", hint: "예: APR, SEP, MAY" }
-              - { label: "일", name: "day", widget: "string", hint: "예: 09, -- (미정일 때)" }
-              - { label: "년도", name: "year", widget: "string", hint: "예: 2026" }
-              - { label: "모집 상태", name: "status", widget: "select", options: ["모집중", "준비중", "마감"] }
-              - { label: "상태 구분", name: "statusType", widget: "select", options: ["", "upcoming", "closed"], default: "" }
-              - { label: "프로그램명", name: "title", widget: "string" }
-              - { label: "프로그램 설명", name: "desc", widget: "text" }
-              - { label: "일정 정보", name: "meta1", widget: "string", hint: "예: 2026.4.9~6.11" }
-              - { label: "일정 임시 여부", name: "meta1Temp", widget: "boolean", default: false }
-              - { label: "시간 정보", name: "meta2", widget: "string", hint: "예: 매주 목 19:00-21:00" }
-              - { label: "시간 임시 여부", name: "meta2Temp", widget: "boolean", default: false }
-              - { label: "버튼 텍스트", name: "btnText", widget: "string", hint: "예: 신청하기, 상세보기" }
-              - { label: "버튼 링크", name: "btnLink", widget: "string", hint: "예: pages/apply.html" }
-              - { label: "테두리 버튼", name: "btnOutline", widget: "boolean", default: false }
-              - { label: "상세 페이지 링크", name: "detailLink", widget: "string", hint: "예: pages/program-19.html" }
+              - { label: "월 (영문)", name: "month", widget: "string", hint: "영문 대문자 3글자로 입력. 예: JAN, FEB, MAR, APR, MAY, JUN, JUL, AUG, SEP, OCT, NOV, DEC" }
+              - { label: "일", name: "day", widget: "string", hint: "두 자리 숫자로 입력. 예: 09, 15, 28 / 날짜 미정이면: --" }
+              - { label: "년도", name: "year", widget: "string", hint: "네 자리 숫자. 예: 2026" }
+              - { label: "모집 상태", name: "status", widget: "select", options: ["모집중", "준비중", "마감"], hint: "현재 모집 상태를 선택하세요" }
+              - { label: "상태 구분", name: "statusType", widget: "select", options: ["", "upcoming", "closed"], default: "", hint: "준비중이면 'upcoming', 마감이면 'closed' 선택. 모집중이면 비워두세요" }
+              - { label: "프로그램명", name: "title", widget: "string", hint: "프로그램 이름. 예: 비채리더스포럼 19기, 최고경영자과정" }
+              - { label: "프로그램 설명", name: "desc", widget: "text", hint: "프로그램 카드에 표시될 짧은 소개문" }
+              - { label: "일정 정보", name: "meta1", widget: "string", hint: "시작~종료 날짜. 예: 2026.4.9~6.11" }
+              - { label: "일정 임시 여부", name: "meta1Temp", widget: "boolean", default: false, hint: "날짜가 확정 전이면 켜주세요. '(예정)' 표시가 붙습니다" }
+              - { label: "시간 정보", name: "meta2", widget: "string", hint: "수업 요일과 시간. 예: 매주 목 19:00-21:00" }
+              - { label: "시간 임시 여부", name: "meta2Temp", widget: "boolean", default: false, hint: "시간이 확정 전이면 켜주세요. '(예정)' 표시가 붙습니다" }
+              - { label: "버튼 텍스트", name: "btnText", widget: "string", hint: "카드 하단 버튼에 표시될 문구. 예: 신청하기, 상세보기" }
+              - { label: "버튼 링크", name: "btnLink", widget: "string", hint: "버튼 클릭 시 이동할 페이지. 예: pages/apply.html" }
+              - { label: "테두리 버튼", name: "btnOutline", widget: "boolean", default: false, hint: "켜면 버튼이 테두리만 있는 스타일로 바뀝니다 (마감된 프로그램에 사용)" }
+              - { label: "상세 페이지 링크", name: "detailLink", widget: "string", hint: "프로그램 상세 페이지 주소. 예: pages/program-19.html" }
 
   # ============================================
   # 수강후기 관리
@@ -57,12 +58,13 @@ collections:
             name: "items"
             widget: "list"
             label_singular: "후기"
+            hint: "메인 페이지와 수강후기 페이지에 표시되는 후기 목록입니다. 위에 있는 후기가 먼저 표시됩니다."
             fields:
-              - { label: "썸네일 이미지", name: "thumbImage", widget: "image", required: false }
-              - { label: "카테고리", name: "category", widget: "string", hint: "예: 비채리더스포럼, 워크샵" }
-              - { label: "제목", name: "title", widget: "string" }
-              - { label: "설명", name: "desc", widget: "text" }
-              - { label: "연락처 안내", name: "contact", widget: "string", required: false }
+              - { label: "썸네일 이미지", name: "thumbImage", widget: "image", required: false, hint: "후기 카드에 표시될 대표 이미지. 클릭해서 파일을 선택하면 자동으로 업로드됩니다" }
+              - { label: "카테고리", name: "category", widget: "string", hint: "후기 분류. 예: 비채리더스포럼, 워크샵" }
+              - { label: "제목", name: "title", widget: "string", hint: "후기 카드에 표시될 제목. 예: CEO FIRST, 스피치 나침반" }
+              - { label: "설명", name: "desc", widget: "text", hint: "후기 상세 내용. 줄바꿈은 Enter로 입력하세요" }
+              - { label: "연락처 안내", name: "contact", widget: "string", required: false, hint: "하단에 표시할 연락처. 예: 교육문의 070-7839-3002 (비워두면 표시 안 됨)" }
 
   # ============================================
   # FAQ 관리
@@ -78,9 +80,10 @@ collections:
             name: "items"
             widget: "list"
             label_singular: "질문"
+            hint: "자주 묻는 질문 목록입니다. 위에 있는 질문이 페이지 상단에 표시됩니다."
             fields:
-              - { label: "질문", name: "question", widget: "string" }
-              - { label: "답변", name: "answer", widget: "text", hint: "HTML 태그 사용 가능 (<p>, <br>, <strong> 등)" }
+              - { label: "질문", name: "question", widget: "string", hint: "질문 내용을 입력하세요. 예: 수강료는 얼마인가요?" }
+              - { label: "답변", name: "answer", widget: "text", hint: "답변 내용. 줄바꿈하려면 <br> 입력, 굵은 글씨는 <strong>텍스트</strong>로 감싸세요" }
 
   # ============================================
   # 공지사항 관리
@@ -96,11 +99,12 @@ collections:
             name: "items"
             widget: "list"
             label_singular: "공지"
+            hint: "공지사항 목록입니다. 새 공지 추가 시 번호를 이전 공지+1로 입력하세요."
             fields:
-              - { label: "번호", name: "id", widget: "number" }
-              - { label: "제목", name: "title", widget: "string" }
-              - { label: "작성일", name: "date", widget: "string", hint: "예: 2026.03.17" }
-              - { label: "본문", name: "body", widget: "text", hint: "HTML 태그 사용 가능" }
+              - { label: "번호", name: "id", widget: "number", hint: "공지 번호. 가장 최근 공지 번호보다 1 크게 입력. 예: 4" }
+              - { label: "제목", name: "title", widget: "string", hint: "공지 제목. 예: 비채리더스포럼 19기 수강생 모집" }
+              - { label: "작성일", name: "date", widget: "string", hint: "날짜 형식: 2026.03.17 (연도.월.일)" }
+              - { label: "본문", name: "body", widget: "text", hint: "공지 내용. 줄바꿈은 <br>, 굵은 글씨는 <strong>텍스트</strong>" }
 
   # ============================================
   # 사이트 설정
@@ -115,12 +119,13 @@ collections:
           - label: "푸터"
             name: "footer"
             widget: "object"
+            hint: "모든 페이지 하단에 공통으로 표시되는 정보입니다"
             fields:
-              - { label: "슬로건", name: "slogan", widget: "string" }
-              - { label: "전화번호", name: "tel", widget: "string" }
-              - { label: "주소", name: "address", widget: "string" }
-              - { label: "회사 정보", name: "companyInfo", widget: "string" }
-              - { label: "저작권 표시", name: "copyright", widget: "string" }
+              - { label: "슬로건", name: "slogan", widget: "string", hint: "푸터 상단의 슬로건 문구" }
+              - { label: "전화번호", name: "tel", widget: "string", hint: "대표 전화번호. 예: 070-7839-3002" }
+              - { label: "주소", name: "address", widget: "string", hint: "사무실 주소" }
+              - { label: "회사 정보", name: "companyInfo", widget: "string", hint: "사업자 정보. 예: 비채교육 | 대표 정미선 | 사업자등록번호 xxx-xx-xxxxx" }
+              - { label: "저작권 표시", name: "copyright", widget: "string", hint: "하단 저작권 문구. 예: ⓒ 2025 비채교육" }
 
   # ============================================
   # 페이지 텍스트 관리
@@ -136,41 +141,46 @@ collections:
           - label: "히어로 영역"
             name: "hero"
             widget: "object"
+            hint: "메인 페이지 맨 위 큰 배너 영역"
             fields:
-              - { label: "상단 텍스트", name: "eyebrow", widget: "string" }
-              - { label: "메인 타이틀", name: "title", widget: "text", hint: "줄바꿈은 \\n 으로 입력" }
-              - { label: "설명", name: "desc", widget: "text" }
-              - { label: "버튼 텍스트", name: "btnText", widget: "string" }
+              - { label: "상단 텍스트", name: "eyebrow", widget: "string", hint: "메인 타이틀 위에 작게 표시되는 문구" }
+              - { label: "메인 타이틀", name: "title", widget: "text", hint: "큰 글씨 제목. 줄바꿈하려면 \\n 입력" }
+              - { label: "설명", name: "desc", widget: "text", hint: "타이틀 아래 설명 문구" }
+              - { label: "버튼 텍스트", name: "btnText", widget: "string", hint: "배너 안의 버튼 문구. 예: 프로그램 보기" }
           - label: "소개 섹션"
             name: "about"
             widget: "object"
+            hint: "메인 페이지의 '비채 소개' 영역"
             fields:
-              - { label: "라벨", name: "label", widget: "string" }
-              - { label: "타이틀", name: "title", widget: "string" }
-              - { label: "설명", name: "desc", widget: "text" }
+              - { label: "라벨", name: "label", widget: "string", hint: "섹션 위쪽의 작은 라벨. 예: ABOUT" }
+              - { label: "타이틀", name: "title", widget: "string", hint: "섹션 제목" }
+              - { label: "설명", name: "desc", widget: "text", hint: "소개 본문 텍스트" }
           - label: "프로그램 섹션"
             name: "program"
             widget: "object"
+            hint: "메인 페이지의 '프로그램' 영역"
             fields:
-              - { label: "라벨", name: "label", widget: "string" }
-              - { label: "타이틀 전체", name: "title", widget: "string" }
-              - { label: "타이틀 - 비채 부분", name: "titleBrand", widget: "string" }
-              - { label: "타이틀 - 나머지", name: "titleRest", widget: "string" }
-              - { label: "설명", name: "desc", widget: "text" }
+              - { label: "라벨", name: "label", widget: "string", hint: "섹션 위쪽의 작은 라벨. 예: PROGRAM" }
+              - { label: "타이틀 전체", name: "title", widget: "string", hint: "이 값은 사용되지 않지만 참고용으로 전체 제목을 입력" }
+              - { label: "타이틀 - 비채 부분", name: "titleBrand", widget: "string", hint: "제목에서 강조 색상으로 표시될 부분. 예: 비채" }
+              - { label: "타이틀 - 나머지", name: "titleRest", widget: "string", hint: "제목의 나머지 부분. 예: 의 프로그램" }
+              - { label: "설명", name: "desc", widget: "text", hint: "프로그램 섹션 설명문" }
           - label: "신청 섹션"
             name: "apply"
             widget: "object"
+            hint: "메인 페이지의 '수강신청' 영역"
             fields:
-              - { label: "라벨", name: "label", widget: "string" }
-              - { label: "타이틀", name: "title", widget: "string" }
-              - { label: "설명", name: "desc", widget: "text" }
-              - { label: "버튼 텍스트", name: "btnText", widget: "string" }
+              - { label: "라벨", name: "label", widget: "string", hint: "섹션 위쪽의 작은 라벨. 예: APPLY" }
+              - { label: "타이틀", name: "title", widget: "string", hint: "섹션 제목" }
+              - { label: "설명", name: "desc", widget: "text", hint: "수강신청 안내 문구" }
+              - { label: "버튼 텍스트", name: "btnText", widget: "string", hint: "버튼에 표시될 문구. 예: 수강 신청하기" }
           - label: "아카이브 섹션"
             name: "archive"
             widget: "object"
+            hint: "메인 페이지의 '아카이브' 영역"
             fields:
-              - { label: "라벨", name: "label", widget: "string" }
-              - { label: "타이틀", name: "title", widget: "string" }
+              - { label: "라벨", name: "label", widget: "string", hint: "섹션 위쪽의 작은 라벨. 예: ARCHIVE" }
+              - { label: "타이틀", name: "title", widget: "string", hint: "섹션 제목" }
 
       # ── About ──
       - label: "비채 소개 (About)"
@@ -180,30 +190,33 @@ collections:
           - label: "배너"
             name: "banner"
             widget: "object"
+            hint: "페이지 상단의 배너 영역"
             fields:
-              - { label: "타이틀", name: "title", widget: "string" }
-              - { label: "설명", name: "desc", widget: "string" }
+              - { label: "타이틀", name: "title", widget: "string", hint: "배너 제목. 예: 비채 소개" }
+              - { label: "설명", name: "desc", widget: "string", hint: "배너 아래 한 줄 설명" }
           - label: "섹션"
             name: "sections"
             widget: "list"
             label_singular: "섹션"
+            hint: "소개 페이지의 각 섹션입니다. 순서대로 표시됩니다."
             fields:
-              - { label: "번호", name: "label", widget: "string" }
-              - { label: "제목", name: "heading", widget: "string" }
-              - { label: "본문", name: "body", widget: "text", required: false }
+              - { label: "번호", name: "label", widget: "string", hint: "섹션 번호. 예: 01, 02, 03" }
+              - { label: "제목", name: "heading", widget: "string", hint: "섹션 제목" }
+              - { label: "본문", name: "body", widget: "text", required: false, hint: "섹션 설명 텍스트. 줄바꿈은 \\n으로 입력" }
               - label: "프로그램 카드"
                 name: "cards"
                 widget: "list"
                 required: false
                 label_singular: "카드"
+                hint: "이 섹션에 카드형 프로그램 목록이 필요한 경우에만 추가"
                 fields:
-                  - { label: "카테고리명", name: "category", widget: "string" }
+                  - { label: "카테고리명", name: "category", widget: "string", hint: "카드 그룹 이름. 예: 정규과정, 특별과정" }
                   - label: "프로그램"
                     name: "items"
                     widget: "list"
                     fields:
-                      - { label: "프로그램명", name: "name", widget: "string" }
-                      - { label: "설명", name: "desc", widget: "string" }
+                      - { label: "프로그램명", name: "name", widget: "string", hint: "프로그램 이름" }
+                      - { label: "설명", name: "desc", widget: "string", hint: "프로그램 한 줄 설명" }
 
       # ── 프로그램 목록 ──
       - label: "프로그램 목록 페이지"
@@ -213,16 +226,18 @@ collections:
           - label: "배너"
             name: "banner"
             widget: "object"
+            hint: "페이지 상단의 배너 영역"
             fields:
-              - { label: "타이틀", name: "title", widget: "string" }
-              - { label: "설명", name: "desc", widget: "string" }
+              - { label: "타이틀", name: "title", widget: "string", hint: "배너 제목. 예: 프로그램" }
+              - { label: "설명", name: "desc", widget: "string", hint: "배너 아래 한 줄 설명" }
           - label: "소개"
             name: "intro"
             widget: "object"
+            hint: "프로그램 카드 위에 표시되는 소개 영역"
             fields:
-              - { label: "타이틀 - 비채 부분", name: "titleBrand", widget: "string" }
-              - { label: "타이틀 - 나머지", name: "titleRest", widget: "string" }
-              - { label: "설명", name: "desc", widget: "text" }
+              - { label: "타이틀 - 비채 부분", name: "titleBrand", widget: "string", hint: "강조 색상으로 표시될 부분. 예: 비채" }
+              - { label: "타이틀 - 나머지", name: "titleRest", widget: "string", hint: "제목의 나머지 부분. 예: 의 프로그램" }
+              - { label: "설명", name: "desc", widget: "text", hint: "프로그램 소개 문구" }
 
       # ── 비채리더스포럼 19기 ──
       - label: "비채리더스포럼 19기"
@@ -232,24 +247,27 @@ collections:
           - label: "배너"
             name: "banner"
             widget: "object"
+            hint: "페이지 상단의 배너 영역"
             fields:
-              - { label: "타이틀", name: "title", widget: "string" }
-              - { label: "설명", name: "desc", widget: "string" }
+              - { label: "타이틀", name: "title", widget: "string", hint: "배너 제목. 예: 비채리더스포럼 19기" }
+              - { label: "설명", name: "desc", widget: "string", hint: "배너 아래 한 줄 설명" }
           - label: "섹션"
             name: "sections"
             widget: "list"
             label_singular: "섹션"
+            hint: "프로그램 상세 정보 섹션들. 순서대로 표시됩니다."
             fields:
-              - { label: "번호", name: "label", widget: "string" }
-              - { label: "제목", name: "heading", widget: "string" }
-              - { label: "본문", name: "body", widget: "text", required: false }
+              - { label: "번호", name: "label", widget: "string", hint: "섹션 번호. 예: 01, 02" }
+              - { label: "제목", name: "heading", widget: "string", hint: "섹션 제목" }
+              - { label: "본문", name: "body", widget: "text", required: false, hint: "섹션 설명 텍스트. 줄바꿈은 \\n으로 입력" }
               - label: "표 (정보)"
                 name: "table"
                 widget: "list"
                 required: false
+                hint: "항목-내용 형태의 표가 필요한 경우 추가. 예: 교육기간 / 2026.4.9~6.11"
                 fields:
-                  - { label: "항목명", name: "th", widget: "string" }
-                  - { label: "내용", name: "td", widget: "string" }
+                  - { label: "항목명", name: "th", widget: "string", hint: "표의 왼쪽 항목명. 예: 교육기간, 교육시간, 수강료" }
+                  - { label: "내용", name: "td", widget: "string", hint: "표의 오른쪽 내용. 예: 2026.4.9~6.11 (매주 목)" }
 
       # ── 최고경영자과정 ──
       - label: "최고경영자과정"
@@ -259,24 +277,27 @@ collections:
           - label: "배너"
             name: "banner"
             widget: "object"
+            hint: "페이지 상단의 배너 영역"
             fields:
-              - { label: "타이틀", name: "title", widget: "string" }
-              - { label: "설명", name: "desc", widget: "string" }
+              - { label: "타이틀", name: "title", widget: "string", hint: "배너 제목" }
+              - { label: "설명", name: "desc", widget: "string", hint: "배너 아래 한 줄 설명" }
           - label: "섹션"
             name: "sections"
             widget: "list"
             label_singular: "섹션"
+            hint: "과정 상세 정보 섹션들"
             fields:
-              - { label: "번호", name: "label", widget: "string" }
-              - { label: "제목", name: "heading", widget: "string" }
-              - { label: "본문", name: "body", widget: "text", required: false }
+              - { label: "번호", name: "label", widget: "string", hint: "섹션 번호. 예: 01, 02" }
+              - { label: "제목", name: "heading", widget: "string", hint: "섹션 제목" }
+              - { label: "본문", name: "body", widget: "text", required: false, hint: "섹션 설명 텍스트" }
               - label: "목록 항목"
                 name: "list"
                 widget: "list"
                 required: false
+                hint: "커리큘럼이나 특징을 목록으로 표시할 경우 추가"
                 fields:
-                  - { label: "항목명", name: "title", widget: "string" }
-                  - { label: "설명", name: "desc", widget: "string", required: false }
+                  - { label: "항목명", name: "title", widget: "string", hint: "목록 제목. 예: 경영전략, 리더십" }
+                  - { label: "설명", name: "desc", widget: "string", required: false, hint: "항목에 대한 설명 (비워두면 제목만 표시)" }
 
       # ── 차세대 리더 ──
       - label: "차세대 리더최고위과정"
@@ -286,23 +307,26 @@ collections:
           - label: "배너"
             name: "banner"
             widget: "object"
+            hint: "페이지 상단의 배너 영역"
             fields:
-              - { label: "타이틀", name: "title", widget: "string" }
-              - { label: "설명", name: "desc", widget: "string" }
+              - { label: "타이틀", name: "title", widget: "string", hint: "배너 제목" }
+              - { label: "설명", name: "desc", widget: "string", hint: "배너 아래 한 줄 설명" }
           - label: "섹션"
             name: "sections"
             widget: "list"
             label_singular: "섹션"
+            hint: "과정 상세 정보 섹션들"
             fields:
-              - { label: "번호", name: "label", widget: "string" }
-              - { label: "제목", name: "heading", widget: "string" }
-              - { label: "본문", name: "body", widget: "text", required: false }
+              - { label: "번호", name: "label", widget: "string", hint: "섹션 번호. 예: 01, 02" }
+              - { label: "제목", name: "heading", widget: "string", hint: "섹션 제목" }
+              - { label: "본문", name: "body", widget: "text", required: false, hint: "섹션 설명 텍스트" }
               - label: "목록 항목"
                 name: "list"
                 widget: "list"
                 required: false
+                hint: "커리큘럼 목록이 필요한 경우 추가"
                 fields:
-                  - { label: "항목명", name: "title", widget: "string" }
+                  - { label: "항목명", name: "title", widget: "string", hint: "커리큘럼 항목명" }
 
       # ── 아카데미 ──
       - label: "슬기로운 직장생활 ABC"
@@ -312,23 +336,26 @@ collections:
           - label: "배너"
             name: "banner"
             widget: "object"
+            hint: "페이지 상단의 배너 영역"
             fields:
-              - { label: "타이틀", name: "title", widget: "string" }
-              - { label: "설명", name: "desc", widget: "string" }
+              - { label: "타이틀", name: "title", widget: "string", hint: "배너 제목" }
+              - { label: "설명", name: "desc", widget: "string", hint: "배너 아래 한 줄 설명" }
           - label: "섹션"
             name: "sections"
             widget: "list"
             label_singular: "섹션"
+            hint: "과정 상세 정보 섹션들"
             fields:
-              - { label: "번호", name: "label", widget: "string" }
-              - { label: "제목", name: "heading", widget: "string" }
+              - { label: "번호", name: "label", widget: "string", hint: "섹션 번호. 예: 01, 02" }
+              - { label: "제목", name: "heading", widget: "string", hint: "섹션 제목" }
               - label: "목록 항목"
                 name: "list"
                 widget: "list"
                 required: false
+                hint: "커리큘럼 목록이 필요한 경우 추가"
                 fields:
-                  - { label: "항목명", name: "title", widget: "string" }
-              - { label: "참고 문구", name: "note", widget: "string", required: false }
+                  - { label: "항목명", name: "title", widget: "string", hint: "커리큘럼 항목명" }
+              - { label: "참고 문구", name: "note", widget: "string", required: false, hint: "섹션 하단에 작게 표시될 참고 문구 (비워두면 표시 안 됨)" }
 
       # ── 수강신청 ──
       - label: "수강신청 (Apply)"
@@ -338,31 +365,35 @@ collections:
           - label: "배너"
             name: "banner"
             widget: "object"
+            hint: "페이지 상단의 배너 영역"
             fields:
-              - { label: "타이틀", name: "title", widget: "string" }
-              - { label: "설명", name: "desc", widget: "string" }
+              - { label: "타이틀", name: "title", widget: "string", hint: "배너 제목. 예: 수강신청" }
+              - { label: "설명", name: "desc", widget: "string", hint: "배너 아래 한 줄 설명" }
           - label: "랜딩 소개"
             name: "landing"
             widget: "object"
+            hint: "신청서 위에 표시되는 소개 영역"
             fields:
-              - { label: "타이틀", name: "title", widget: "string" }
-              - { label: "설명", name: "desc", widget: "text" }
+              - { label: "타이틀", name: "title", widget: "string", hint: "소개 제목" }
+              - { label: "설명", name: "desc", widget: "text", hint: "소개 본문 텍스트" }
           - label: "신청서"
             name: "form"
             widget: "object"
+            hint: "수강신청 폼 관련 텍스트"
             fields:
-              - { label: "타이틀", name: "title", widget: "string" }
-              - { label: "참고자료 안내 문구", name: "refNotice", widget: "text" }
+              - { label: "타이틀", name: "title", widget: "string", hint: "신청서 영역 제목" }
+              - { label: "참고자료 안내 문구", name: "refNotice", widget: "text", hint: "신청서 안에 표시되는 안내 문구" }
           - label: "개인정보"
             name: "privacy"
             widget: "object"
+            hint: "수강신청 시 표시되는 개인정보 동의 관련 문구"
             fields:
-              - { label: "제목", name: "title", widget: "string" }
-              - { label: "수집항목", name: "collectItems", widget: "string" }
-              - { label: "수집목적", name: "collectPurpose", widget: "string" }
-              - { label: "보유 및 이용기간", name: "retentionPeriod", widget: "string" }
-              - { label: "동의 안내문", name: "consentText", widget: "text" }
-              - { label: "거부 안내문", name: "refusalText", widget: "text" }
+              - { label: "제목", name: "title", widget: "string", hint: "개인정보 수집 안내 제목" }
+              - { label: "수집항목", name: "collectItems", widget: "string", hint: "수집하는 개인정보 항목. 예: 이름, 연락처, 이메일" }
+              - { label: "수집목적", name: "collectPurpose", widget: "string", hint: "수집 목적. 예: 수강 접수 및 안내" }
+              - { label: "보유 및 이용기간", name: "retentionPeriod", widget: "string", hint: "보관 기간. 예: 수강 종료 후 1년" }
+              - { label: "동의 안내문", name: "consentText", widget: "text", hint: "동의 체크박스 옆에 표시될 문구" }
+              - { label: "거부 안내문", name: "refusalText", widget: "text", hint: "동의 거부 시 불이익 안내 문구" }
 
       # ── 아카이브 ──
       - label: "아카이브 (Archive)"
@@ -372,12 +403,14 @@ collections:
           - label: "배너"
             name: "banner"
             widget: "object"
+            hint: "페이지 상단의 배너 영역"
             fields:
-              - { label: "타이틀", name: "title", widget: "string" }
-              - { label: "설명", name: "desc", widget: "string" }
+              - { label: "타이틀", name: "title", widget: "string", hint: "배너 제목. 예: 아카이브" }
+              - { label: "설명", name: "desc", widget: "string", hint: "배너 아래 한 줄 설명" }
           - label: "랜딩 소개"
             name: "landing"
             widget: "object"
+            hint: "아카이브 목록 위에 표시되는 소개 영역"
             fields:
-              - { label: "타이틀", name: "title", widget: "string" }
-              - { label: "설명", name: "desc", widget: "text" }
+              - { label: "타이틀", name: "title", widget: "string", hint: "소개 제목" }
+              - { label: "설명", name: "desc", widget: "text", hint: "소개 본문 텍스트" }

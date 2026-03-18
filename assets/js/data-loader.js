@@ -14,6 +14,14 @@ var DATA_BASE = (location.pathname.indexOf('/pages/') !== -1) ? '../data/' :
                 (location.pathname.indexOf('/admin/') !== -1) ? '../data/' : 'data/';
 var PAGES_BASE = (location.pathname.indexOf('/pages/') !== -1) ? '' : 'pages/';
 
+// 이미지 경로 변환: CMS 절대경로(/assets/...)를 사이트 상대경로로 변환
+function resolveImg(path) {
+    if (!path) return '';
+    var clean = path.replace(/^\//, '');
+    if (location.pathname.indexOf('/pages/') !== -1) return '../' + clean;
+    return clean;
+}
+
 function fetchJSON(filename) {
     return fetch(DATA_BASE + filename + '?v=' + Date.now()).then(function(r) {
         if (!r.ok) throw new Error(filename + ' load failed: ' + r.status);
@@ -215,7 +223,7 @@ function renderReviewsMain(data) {
     items.forEach(function(r) {
         html += '<div class="review-card">';
         if (r.thumbImage) {
-            html += '<div class="review-thumb"><img src="' + r.thumbImage + '" alt="' + r.title + '" style="width:100%;height:100%;object-fit:cover;"></div>';
+            html += '<div class="review-thumb"><img src="' + resolveImg(r.thumbImage) + '" alt="' + r.title + '" style="width:100%;height:100%;object-fit:cover;"></div>';
         } else {
             html += '<div class="review-thumb">' + (r.thumb || '') + '</div>';
         }
@@ -234,7 +242,7 @@ function renderReviewsSub(data) {
     data.forEach(function(r) {
         html += '<div class="review-item" data-aos="fade-up">';
         if (r.thumbImage) {
-            html += '<div class="review-thumb"><img src="../' + r.thumbImage + '" alt="' + r.title + '" style="width:100%;height:100%;object-fit:cover;"></div>';
+            html += '<div class="review-thumb"><img src="' + resolveImg(r.thumbImage) + '" alt="' + r.title + '" style="width:100%;height:100%;object-fit:cover;"></div>';
         } else {
             html += '<div class="review-thumb">' + (r.thumb || '') + '</div>';
         }
