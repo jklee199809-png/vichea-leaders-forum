@@ -153,7 +153,7 @@ function renderReviewsMain(data) {
         }
         if (r.category) html += '<span class="review-category">' + r.category + '</span>';
         html += '<h4>' + r.title + '</h4>';
-        html += '<p>' + (r.desc || '').split('\n')[0].substring(0, 80) + '…</p>';
+        html += '<p>' + (r.desc || '') + '</p>';
         html += '</div>';
     });
     container.innerHTML = html;
