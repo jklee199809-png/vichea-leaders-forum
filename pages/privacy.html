@@ -149,7 +149,7 @@
             <div class="footer-inner">
                 <div class="footer-brand">
                     <span class="footer-logo">VICHEA LEADERS FORUM</span>
-                    <p>리더의 통찰, 책에서 시작됩니다.</p>
+                    <p data-cms="footer-slogan">리더의 통찰, 책에서 시작됩니다.</p>
                 </div>
                 <div class="footer-links">
                     <div class="footer-col"><h4>MENU</h4><ul>
@@ -159,7 +159,7 @@
                         <li><a href="archive.html">Archive</a></li>
                     </ul></div>
                     <div class="footer-col"><h4>CONTACT</h4><ul>
-                        <li>Tel. 070-7839-3002</li>
+                        <li data-cms="footer-tel">Tel. 070-7839-3002</li>
                         <li>Email. lnabiz@naver.com</li>
                         <li>서울특별시 관악구 관악로 168(봉천동)</li>
                     </ul></div>
@@ -177,5 +177,7 @@
         mobileMenu.querySelectorAll('a:not(.mobile-sub-toggle)').forEach(link => { link.addEventListener('click', () => { mobileMenuBtn.classList.remove('active'); mobileMenu.classList.remove('active'); document.body.classList.remove('no-scroll'); }); });
         mobileMenu.querySelectorAll('.mobile-sub-toggle').forEach(toggle => { toggle.addEventListener('click', (e) => { e.preventDefault(); const parent = toggle.parentElement; const sub = parent.querySelector('.mobile-sub'); parent.classList.toggle('open'); sub.classList.toggle('open'); }); });
     </script>
+    <script src="../assets/js/data-loader.js?v=20260318cms"></script>
+    <script>loadSiteData();</script>
 </body>
 </html>

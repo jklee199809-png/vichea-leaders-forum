@@ -5,19 +5,87 @@
  * 사용법:
  *   메인 페이지: loadPrograms('main'), loadReviews('main')
  *   서브 페이지: loadPrograms('sub'), loadReviews('sub'), loadFaqs(), loadNotices()
+ *   페이지 텍스트: loadPageText('pages/home.json', callback)
+ *   푸터: loadSiteData()
  */
 
-// 경로 자동 판별 (메인 vs pages 하위)
-var DATA_BASE = (location.pathname.indexOf('/pages/') !== -1) ? '../data/' : 'data/';
+// 경로 자동 판별 (메인 vs pages 하위 vs admin)
+var DATA_BASE = (location.pathname.indexOf('/pages/') !== -1) ? '../data/' :
+                (location.pathname.indexOf('/admin/') !== -1) ? '../data/' : 'data/';
 var PAGES_BASE = (location.pathname.indexOf('/pages/') !== -1) ? '' : 'pages/';
 
 function fetchJSON(filename) {
     return fetch(DATA_BASE + filename + '?v=' + Date.now()).then(function(r) {
         if (!r.ok) throw new Error(filename + ' load failed: ' + r.status);
         return r.json();
+    }).then(function(data) {
+        // CMS 호환: { items: [...] } 래퍼 또는 순수 배열 모두 지원
+        if (Array.isArray(data)) return data;
+        if (data.items && Array.isArray(data.items)) return data.items;
+        return data;
     }).catch(function(e) {
         console.error('[data-loader]', e);
         return [];
+    });
+}
+
+// JSON 파일 원본 그대로 로드 (배열 변환 없이)
+function fetchJSONRaw(filename) {
+    return fetch(DATA_BASE + filename + '?v=' + Date.now()).then(function(r) {
+        if (!r.ok) throw new Error(filename + ' load failed: ' + r.status);
+        return r.json();
+    }).catch(function(e) {
+        console.warn('[data-loader]', filename, e);
+        return null;
+    });
+}
+
+// ========================================
+// 페이지 텍스트 로딩
+// ========================================
+function loadPageText(jsonFile, callback) {
+    return fetchJSONRaw(jsonFile).then(function(data) {
+        if (data && callback) callback(data);
+        return data;
+    });
+}
+
+// 텍스트를 HTML로 변환 (\n → <br>)
+function textToHtml(text) {
+    if (!text) return '';
+    return text.replace(/\n/g, '<br>');
+}
+
+// ID로 요소 찾아서 텍스트 세팅
+function setText(id, text) {
+    var el = document.getElementById(id);
+    if (el && text !== undefined && text !== null) {
+        el.innerHTML = textToHtml(text);
+    }
+}
+
+// ========================================
+// 사이트 공통 데이터 (푸터)
+// ========================================
+function loadSiteData() {
+    return fetchJSONRaw('site.json').then(function(data) {
+        if (!data || !data.footer) return;
+        var f = data.footer;
+        // 푸터 슬로건
+        var sloganEls = document.querySelectorAll('[data-cms="footer-slogan"]');
+        sloganEls.forEach(function(el) { el.textContent = f.slogan; });
+        // 전화번호
+        var telEls = document.querySelectorAll('[data-cms="footer-tel"]');
+        telEls.forEach(function(el) { el.textContent = 'Tel. ' + f.tel; });
+        // 주소
+        var addrEls = document.querySelectorAll('[data-cms="footer-address"]');
+        addrEls.forEach(function(el) { el.textContent = f.address; });
+        // 회사정보
+        var infoEls = document.querySelectorAll('[data-cms="footer-info"]');
+        infoEls.forEach(function(el) { el.textContent = f.companyInfo; });
+        // 저작권
+        var copyEls = document.querySelectorAll('[data-cms="footer-copyright"]');
+        copyEls.forEach(function(el) { el.innerHTML = '&copy; ' + f.copyright.replace(/^©\s*/, ''); });
     });
 }
 
@@ -238,13 +306,84 @@ function loadNotices() {
                 var id = row.getAttribute('data-id');
                 var detail = document.getElementById('noticeDetail-' + id);
                 if (detail) {
-                    // 다른 디테일 닫기
                     document.querySelectorAll('.notice-detail.show').forEach(function(d) {
                         if (d !== detail) d.classList.remove('show');
                     });
                     detail.classList.toggle('show');
                 }
             });
+        });
+    });
+}
+
+// ========================================
+// 프로그램 상세 페이지 동적 렌더링
+// ========================================
+function loadProgramPage(jsonFile) {
+    return loadPageText(jsonFile, function(data) {
+        // 배너
+        if (data.banner) {
+            setText('pageBannerTitle', data.banner.title);
+            setText('pageBannerDesc', data.banner.desc);
+        }
+        // 섹션
+        if (data.sections) {
+            data.sections.forEach(function(sec, i) {
+                var prefix = 'section' + i;
+                setText(prefix + 'Label', sec.label);
+                setText(prefix + 'Heading', sec.heading);
+                if (sec.body) setText(prefix + 'Body', sec.body);
+                // 테이블
+                if (sec.table) {
+                    var tableEl = document.getElementById(prefix + 'Table');
+                    if (tableEl) {
+                        var thtml = '';
+                        sec.table.forEach(function(row) {
+                            thtml += '<tr><th>' + row.th + '</th><td>' + row.td + '</td></tr>';
+                        });
+                        tableEl.innerHTML = thtml;
+                    }
+                }
+                // 리스트
+                if (sec.list) {
+                    var listEl = document.getElementById(prefix + 'List');
+                    if (listEl) {
+                        var lhtml = '';
+                        sec.list.forEach(function(item) {
+                            if (item.desc) {
+                                lhtml += '<li><strong>' + item.title + '</strong> - ' + item.desc + '</li>';
+                            } else {
+                                lhtml += '<li>' + item.title + '</li>';
+                            }
+                        });
+                        listEl.innerHTML = lhtml;
+                    }
+                }
+                // 참고 문구
+                if (sec.note !== undefined) {
+                    setText(prefix + 'Note', sec.note);
+                }
+            });
+        }
+    });
+}
+
+// ========================================
+// Apply 선택지 프로그램 동적 생성
+// ========================================
+function loadProgramOptions() {
+    return fetchJSON('programs.json').then(function(data) {
+        var select = document.getElementById('program');
+        if (!select) return;
+        // 기존 옵션 중 첫 번째(placeholder)만 남기고 제거
+        while (select.options.length > 1) {
+            select.remove(1);
+        }
+        data.forEach(function(p) {
+            var opt = document.createElement('option');
+            opt.value = p.title;
+            opt.textContent = p.title;
+            select.appendChild(opt);
         });
     });
 }

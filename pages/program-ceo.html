@@ -77,8 +77,8 @@
                 <span class="sep">&rsaquo;</span>
                 <span class="current">최고경영자과정</span>
             </div>
-            <h1 class="page-banner-title">숙명 미래혁신 최고경영자과정 1기</h1>
-            <p class="page-banner-desc">미래를 이끄는 리더를 위한 프리미엄 교육</p>
+            <h1 class="page-banner-title" id="pageBannerTitle">숙명 미래혁신 최고경영자과정 1기</h1>
+            <p class="page-banner-desc" id="pageBannerDesc">미래를 이끄는 리더를 위한 프리미엄 교육</p>
         </div>
     </section>
 
@@ -99,18 +99,18 @@
                 <main class="page-content">
                     <!-- 01 과정 소개 -->
                     <div class="content-section" data-aos="fade-up">
-                        <p class="content-section-label">01</p>
-                        <h3>과정 소개</h3>
-                        <p>기업과 조직의 지속 가능한 성장을 이끄는 최고경영자를 위한 프리미엄 교육과정입니다.</p>
+                        <p class="content-section-label" id="section0Label">01</p>
+                        <h3 id="section0Heading">과정 소개</h3>
+                        <p id="section0Body">기업과 조직의 지속 가능한 성장을 이끄는 최고경영자를 위한 프리미엄 교육과정입니다.</p>
                         <p>미래·전략, 디지털·AI, 조직·리더십, 인문경영의 4대 핵심 영역을 체계적으로 고도화하여,</p>
                         <p>급변하는 경영 환경에서 전략적 통찰력과 실행력을 갖춘 리더로 성장할 수 있도록 지원합니다.</p>
                     </div>
 
                     <!-- 02 교육과정 구성 -->
                     <div class="content-section" data-aos="fade-up">
-                        <p class="content-section-label">02</p>
-                        <h3>교육과정 구성</h3>
-                        <ul class="content-list">
+                        <p class="content-section-label" id="section1Label">02</p>
+                        <h3 id="section1Heading">교육과정 구성</h3>
+                        <ul class="content-list" id="section1List">
                             <li><strong>Module 1. 미래 환경과 혁신 전략</strong> - 거시 환경 변화 속에서 CEO의 전략적 통찰력을 강화합니다.</li>
                             <li><strong>Module 2. 디지털·AI 기반 비즈니스 혁신</strong> - 디지털 전환(DX)과 AI 기술을 경영 의사결정 관점에서 이해합니다.</li>
                             <li><strong>Module 3. 조직·리더십·전환 관리</strong> - 혁신을 가능하게 하는 사람과 조직의 변화 관리를 학습합니다.</li>
@@ -120,9 +120,9 @@
 
                     <!-- 03 교육 상세정보 -->
                     <div class="content-section" data-aos="fade-up">
-                        <p class="content-section-label">03</p>
-                        <h3>교육 상세정보</h3>
-                        <p>상세 일정은 추후 안내됩니다.</p>
+                        <p class="content-section-label" id="section2Label">03</p>
+                        <h3 id="section2Heading">교육 상세정보</h3>
+                        <p id="section2Body">상세 일정은 추후 안내됩니다.</p>
                     </div>
                 </main>
             </div>
@@ -134,7 +134,7 @@
             <div class="footer-inner">
                 <div class="footer-brand">
                     <span class="footer-logo">VICHEA LEADERS FORUM</span>
-                    <p>리더의 통찰, 책에서 시작됩니다.</p>
+                    <p data-cms="footer-slogan">리더의 통찰, 책에서 시작됩니다.</p>
                 </div>
                 <div class="footer-links">
                     <div class="footer-col">
@@ -149,23 +149,25 @@
                     <div class="footer-col">
                         <h4>CONTACT</h4>
                         <ul>
-                            <li>Tel. 070-7839-3002</li>
-                            <li>서울시 관악구</li>
+                            <li data-cms="footer-tel">Tel. 070-7839-3002</li>
+                            <li data-cms="footer-address">서울시 관악구</li>
                         </ul>
                     </div>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>비채리더스포럼 | 운영: 엘앤에이(주) | 대표 이재연 | 사업자등록번호 105-87-94459</p>
-                <p>&copy; 2013 L&amp;A Corp. All rights reserved.</p>
+                <p data-cms="footer-info">비채리더스포럼 | 운영: 엘앤에이(주) | 대표 이재연 | 사업자등록번호 105-87-94459</p>
+                <p data-cms="footer-copyright">&copy; 2013 L&amp;A Corp. All rights reserved.</p>
             </div>
         </div>
     </footer>
-    <script src="../assets/js/data-loader.js?v=20260318"></script>
+    <script src="../assets/js/data-loader.js?v=20260318cms"></script>
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script>
         AOS.init({ duration: 700, once: true, offset: 60 });
         loadProgramCta('숙명 미래혁신 최고경영자과정 1기');
+        loadSiteData();
+        loadProgramPage('pages/program-ceo.json');
         const mobileMenuBtn = document.getElementById('mobileMenuBtn');
         const mobileMenu = document.getElementById('mobileMenu');
         mobileMenuBtn.addEventListener('click', () => {

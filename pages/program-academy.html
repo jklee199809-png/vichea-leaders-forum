@@ -77,8 +77,8 @@
                 <span class="sep">&rsaquo;</span>
                 <span class="current">슬기로운 직장생활 ABC</span>
             </div>
-            <h1 class="page-banner-title">슬기로운 직장생활 ABC</h1>
-            <p class="page-banner-desc">직장생활의 기본기를 다지는 실전 교육 과정</p>
+            <h1 class="page-banner-title" id="pageBannerTitle">슬기로운 직장생활 ABC</h1>
+            <p class="page-banner-desc" id="pageBannerDesc">직장생활의 기본기를 다지는 실전 교육 과정</p>
         </div>
     </section>
 
@@ -99,9 +99,9 @@
                 <main class="page-content">
                     <!-- 01 과정목표 -->
                     <div class="content-section" data-aos="fade-up">
-                        <p class="content-section-label">01</p>
-                        <h3>과정목표</h3>
-                        <ul class="content-list">
+                        <p class="content-section-label" id="section0Label">01</p>
+                        <h3 id="section0Heading">과정목표</h3>
+                        <ul class="content-list" id="section0List">
                             <li>직장생활의 기본 예절과 자세</li>
                             <li>상사와의 관계</li>
                             <li>수명보고 및 업무관리의 기초</li>
@@ -110,16 +110,16 @@
 
                     <!-- 02 교육내용 -->
                     <div class="content-section" data-aos="fade-up">
-                        <p class="content-section-label">02</p>
-                        <h3>교육내용</h3>
-                        <ul class="content-list">
+                        <p class="content-section-label" id="section1Label">02</p>
+                        <h3 id="section1Heading">교육내용</h3>
+                        <ul class="content-list" id="section1List">
                             <li>기본예절과 자세</li>
                             <li>원활한 대인관계, 상사와의 관계 형성</li>
                             <li>수명보고 및 칭찬받는 보고서 작성</li>
                             <li>업무 효율성을 높이는 업무관리</li>
                             <li>상황별 실습과 피드백</li>
                         </ul>
-                        <p style="margin-top: 24px; font-size: 13px; color: var(--color-gray-500);">※ 교육 내용은 기업과의 협의에 의해 수정됩니다.</p>
+                        <p id="section1Note" style="margin-top: 24px; font-size: 13px; color: var(--color-gray-500);">※ 교육 내용은 기업과의 협의에 의해 수정됩니다.</p>
                     </div>
                 </main>
             </div>
@@ -131,7 +131,7 @@
             <div class="footer-inner">
                 <div class="footer-brand">
                     <span class="footer-logo">VICHEA LEADERS FORUM</span>
-                    <p>리더의 통찰, 책에서 시작됩니다.</p>
+                    <p data-cms="footer-slogan">리더의 통찰, 책에서 시작됩니다.</p>
                 </div>
                 <div class="footer-links">
                     <div class="footer-col">
@@ -146,23 +146,25 @@
                     <div class="footer-col">
                         <h4>CONTACT</h4>
                         <ul>
-                            <li>Tel. 070-7839-3002</li>
-                            <li>서울시 관악구</li>
+                            <li data-cms="footer-tel">Tel. 070-7839-3002</li>
+                            <li data-cms="footer-address">서울시 관악구</li>
                         </ul>
                     </div>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>비채리더스포럼 | 운영: 엘앤에이(주) | 대표 이재연 | 사업자등록번호 105-87-94459</p>
-                <p>&copy; 2013 L&amp;A Corp. All rights reserved.</p>
+                <p data-cms="footer-info">비채리더스포럼 | 운영: 엘앤에이(주) | 대표 이재연 | 사업자등록번호 105-87-94459</p>
+                <p data-cms="footer-copyright">&copy; 2013 L&amp;A Corp. All rights reserved.</p>
             </div>
         </div>
     </footer>
-    <script src="../assets/js/data-loader.js?v=20260318"></script>
+    <script src="../assets/js/data-loader.js?v=20260318cms"></script>
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script>
         AOS.init({ duration: 700, once: true, offset: 60 });
         loadProgramCta('슬기로운 직장생활 ABC');
+        loadSiteData();
+        loadProgramPage('pages/program-academy.json');
         const mobileMenuBtn = document.getElementById('mobileMenuBtn');
         const mobileMenu = document.getElementById('mobileMenu');
         mobileMenuBtn.addEventListener('click', () => {

@@ -100,8 +100,8 @@
                 <span class="sep">&rsaquo;</span>
                 <span class="current">수강 신청</span>
             </div>
-            <h1 class="page-banner-title">수강 신청</h1>
-            <p class="page-banner-desc">비채 프로그램 신청서를 작성해 주세요</p>
+            <h1 class="page-banner-title" id="pageBannerTitle">수강 신청</h1>
+            <p class="page-banner-desc" id="pageBannerDesc">비채 프로그램 신청서를 작성해 주세요</p>
         </div>
     </section>
 
@@ -122,7 +122,7 @@
                 <main class="page-content">
                     <!-- Landing Intro -->
                     <div class="landing-intro" data-aos="fade-up">
-                        <h2>수강신청</h2>
+                        <h2 id="applyLandingTitle">수강신청</h2>
                         <p>
                             비채의 과정은 경영과 인문의 통찰을 나누고,<br>
                             함께 성장할 사람들과 연결되는 특별한 경험입니다.<br><br>
@@ -141,10 +141,6 @@
                                 <label class="form-label">신청 프로그램 <span class="required">*</span></label>
                                 <select class="form-select" id="program" required>
                                     <option value="" disabled selected>프로그램을 선택해 주세요</option>
-                                    <option value="비채리더스포럼 19기">비채리더스포럼 19기</option>
-                                    <option value="숙명 미래혁신 최고경영자과정 1기">숙명 미래혁신 최고경영자과정 1기</option>
-                                    <option value="숙명 차세대 리더최고위과정">숙명 차세대 리더최고위과정</option>
-                                    <option value="슬기로운 직장생활 ABC">슬기로운 직장생활 ABC</option>
                                 </select>
                             </div>
                             <div class="form-group">
@@ -222,7 +218,7 @@
             <div class="footer-inner">
                 <div class="footer-brand">
                     <span class="footer-logo">VICHEA LEADERS FORUM</span>
-                    <p>리더의 통찰, 책에서 시작됩니다.</p>
+                    <p data-cms="footer-slogan">리더의 통찰, 책에서 시작됩니다.</p>
                 </div>
                 <div class="footer-links">
                     <div class="footer-col"><h4>MENU</h4><ul>
@@ -232,14 +228,14 @@
                         <li><a href="archive.html">Archive</a></li>
                     </ul></div>
                     <div class="footer-col"><h4>CONTACT</h4><ul>
-                        <li>Tel. 070-7839-3002</li>
-                        <li>서울시 관악구</li>
+                        <li data-cms="footer-tel">Tel. 070-7839-3002</li>
+                        <li data-cms="footer-address">서울시 관악구</li>
                     </ul></div>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>비채리더스포럼 | 운영: 엘앤에이(주) | 대표 이재연 | 사업자등록번호 105-87-94459</p>
-                <p>&copy; 2013 L&amp;A Corp. All rights reserved.</p>
+                <p data-cms="footer-info">비채리더스포럼 | 운영: 엘앤에이(주) | 대표 이재연 | 사업자등록번호 105-87-94459</p>
+                <p data-cms="footer-copyright">&copy; 2013 L&amp;A Corp. All rights reserved.</p>
             </div>
         </div>
     </footer>
@@ -299,6 +295,20 @@
                 }
             }).open();
         }
+    </script>
+    <script src="../assets/js/data-loader.js?v=20260318cms"></script>
+    <script>
+        loadSiteData();
+        loadProgramOptions();
+        loadPageText('pages/apply.json', function(d) {
+            if (d.banner) {
+                setText('pageBannerTitle', d.banner.title);
+                setText('pageBannerDesc', d.banner.desc);
+            }
+            if (d.landing) {
+                setText('applyLandingTitle', d.landing.title);
+            }
+        });
     </script>
 </body>
 </html>

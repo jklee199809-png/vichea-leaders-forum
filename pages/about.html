@@ -77,8 +77,8 @@
                 <span class="sep">&rsaquo;</span>
                 <span class="current">비채 소개</span>
             </div>
-            <h1 class="page-banner-title">비채</h1>
-            <p class="page-banner-desc">비우고 채우며, 함께 성장하는 여정</p>
+            <h1 class="page-banner-title" id="pageBannerTitle">비채</h1>
+            <p class="page-banner-desc" id="pageBannerDesc">비우고 채우며, 함께 성장하는 여정</p>
         </div>
     </section>
 
@@ -88,17 +88,17 @@
             <main class="page-content" style="max-width: 800px; margin: 0 auto;">
                 <!-- 01 WHO WE ARE -->
                 <div class="content-section" data-aos="fade-up">
-                    <p class="content-section-label">01</p>
-                    <h3>WHO WE ARE</h3>
-                    <p><strong>비채</strong>는 엘앤에이(주)가 운영하는 프리미엄 교육 브랜드입니다.</p>
-                    <p>경영의 지혜와 인문학적 통찰을 바탕으로, 리더들이 함께 비우고 채우며 성장하는 공간을 만들어갑니다.</p>
+                    <p class="content-section-label" id="section0Label">01</p>
+                    <h3 id="section0Heading">WHO WE ARE</h3>
+                    <div id="section0Body"><p><strong>비채</strong>는 엘앤에이(주)가 운영하는 프리미엄 교육 브랜드입니다.</p>
+                    <p>경영의 지혜와 인문학적 통찰을 바탕으로, 리더들이 함께 비우고 채우며 성장하는 공간을 만들어갑니다.</p></div>
                 </div>
 
                 <!-- 02 VICHEA PROGRAMS -->
                 <div class="content-section" data-aos="fade-up">
-                    <p class="content-section-label">02</p>
-                    <h3>VICHEA PROGRAMS</h3>
-                    <p>각자의 성장 단계에 맞는 다양한 배움을 제공합니다.</p>
+                    <p class="content-section-label" id="section1Label">02</p>
+                    <h3 id="section1Heading">VICHEA PROGRAMS</h3>
+                    <p id="section1Body">각자의 성장 단계에 맞는 다양한 배움을 제공합니다.</p>
 
                     <!-- Program Cards -->
                     <div class="service-cards" style="grid-template-columns: repeat(2, 1fr); margin-top: 32px;">
@@ -133,10 +133,10 @@
 
                 <!-- 03 WHY VICHEA? -->
                 <div class="content-section" data-aos="fade-up">
-                    <p class="content-section-label">03</p>
-                    <h3>WHY VICHEA?</h3>
-                    <p>고정된 사고를 비우고, 새로운 관점을 채운다.</p>
-                    <p>비채는 단순한 강의가 아닌, 함께 성장하는 여정입니다.</p>
+                    <p class="content-section-label" id="section2Label">03</p>
+                    <h3 id="section2Heading">WHY VICHEA?</h3>
+                    <div id="section2Body"><p>고정된 사고를 비우고, 새로운 관점을 채운다.</p>
+                    <p>비채는 단순한 강의가 아닌, 함께 성장하는 여정입니다.</p></div>
                 </div>
             </main>
         </div>
@@ -147,7 +147,7 @@
             <div class="footer-inner">
                 <div class="footer-brand">
                     <span class="footer-logo">VICHEA LEADERS FORUM</span>
-                    <p>리더의 통찰, 책에서 시작됩니다.</p>
+                    <p data-cms="footer-slogan">리더의 통찰, 책에서 시작됩니다.</p>
                 </div>
                 <div class="footer-links">
                     <div class="footer-col">
@@ -162,18 +162,20 @@
                     <div class="footer-col">
                         <h4>CONTACT</h4>
                         <ul>
-                            <li>Tel. 070-7839-3002</li>
-                            <li>서울시 관악구</li>
+                            <li data-cms="footer-tel">Tel. 070-7839-3002</li>
+                            <li data-cms="footer-address">서울시 관악구</li>
                         </ul>
                     </div>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>비채리더스포럼 | 운영: 엘앤에이(주) | 대표 이재연 | 사업자등록번호 105-87-94459</p>
-                <p>&copy; 2013 L&amp;A Corp. All rights reserved.</p>
+                <p data-cms="footer-info">비채리더스포럼 | 운영: 엘앤에이(주) | 대표 이재연 | 사업자등록번호 105-87-94459</p>
+                <p data-cms="footer-copyright">&copy; 2013 L&amp;A Corp. All rights reserved.</p>
             </div>
         </div>
     </footer>
+    <script src="../assets/js/data-loader.js?v=20260318cms"></script>
+
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script>
         AOS.init({ duration: 700, once: true, offset: 60 });
@@ -199,6 +201,23 @@
                 parent.classList.toggle('open');
                 sub.classList.toggle('open');
             });
+        });
+    </script>
+    <script src="../assets/js/data-loader.js?v=20260318cms"></script>
+    <script>
+        loadSiteData();
+        loadPageText('pages/about.json', function(d) {
+            if (d.banner) {
+                setText('pageBannerTitle', d.banner.title);
+                setText('pageBannerDesc', d.banner.desc);
+            }
+            if (d.sections) {
+                d.sections.forEach(function(sec, i) {
+                    setText('section' + i + 'Label', sec.label);
+                    setText('section' + i + 'Heading', sec.heading);
+                    if (sec.body) setText('section' + i + 'Body', sec.body);
+                });
+            }
         });
     </script>
 </body>

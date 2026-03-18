@@ -80,10 +80,10 @@
     <section class="hero">
         <div class="hero-overlay"></div>
         <div class="hero-content">
-            <p class="hero-eyebrow">VICHEA LEADERS FORUM</p>
-            <h1 class="hero-title">리더의 통찰,<br>책에서 시작됩니다</h1>
-            <p class="hero-desc">대한민국 최고 경영진을 위한 프리미엄 독서 포럼<br>저자와의 깊은 대화로 리더십의 새로운 지평을 열다</p>
-            <a href="pages/program.html" class="hero-btn">프로그램 보기</a>
+            <p class="hero-eyebrow" id="heroEyebrow">VICHEA LEADERS FORUM</p>
+            <h1 class="hero-title" id="heroTitle">리더의 통찰,<br>책에서 시작됩니다</h1>
+            <p class="hero-desc" id="heroDesc">대한민국 최고 경영진을 위한 프리미엄 독서 포럼<br>저자와의 깊은 대화로 리더십의 새로운 지평을 열다</p>
+            <a href="pages/program.html" class="hero-btn" id="heroBtn">프로그램 보기</a>
         </div>
         <div class="hero-scroll">
             <span>SCROLL</span>
@@ -95,8 +95,8 @@
     <section class="section section-about-intro" id="about">
         <div class="container">
             <div class="section-label">ABOUT</div>
-            <h2 class="section-title center">비채리더스포럼이란?</h2>
-            <p class="section-desc center">
+            <h2 class="section-title center" id="homeAboutTitle">비채리더스포럼이란?</h2>
+            <p class="section-desc center" id="homeAboutDesc">
                 비우고 채우며, 함께 성장하는 여정<br>
                 경영의 지혜와 인문학의 통찰이 만나는 곳.<br>
                 서로의 경험을 나누고, 지속 가능한 성장의 방향을 함께 찾아갑니다.<br>
@@ -113,8 +113,8 @@
     <section class="section section-program" id="program">
         <div class="container">
             <div class="section-label">PROGRAM</div>
-            <h2 class="section-title center"><span class="brand-vichea">비채</span> 아카데미</h2>
-            <p class="section-desc center">
+            <h2 class="section-title center" id="homeProgramTitle"><span class="brand-vichea">비채</span> 아카데미</h2>
+            <p class="section-desc center" id="homeProgramDesc">
                 경영자의 성장 단계에 맞는 다양한 배움을 준비했습니다.<br>
                 저자 직강부터 최고경영자과정, 월간 모임까지 —<br>
                 비채에서 지식과 사람을 함께 만나세요.
@@ -132,12 +132,12 @@
             <div class="apply-inner">
                 <div class="apply-text">
                     <div class="section-label light">APPLY</div>
-                    <h2 class="section-title light">지금 바로 참여하세요</h2>
-                    <p class="section-desc light">
+                    <h2 class="section-title light" id="homeApplyTitle">지금 바로 참여하세요</h2>
+                    <p class="section-desc light" id="homeApplyDesc">
                         비채리더스포럼과 함께 리더십의 새로운 지평을 열어보세요.<br>
                         수강 신청은 온라인으로 간편하게 진행됩니다.
                     </p>
-                    <a href="pages/apply.html" class="hero-btn btn-sm">수강 신청하기</a>
+                    <a href="pages/apply.html" class="hero-btn btn-sm" id="homeApplyBtn">수강 신청하기</a>
                 </div>
             </div>
         </div>
@@ -147,7 +147,7 @@
     <section class="section section-archive" id="archive">
         <div class="container">
             <div class="section-label">ARCHIVE</div>
-            <h2 class="section-title center">Review</h2>
+            <h2 class="section-title center" id="homeArchiveTitle">Review</h2>
             <div class="review-cards"></div>
             <div class="center mt-40">
                 <a href="pages/review.html" class="text-link">더보기 &rarr;</a>
@@ -161,7 +161,7 @@
             <div class="footer-inner">
                 <div class="footer-brand">
                     <span class="footer-logo">VICHEA LEADERS FORUM</span>
-                    <p>리더의 통찰, 책에서 시작됩니다.</p>
+                    <p data-cms="footer-slogan">리더의 통찰, 책에서 시작됩니다.</p>
                 </div>
                 <div class="footer-links">
                     <div class="footer-col">
@@ -176,20 +176,20 @@
                     <div class="footer-col">
                         <h4>CONTACT</h4>
                         <ul>
-                            <li>Tel. 070-7839-3002</li>
-                            <li>서울시 관악구</li>
+                            <li data-cms="footer-tel">Tel. 070-7839-3002</li>
+                            <li data-cms="footer-address">서울시 관악구</li>
                         </ul>
                     </div>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>비채리더스포럼 | 운영: 엘앤에이(주) | 대표 이재연 | 사업자등록번호 105-87-94459</p>
-                <p>&copy; 2013 L&amp;A Corp. All rights reserved.</p>
+                <p data-cms="footer-info">비채리더스포럼 | 운영: 엘앤에이(주) | 대표 이재연 | 사업자등록번호 105-87-94459</p>
+                <p data-cms="footer-copyright">&copy; 2013 L&amp;A Corp. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
-    <script src="assets/js/data-loader.js?v=20260317"></script>
+    <script src="assets/js/data-loader.js?v=20260318cms"></script>
     <!-- Swiper -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <!-- GSAP (고급 애니메이션) -->
@@ -266,5 +266,38 @@
         });
     </script>
 
+    <script>
+        // CMS 페이지 텍스트 로딩
+        loadSiteData();
+        loadPageText('pages/home.json', function(d) {
+            if (d.hero) {
+                setText('heroEyebrow', d.hero.eyebrow);
+                setText('heroTitle', d.hero.title);
+                setText('heroDesc', d.hero.desc);
+                var btn = document.getElementById('heroBtn');
+                if (btn && d.hero.btnText) btn.textContent = d.hero.btnText;
+            }
+            if (d.about) {
+                setText('homeAboutTitle', d.about.title);
+                setText('homeAboutDesc', d.about.desc);
+            }
+            if (d.program) {
+                var pt = document.getElementById('homeProgramTitle');
+                if (pt && d.program.titleBrand) {
+                    pt.innerHTML = '<span class="brand-vichea">' + d.program.titleBrand + '</span>' + d.program.titleRest;
+                }
+                setText('homeProgramDesc', d.program.desc);
+            }
+            if (d.apply) {
+                setText('homeApplyTitle', d.apply.title);
+                setText('homeApplyDesc', d.apply.desc);
+                var ab = document.getElementById('homeApplyBtn');
+                if (ab && d.apply.btnText) ab.textContent = d.apply.btnText;
+            }
+            if (d.archive) {
+                setText('homeArchiveTitle', d.archive.title);
+            }
+        });
+    </script>
 </body>
 </html>

@@ -1,0 +1,386 @@
+backend:
+  name: github
+  repo: jklee199809-png/vichea-leaders-forum
+  branch: main
+  auth_type: pkce
+  app_id: Ov23liFwQqYxTb7bEjNL
+
+media_folder: "assets/images"
+public_folder: "/assets/images"
+
+locale: "ko"
+
+slug:
+  encoding: "unicode"
+  clean_accents: false
+
+collections:
+  # ============================================
+  # 프로그램 관리
+  # ============================================
+  - name: "programs"
+    label: "프로그램 관리"
+    files:
+      - label: "프로그램 목록"
+        name: "programs"
+        file: "data/programs.json"
+        fields:
+          - label: "프로그램"
+            name: "items"
+            widget: "list"
+            label_singular: "프로그램"
+            fields:
+              - { label: "월 (영문)", name: "month", widget: "string", hint: "예: APR, SEP, MAY" }
+              - { label: "일", name: "day", widget: "string", hint: "예: 09, -- (미정일 때)" }
+              - { label: "년도", name: "year", widget: "string", hint: "예: 2026" }
+              - { label: "모집 상태", name: "status", widget: "select", options: ["모집중", "준비중", "마감"] }
+              - { label: "상태 구분", name: "statusType", widget: "select", options: ["", "upcoming", "closed"], default: "" }
+              - { label: "프로그램명", name: "title", widget: "string" }
+              - { label: "프로그램 설명", name: "desc", widget: "text" }
+              - { label: "일정 정보", name: "meta1", widget: "string", hint: "예: 2026.4.9~6.11" }
+              - { label: "일정 임시 여부", name: "meta1Temp", widget: "boolean", default: false }
+              - { label: "시간 정보", name: "meta2", widget: "string", hint: "예: 매주 목 19:00-21:00" }
+              - { label: "시간 임시 여부", name: "meta2Temp", widget: "boolean", default: false }
+              - { label: "버튼 텍스트", name: "btnText", widget: "string", hint: "예: 신청하기, 상세보기" }
+              - { label: "버튼 링크", name: "btnLink", widget: "string", hint: "예: pages/apply.html" }
+              - { label: "테두리 버튼", name: "btnOutline", widget: "boolean", default: false }
+              - { label: "상세 페이지 링크", name: "detailLink", widget: "string", hint: "예: pages/program-19.html" }
+
+  # ============================================
+  # 수강후기 관리
+  # ============================================
+  - name: "reviews"
+    label: "수강후기 관리"
+    files:
+      - label: "수강후기 목록"
+        name: "reviews"
+        file: "data/reviews.json"
+        fields:
+          - label: "후기"
+            name: "items"
+            widget: "list"
+            label_singular: "후기"
+            fields:
+              - { label: "썸네일 이미지", name: "thumbImage", widget: "image", required: false }
+              - { label: "카테고리", name: "category", widget: "string", hint: "예: 비채리더스포럼, 워크샵" }
+              - { label: "제목", name: "title", widget: "string" }
+              - { label: "설명", name: "desc", widget: "text" }
+              - { label: "연락처 안내", name: "contact", widget: "string", required: false }
+
+  # ============================================
+  # FAQ 관리
+  # ============================================
+  - name: "faqs"
+    label: "FAQ 관리"
+    files:
+      - label: "FAQ 목록"
+        name: "faqs"
+        file: "data/faqs.json"
+        fields:
+          - label: "FAQ"
+            name: "items"
+            widget: "list"
+            label_singular: "질문"
+            fields:
+              - { label: "질문", name: "question", widget: "string" }
+              - { label: "답변", name: "answer", widget: "text", hint: "HTML 태그 사용 가능 (<p>, <br>, <strong> 등)" }
+
+  # ============================================
+  # 공지사항 관리
+  # ============================================
+  - name: "notices"
+    label: "공지사항 관리"
+    files:
+      - label: "공지사항 목록"
+        name: "notices"
+        file: "data/notices.json"
+        fields:
+          - label: "공지사항"
+            name: "items"
+            widget: "list"
+            label_singular: "공지"
+            fields:
+              - { label: "번호", name: "id", widget: "number" }
+              - { label: "제목", name: "title", widget: "string" }
+              - { label: "작성일", name: "date", widget: "string", hint: "예: 2026.03.17" }
+              - { label: "본문", name: "body", widget: "text", hint: "HTML 태그 사용 가능" }
+
+  # ============================================
+  # 사이트 설정
+  # ============================================
+  - name: "settings"
+    label: "사이트 설정"
+    files:
+      - label: "공통 정보 (푸터)"
+        name: "site"
+        file: "data/site.json"
+        fields:
+          - label: "푸터"
+            name: "footer"
+            widget: "object"
+            fields:
+              - { label: "슬로건", name: "slogan", widget: "string" }
+              - { label: "전화번호", name: "tel", widget: "string" }
+              - { label: "주소", name: "address", widget: "string" }
+              - { label: "회사 정보", name: "companyInfo", widget: "string" }
+              - { label: "저작권 표시", name: "copyright", widget: "string" }
+
+  # ============================================
+  # 페이지 텍스트 관리
+  # ============================================
+  - name: "pages"
+    label: "페이지 텍스트"
+    files:
+      # ── 홈 ──
+      - label: "홈 (메인)"
+        name: "home"
+        file: "data/pages/home.json"
+        fields:
+          - label: "히어로 영역"
+            name: "hero"
+            widget: "object"
+            fields:
+              - { label: "상단 텍스트", name: "eyebrow", widget: "string" }
+              - { label: "메인 타이틀", name: "title", widget: "text", hint: "줄바꿈은 \\n 으로 입력" }
+              - { label: "설명", name: "desc", widget: "text" }
+              - { label: "버튼 텍스트", name: "btnText", widget: "string" }
+          - label: "소개 섹션"
+            name: "about"
+            widget: "object"
+            fields:
+              - { label: "라벨", name: "label", widget: "string" }
+              - { label: "타이틀", name: "title", widget: "string" }
+              - { label: "설명", name: "desc", widget: "text" }
+          - label: "프로그램 섹션"
+            name: "program"
+            widget: "object"
+            fields:
+              - { label: "라벨", name: "label", widget: "string" }
+              - { label: "타이틀 전체", name: "title", widget: "string" }
+              - { label: "타이틀 - 비채 부분", name: "titleBrand", widget: "string" }
+              - { label: "타이틀 - 나머지", name: "titleRest", widget: "string" }
+              - { label: "설명", name: "desc", widget: "text" }
+          - label: "신청 섹션"
+            name: "apply"
+            widget: "object"
+            fields:
+              - { label: "라벨", name: "label", widget: "string" }
+              - { label: "타이틀", name: "title", widget: "string" }
+              - { label: "설명", name: "desc", widget: "text" }
+              - { label: "버튼 텍스트", name: "btnText", widget: "string" }
+          - label: "아카이브 섹션"
+            name: "archive"
+            widget: "object"
+            fields:
+              - { label: "라벨", name: "label", widget: "string" }
+              - { label: "타이틀", name: "title", widget: "string" }
+
+      # ── About ──
+      - label: "비채 소개 (About)"
+        name: "about"
+        file: "data/pages/about.json"
+        fields:
+          - label: "배너"
+            name: "banner"
+            widget: "object"
+            fields:
+              - { label: "타이틀", name: "title", widget: "string" }
+              - { label: "설명", name: "desc", widget: "string" }
+          - label: "섹션"
+            name: "sections"
+            widget: "list"
+            label_singular: "섹션"
+            fields:
+              - { label: "번호", name: "label", widget: "string" }
+              - { label: "제목", name: "heading", widget: "string" }
+              - { label: "본문", name: "body", widget: "text", required: false }
+              - label: "프로그램 카드"
+                name: "cards"
+                widget: "list"
+                required: false
+                label_singular: "카드"
+                fields:
+                  - { label: "카테고리명", name: "category", widget: "string" }
+                  - label: "프로그램"
+                    name: "items"
+                    widget: "list"
+                    fields:
+                      - { label: "프로그램명", name: "name", widget: "string" }
+                      - { label: "설명", name: "desc", widget: "string" }
+
+      # ── 프로그램 목록 ──
+      - label: "프로그램 목록 페이지"
+        name: "program-page"
+        file: "data/pages/program.json"
+        fields:
+          - label: "배너"
+            name: "banner"
+            widget: "object"
+            fields:
+              - { label: "타이틀", name: "title", widget: "string" }
+              - { label: "설명", name: "desc", widget: "string" }
+          - label: "소개"
+            name: "intro"
+            widget: "object"
+            fields:
+              - { label: "타이틀 - 비채 부분", name: "titleBrand", widget: "string" }
+              - { label: "타이틀 - 나머지", name: "titleRest", widget: "string" }
+              - { label: "설명", name: "desc", widget: "text" }
+
+      # ── 비채리더스포럼 19기 ──
+      - label: "비채리더스포럼 19기"
+        name: "program-19"
+        file: "data/pages/program-19.json"
+        fields:
+          - label: "배너"
+            name: "banner"
+            widget: "object"
+            fields:
+              - { label: "타이틀", name: "title", widget: "string" }
+              - { label: "설명", name: "desc", widget: "string" }
+          - label: "섹션"
+            name: "sections"
+            widget: "list"
+            label_singular: "섹션"
+            fields:
+              - { label: "번호", name: "label", widget: "string" }
+              - { label: "제목", name: "heading", widget: "string" }
+              - { label: "본문", name: "body", widget: "text", required: false }
+              - label: "표 (정보)"
+                name: "table"
+                widget: "list"
+                required: false
+                fields:
+                  - { label: "항목명", name: "th", widget: "string" }
+                  - { label: "내용", name: "td", widget: "string" }
+
+      # ── 최고경영자과정 ──
+      - label: "최고경영자과정"
+        name: "program-ceo"
+        file: "data/pages/program-ceo.json"
+        fields:
+          - label: "배너"
+            name: "banner"
+            widget: "object"
+            fields:
+              - { label: "타이틀", name: "title", widget: "string" }
+              - { label: "설명", name: "desc", widget: "string" }
+          - label: "섹션"
+            name: "sections"
+            widget: "list"
+            label_singular: "섹션"
+            fields:
+              - { label: "번호", name: "label", widget: "string" }
+              - { label: "제목", name: "heading", widget: "string" }
+              - { label: "본문", name: "body", widget: "text", required: false }
+              - label: "목록 항목"
+                name: "list"
+                widget: "list"
+                required: false
+                fields:
+                  - { label: "항목명", name: "title", widget: "string" }
+                  - { label: "설명", name: "desc", widget: "string", required: false }
+
+      # ── 차세대 리더 ──
+      - label: "차세대 리더최고위과정"
+        name: "program-leader"
+        file: "data/pages/program-leader.json"
+        fields:
+          - label: "배너"
+            name: "banner"
+            widget: "object"
+            fields:
+              - { label: "타이틀", name: "title", widget: "string" }
+              - { label: "설명", name: "desc", widget: "string" }
+          - label: "섹션"
+            name: "sections"
+            widget: "list"
+            label_singular: "섹션"
+            fields:
+              - { label: "번호", name: "label", widget: "string" }
+              - { label: "제목", name: "heading", widget: "string" }
+              - { label: "본문", name: "body", widget: "text", required: false }
+              - label: "목록 항목"
+                name: "list"
+                widget: "list"
+                required: false
+                fields:
+                  - { label: "항목명", name: "title", widget: "string" }
+
+      # ── 아카데미 ──
+      - label: "슬기로운 직장생활 ABC"
+        name: "program-academy"
+        file: "data/pages/program-academy.json"
+        fields:
+          - label: "배너"
+            name: "banner"
+            widget: "object"
+            fields:
+              - { label: "타이틀", name: "title", widget: "string" }
+              - { label: "설명", name: "desc", widget: "string" }
+          - label: "섹션"
+            name: "sections"
+            widget: "list"
+            label_singular: "섹션"
+            fields:
+              - { label: "번호", name: "label", widget: "string" }
+              - { label: "제목", name: "heading", widget: "string" }
+              - label: "목록 항목"
+                name: "list"
+                widget: "list"
+                required: false
+                fields:
+                  - { label: "항목명", name: "title", widget: "string" }
+              - { label: "참고 문구", name: "note", widget: "string", required: false }
+
+      # ── 수강신청 ──
+      - label: "수강신청 (Apply)"
+        name: "apply"
+        file: "data/pages/apply.json"
+        fields:
+          - label: "배너"
+            name: "banner"
+            widget: "object"
+            fields:
+              - { label: "타이틀", name: "title", widget: "string" }
+              - { label: "설명", name: "desc", widget: "string" }
+          - label: "랜딩 소개"
+            name: "landing"
+            widget: "object"
+            fields:
+              - { label: "타이틀", name: "title", widget: "string" }
+              - { label: "설명", name: "desc", widget: "text" }
+          - label: "신청서"
+            name: "form"
+            widget: "object"
+            fields:
+              - { label: "타이틀", name: "title", widget: "string" }
+              - { label: "참고자료 안내 문구", name: "refNotice", widget: "text" }
+          - label: "개인정보"
+            name: "privacy"
+            widget: "object"
+            fields:
+              - { label: "제목", name: "title", widget: "string" }
+              - { label: "수집항목", name: "collectItems", widget: "string" }
+              - { label: "수집목적", name: "collectPurpose", widget: "string" }
+              - { label: "보유 및 이용기간", name: "retentionPeriod", widget: "string" }
+              - { label: "동의 안내문", name: "consentText", widget: "text" }
+              - { label: "거부 안내문", name: "refusalText", widget: "text" }
+
+      # ── 아카이브 ──
+      - label: "아카이브 (Archive)"
+        name: "archive"
+        file: "data/pages/archive.json"
+        fields:
+          - label: "배너"
+            name: "banner"
+            widget: "object"
+            fields:
+              - { label: "타이틀", name: "title", widget: "string" }
+              - { label: "설명", name: "desc", widget: "string" }
+          - label: "랜딩 소개"
+            name: "landing"
+            widget: "object"
+            fields:
+              - { label: "타이틀", name: "title", widget: "string" }
+              - { label: "설명", name: "desc", widget: "text" }

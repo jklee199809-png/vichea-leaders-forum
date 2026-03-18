@@ -131,7 +131,7 @@
             <div class="footer-inner">
                 <div class="footer-brand">
                     <span class="footer-logo">VICHEA LEADERS FORUM</span>
-                    <p>리더의 통찰, 책에서 시작됩니다.</p>
+                    <p data-cms="footer-slogan">리더의 통찰, 책에서 시작됩니다.</p>
                 </div>
                 <div class="footer-links">
                     <div class="footer-col"><h4>MENU</h4><ul>
@@ -141,17 +141,19 @@
                         <li><a href="archive.html">Archive</a></li>
                     </ul></div>
                     <div class="footer-col"><h4>CONTACT</h4><ul>
-                        <li>Tel. 070-7839-3002</li>
-                        <li>서울시 관악구</li>
+                        <li data-cms="footer-tel">Tel. 070-7839-3002</li>
+                        <li data-cms="footer-address">서울시 관악구</li>
                     </ul></div>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>비채리더스포럼 | 운영: 엘앤에이(주) | 대표 이재연 | 사업자등록번호 105-87-94459</p>
-                <p>&copy; 2013 L&amp;A Corp. All rights reserved.</p>
+                <p data-cms="footer-info">비채리더스포럼 | 운영: 엘앤에이(주) | 대표 이재연 | 사업자등록번호 105-87-94459</p>
+                <p data-cms="footer-copyright">&copy; 2013 L&amp;A Corp. All rights reserved.</p>
             </div>
         </div>
     </footer>
+    <script src="../assets/js/data-loader.js?v=20260318cms"></script>
+
 
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script>
@@ -230,5 +232,6 @@
             });
         })();
     </script>
+    <script>loadSiteData();</script>
 </body>
 </html>

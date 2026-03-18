@@ -91,8 +91,8 @@
                 <span class="sep">&rsaquo;</span>
                 <span class="current">프로그램</span>
             </div>
-            <h1 class="page-banner-title">Program</h1>
-            <p class="page-banner-desc">비채의 다양한 교육 프로그램을 소개합니다</p>
+            <h1 class="page-banner-title" id="pageBannerTitle">Program</h1>
+            <p class="page-banner-desc" id="pageBannerDesc">비채의 다양한 교육 프로그램을 소개합니다</p>
         </div>
     </section>
 
@@ -102,10 +102,10 @@
             <main class="page-content" style="max-width: 900px; margin: 0 auto;">
                 <!-- 프로그램 소개 -->
                 <div class="content-section" data-aos="fade-up">
-                    <h2 style="font-size: 26px; font-weight: 700; color: var(--color-charcoal); margin-bottom: 16px;"><span class="brand-vichea">비채</span> 아카데미</h2>
+                    <h2 id="programIntroTitle" style="font-size: 26px; font-weight: 700; color: var(--color-charcoal); margin-bottom: 16px;"><span class="brand-vichea">비채</span> 아카데미</h2>
                     <p style="font-size: 15px; color: var(--color-gray-500); line-height: 1.9;">
-                        저자 직강과 명사 특강으로 경영의 해법과 새로운 통찰을 얻고,<br>
-                        비채 원우회를 통해 비즈니스 성장을 함께할 다양한 파트너를 만납니다.
+                        <span id="programIntroDesc">저자 직강과 명사 특강으로 경영의 해법과 새로운 통찰을 얻고,<br>
+                        비채 원우회를 통해 비즈니스 성장을 함께할 다양한 파트너를 만납니다.</span>
                     </p>
                 </div>
 
@@ -120,7 +120,7 @@
             <div class="footer-inner">
                 <div class="footer-brand">
                     <span class="footer-logo">VICHEA LEADERS FORUM</span>
-                    <p>리더의 통찰, 책에서 시작됩니다.</p>
+                    <p data-cms="footer-slogan">리더의 통찰, 책에서 시작됩니다.</p>
                 </div>
                 <div class="footer-links">
                     <div class="footer-col">
@@ -135,19 +135,19 @@
                     <div class="footer-col">
                         <h4>CONTACT</h4>
                         <ul>
-                            <li>Tel. 070-7839-3002</li>
-                            <li>서울시 관악구</li>
+                            <li data-cms="footer-tel">Tel. 070-7839-3002</li>
+                            <li data-cms="footer-address">서울시 관악구</li>
                         </ul>
                     </div>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>비채리더스포럼 | 운영: 엘앤에이(주) | 대표 이재연 | 사업자등록번호 105-87-94459</p>
-                <p>&copy; 2013 L&amp;A Corp. All rights reserved.</p>
+                <p data-cms="footer-info">비채리더스포럼 | 운영: 엘앤에이(주) | 대표 이재연 | 사업자등록번호 105-87-94459</p>
+                <p data-cms="footer-copyright">&copy; 2013 L&amp;A Corp. All rights reserved.</p>
             </div>
         </div>
     </footer>
-    <script src="../assets/js/data-loader.js?v=20260317"></script>
+    <script src="../assets/js/data-loader.js?v=20260318cms"></script>
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script>
         AOS.init({ duration: 700, once: true, offset: 60 });
@@ -175,6 +175,20 @@
             });
         });
         loadPrograms('grid');
+
+        loadSiteData();
+        loadPageText('pages/program.json', function(d) {
+            if (d.banner) {
+                setText('pageBannerTitle', d.banner.title);
+                setText('pageBannerDesc', d.banner.desc);
+            }
+            if (d.intro) {
+                var t = document.getElementById('programIntroTitle');
+                if (t) t.innerHTML = '<span class="brand-vichea">' + d.intro.titleBrand + '</span>' + d.intro.titleRest;
+                setText('programIntroDesc', d.intro.desc);
+            }
+        });
+
     </script>
 </body>
 </html>
