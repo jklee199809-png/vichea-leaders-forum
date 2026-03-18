@@ -28,12 +28,12 @@ collections:
             label_singular: "프로그램"
             hint: "현재 운영 중이거나 예정된 프로그램 목록입니다. 새 프로그램 추가는 아래 '프로그램 추가' 버튼을 눌러주세요."
             fields:
+              - { label: "프로그램명", name: "title", widget: "string", hint: "프로그램 이름. 예: 비채리더스포럼 19기, 최고경영자과정" }
+              - { label: "모집 상태", name: "status", widget: "select", options: ["모집중", "준비중", "마감"], hint: "현재 모집 상태를 선택하세요" }
+              - { label: "상태 구분", name: "statusType", widget: "select", options: ["", "upcoming", "closed"], default: "", hint: "준비중이면 'upcoming', 마감이면 'closed' 선택. 모집중이면 비워두세요" }
               - { label: "월 (영문)", name: "month", widget: "string", hint: "영문 대문자 3글자로 입력. 예: JAN, FEB, MAR, APR, MAY, JUN, JUL, AUG, SEP, OCT, NOV, DEC" }
               - { label: "일", name: "day", widget: "string", hint: "두 자리 숫자로 입력. 예: 09, 15, 28 / 날짜 미정이면: --" }
               - { label: "년도", name: "year", widget: "string", hint: "네 자리 숫자. 예: 2026" }
-              - { label: "모집 상태", name: "status", widget: "select", options: ["모집중", "준비중", "마감"], hint: "현재 모집 상태를 선택하세요" }
-              - { label: "상태 구분", name: "statusType", widget: "select", options: ["", "upcoming", "closed"], default: "", hint: "준비중이면 'upcoming', 마감이면 'closed' 선택. 모집중이면 비워두세요" }
-              - { label: "프로그램명", name: "title", widget: "string", hint: "프로그램 이름. 예: 비채리더스포럼 19기, 최고경영자과정" }
               - { label: "프로그램 설명", name: "desc", widget: "text", hint: "프로그램 카드에 표시될 짧은 소개문" }
               - { label: "일정 정보", name: "meta1", widget: "string", hint: "시작~종료 날짜. 예: 2026.4.9~6.11" }
               - { label: "일정 임시 여부", name: "meta1Temp", widget: "boolean", default: false, hint: "날짜가 확정 전이면 켜주세요. '(예정)' 표시가 붙습니다" }
@@ -60,9 +60,9 @@ collections:
             label_singular: "후기"
             hint: "메인 페이지와 수강후기 페이지에 표시되는 후기 목록입니다. 위에 있는 후기가 먼저 표시됩니다."
             fields:
-              - { label: "썸네일 이미지", name: "thumbImage", widget: "image", required: false, hint: "후기 카드에 표시될 대표 이미지. 클릭해서 파일을 선택하면 자동으로 업로드됩니다" }
-              - { label: "카테고리", name: "category", widget: "string", hint: "후기 분류. 예: 비채리더스포럼, 워크샵" }
               - { label: "제목", name: "title", widget: "string", hint: "후기 카드에 표시될 제목. 예: CEO FIRST, 스피치 나침반" }
+              - { label: "카테고리", name: "category", widget: "string", hint: "후기 분류. 예: 비채리더스포럼, 워크샵" }
+              - { label: "썸네일 이미지", name: "thumbImage", widget: "image", required: false, hint: "후기 카드에 표시될 대표 이미지. 클릭해서 파일을 선택하면 자동으로 업로드됩니다" }
               - { label: "설명", name: "desc", widget: "text", hint: "후기 상세 내용. 줄바꿈은 Enter로 입력하세요" }
               - { label: "연락처 안내", name: "contact", widget: "string", required: false, hint: "하단에 표시할 연락처. 예: 교육문의 070-7839-3002 (비워두면 표시 안 됨)" }
 
