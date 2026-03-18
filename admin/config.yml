@@ -2,8 +2,7 @@ backend:
   name: github
   repo: jklee199809-png/vichea-leaders-forum
   branch: main
-  auth_type: pkce
-  app_id: Ov23liFwQqYxTb7bEjNL
+  base_url: https://darling-snickerdoodle-c84e83.netlify.app
 
 media_folder: "assets/images"
 public_folder: "/assets/images"
