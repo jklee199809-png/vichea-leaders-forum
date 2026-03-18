@@ -10,8 +10,18 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
     <style>
         .poster-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-top: 24px; }
-        .poster-item { background: linear-gradient(135deg, var(--color-navy) 0%, var(--color-charcoal) 100%); aspect-ratio: 3/4; display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,0.4); font-size: 15px; font-weight: 500; text-align: center; border: 1px solid var(--color-gray-200); transition: all 0.3s ease; }
+        .poster-item { position: relative; cursor: pointer; overflow: hidden; border: 1px solid var(--color-gray-200); transition: all 0.3s ease; }
         .poster-item:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(0,0,0,0.1); }
+        .poster-item img { width: 100%; display: block; }
+        .poster-label { position: absolute; bottom: 0; left: 0; right: 0; background: rgba(0,0,0,0.6); color: #fff; font-size: 13px; font-weight: 500; text-align: center; padding: 8px 0; }
+        .sidebar-narrow { max-width: 180px; }
+        .btn-more { display: block; margin: 40px auto 0; padding: 14px 48px; background: transparent; border: 1px solid var(--color-gray-300); color: var(--color-gray-700); font-size: 14px; font-weight: 500; font-family: var(--font-kr); cursor: pointer; transition: all 0.2s; letter-spacing: 0.5px; }
+        .btn-more:hover { border-color: var(--color-navy); color: var(--color-navy); }
+        /* Lightbox */
+        .lightbox-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.85); z-index: 9999; align-items: center; justify-content: center; cursor: pointer; }
+        .lightbox-overlay.active { display: flex; }
+        .lightbox-overlay img { max-width: 90vw; max-height: 90vh; object-fit: contain; border-radius: 4px; }
+        .lightbox-close { position: absolute; top: 24px; right: 32px; color: #fff; font-size: 36px; font-weight: 300; cursor: pointer; line-height: 1; z-index: 10000; }
         @media (max-width: 768px) { .poster-grid { grid-template-columns: repeat(2, 1fr); } }
     </style>
 </head>
@@ -27,14 +37,14 @@
                     <li><a href="about.html">About</a></li>
                     <li><a href="program.html">Program</a></li>
                     <li class="has-sub">
-                        <a href="#">Apply</a>
+                        <a href="apply.html">Apply</a>
                         <ul class="sub-menu">
                             <li><a href="apply.html">수강 신청</a></li>
                             <li><a href="faq.html">FAQ</a></li>
                         </ul>
                     </li>
                     <li class="has-sub">
-                        <a href="#">Archive</a>
+                        <a href="archive.html">Archive</a>
                         <ul class="sub-menu">
                             <li><a href="review.html">Review</a></li>
                             <li><a href="history.html">History</a></li>
@@ -91,7 +101,7 @@
         <div class="container">
             <div class="page-layout">
                 <!-- Sidebar -->
-                <aside class="page-sidebar">
+                <aside class="page-sidebar sidebar-narrow">
                     <p class="sidebar-menu-title">Archive</p>
                     <ul class="sidebar-menu">
                         <li><a href="review.html">Review</a></li>
@@ -103,19 +113,17 @@
 
                 <!-- Main Content -->
                 <main class="page-content">
-                    <div class="poster-grid">
-                        <div class="poster-item" data-aos="fade-up">포스터 이미지 영역<br>19기</div>
-                        <div class="poster-item" data-aos="fade-up">포스터 이미지 영역<br>18기</div>
-                        <div class="poster-item" data-aos="fade-up">포스터 이미지 영역<br>17기</div>
-                        <div class="poster-item" data-aos="fade-up">포스터 이미지 영역<br>16기</div>
-                        <div class="poster-item" data-aos="fade-up">포스터 이미지 영역<br>15기</div>
-                        <div class="poster-item" data-aos="fade-up">포스터 이미지 영역<br>14기</div>
-                        <div class="poster-item" data-aos="fade-up">포스터 이미지 영역<br>13기</div>
-                        <div class="poster-item" data-aos="fade-up">포스터 이미지 영역<br>12기</div>
-                    </div>
+                    <div class="poster-grid" id="posterGrid"></div>
+                    <button class="btn-more" id="btnMore" style="display:none;">더보기</button>
                 </main>
             </div>
         </div>
+    </div>
+
+    <!-- Lightbox -->
+    <div class="lightbox-overlay" id="lightbox">
+        <span class="lightbox-close" id="lightboxClose">&times;</span>
+        <img src="" alt="" id="lightboxImg">
     </div>
 
     <footer class="footer">
@@ -130,16 +138,18 @@
                         <li><a href="about.html">About</a></li>
                         <li><a href="program.html">Program</a></li>
                         <li><a href="apply.html">Apply</a></li>
-                        <li><a href="review.html">Archive</a></li>
+                        <li><a href="archive.html">Archive</a></li>
                     </ul></div>
                     <div class="footer-col"><h4>CONTACT</h4><ul>
                         <li>Tel. 070-7839-3002</li>
-                        <li>Email. lnabiz@naver.com</li>
-                        <li>서울특별시 관악구 관악로 168(봉천동)</li>
+                        <li>서울시 관악구</li>
                     </ul></div>
                 </div>
             </div>
-            <div class="footer-bottom"><p>&copy; 2026 VICHEA LEADERS FORUM. All rights reserved.</p></div>
+            <div class="footer-bottom">
+                <p>비채리더스포럼 | 운영: 엘앤에이(주) | 대표 이재연 | 사업자등록번호 105-87-94459</p>
+                <p>&copy; 2013 L&amp;A Corp. All rights reserved.</p>
+            </div>
         </div>
     </footer>
 
@@ -151,6 +161,81 @@
         mobileMenuBtn.addEventListener('click', () => { mobileMenuBtn.classList.toggle('active'); mobileMenu.classList.toggle('active'); document.body.classList.toggle('no-scroll'); });
         mobileMenu.querySelectorAll('a:not(.mobile-sub-toggle)').forEach(link => { link.addEventListener('click', () => { mobileMenuBtn.classList.remove('active'); mobileMenu.classList.remove('active'); document.body.classList.remove('no-scroll'); }); });
         mobileMenu.querySelectorAll('.mobile-sub-toggle').forEach(toggle => { toggle.addEventListener('click', (e) => { e.preventDefault(); const parent = toggle.parentElement; const sub = parent.querySelector('.mobile-sub'); parent.classList.toggle('open'); sub.classList.toggle('open'); }); });
+
+        // Poster data: sorted newest first (19기 → 1기), plus 6기 초대장
+        (function() {
+            var posters = [];
+            // 19기 down to 1기
+            for (var i = 19; i >= 1; i--) {
+                var ext = (i === 3) ? 'png' : 'jpg';
+                posters.push({
+                    src: '../assets/images/posters/비채_' + i + '기_포스터.' + ext,
+                    label: '비채 ' + i + '기 포스터'
+                });
+                // Insert 6기 초대장 after 6기 포스터
+                if (i === 6) {
+                    posters.push({
+                        src: '../assets/images/posters/비채_6기_초대장.jpg',
+                        label: '비채 6기 초대장'
+                    });
+                }
+            }
+
+            var ITEMS_PER_PAGE = 8;
+            var shown = 0;
+            var grid = document.getElementById('posterGrid');
+            var btnMore = document.getElementById('btnMore');
+
+            function showMore() {
+                var end = Math.min(shown + ITEMS_PER_PAGE, posters.length);
+                for (var j = shown; j < end; j++) {
+                    var div = document.createElement('div');
+                    div.className = 'poster-item';
+                    div.setAttribute('data-aos', 'fade-up');
+                    div.innerHTML = '<img src="' + posters[j].src + '" alt="' + posters[j].label + '" loading="lazy"><span class="poster-label">' + posters[j].label + '</span>';
+                    div.addEventListener('click', (function(src) {
+                        return function() { openLightbox(src); };
+                    })(posters[j].src));
+                    grid.appendChild(div);
+                }
+                shown = end;
+                btnMore.style.display = (shown < posters.length) ? 'block' : 'none';
+                AOS.refresh();
+            }
+
+            showMore();
+            btnMore.addEventListener('click', showMore);
+
+            // Lightbox
+            var lightbox = document.getElementById('lightbox');
+            var lightboxImg = document.getElementById('lightboxImg');
+            var lightboxClose = document.getElementById('lightboxClose');
+
+            window.openLightbox = function(src) {
+                lightboxImg.src = src;
+                lightbox.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            };
+
+            lightboxClose.addEventListener('click', function(e) {
+                e.stopPropagation();
+                closeLightbox();
+            });
+
+            lightbox.addEventListener('click', function() {
+                closeLightbox();
+            });
+
+            function closeLightbox() {
+                lightbox.classList.remove('active');
+                lightboxImg.src = '';
+                document.body.style.overflow = '';
+            }
+
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') closeLightbox();
+            });
+        })();
     </script>
 </body>
 </html>

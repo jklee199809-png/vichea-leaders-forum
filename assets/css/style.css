@@ -1790,3 +1790,266 @@ img {
         font-size: 14px;
     }
 }
+
+/* ========================================
+   추가 유틸리티 클래스
+======================================== */
+
+/* 비채 브랜드 폰트 구분 */
+.brand-vichea {
+    font-family: var(--font-en);
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+/* 작은 버튼 */
+.hero-btn.btn-sm {
+    padding: 14px 36px;
+    font-size: 14px;
+}
+
+/* 좁은 사이드바 */
+.sub-sidebar.sidebar-narrow {
+    min-width: 160px;
+    max-width: 160px;
+}
+
+/* 리뷰 카테고리 뱃지 */
+.review-category {
+    display: inline-block;
+    font-size: 12px;
+    color: var(--color-accent);
+    font-weight: 500;
+    margin-bottom: 4px;
+    letter-spacing: 0.5px;
+}
+
+/* 리뷰 연락처 */
+.review-contact {
+    font-size: 13px;
+    color: var(--color-gray-500);
+    margin-top: 8px;
+}
+
+/* About 페이지 프로그램 카드 */
+.about-programs {
+    display: grid;
+    gap: 24px;
+    margin-top: 32px;
+}
+
+.about-program-group {
+    margin-bottom: 16px;
+}
+
+.about-program-group h4 {
+    font-size: 14px;
+    color: var(--color-gray-500);
+    font-weight: 500;
+    margin-bottom: 12px;
+    letter-spacing: 0.5px;
+}
+
+.about-program-card {
+    background: var(--color-gray-50);
+    border-left: 3px solid var(--color-accent);
+    padding: 20px 24px;
+    margin-bottom: 12px;
+}
+
+.about-program-card h5 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: var(--color-charcoal);
+}
+
+.about-program-card p {
+    font-size: 14px;
+    color: var(--color-gray-700);
+    line-height: 1.6;
+}
+
+/* 갤러리 라이트박스 */
+.gallery-lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+    cursor: pointer;
+}
+
+.gallery-lightbox img {
+    max-width: 90%;
+    max-height: 90vh;
+    object-fit: contain;
+}
+
+/* 갤러리 그리드 */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+}
+
+.gallery-grid.books-grid {
+    grid-template-columns: repeat(5, 1fr);
+    gap: 12px;
+}
+
+.gallery-item {
+    cursor: pointer;
+    overflow: hidden;
+    border-radius: 4px;
+    aspect-ratio: auto;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.05);
+}
+
+/* 더보기 버튼 */
+.btn-loadmore {
+    display: block;
+    margin: 32px auto 0;
+    padding: 12px 40px;
+    background: transparent;
+    border: 1px solid var(--color-gray-300);
+    color: var(--color-gray-700);
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-loadmore:hover {
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+}
+
+/* Apply 랜딩 */
+.apply-intro {
+    margin-bottom: 48px;
+    padding-bottom: 32px;
+    border-bottom: 1px solid var(--color-gray-100);
+}
+
+.apply-intro h3 {
+    font-size: 24px;
+    margin-bottom: 16px;
+}
+
+.apply-intro p {
+    font-size: 15px;
+    line-height: 1.8;
+    color: var(--color-gray-700);
+}
+
+/* 개인정보 수집 테이블 */
+.privacy-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 12px 0;
+    font-size: 13px;
+}
+
+.privacy-table th,
+.privacy-table td {
+    padding: 8px 12px;
+    border: 1px solid var(--color-gray-200);
+    text-align: left;
+}
+
+.privacy-table th {
+    background: var(--color-gray-50);
+    font-weight: 500;
+    width: 120px;
+    white-space: nowrap;
+}
+
+/* Archive 랜딩 */
+.archive-intro h3 {
+    font-size: 24px;
+    margin-bottom: 16px;
+}
+
+.archive-intro p {
+    font-size: 15px;
+    line-height: 1.8;
+    color: var(--color-gray-700);
+}
+
+/* 푸터 하단 2줄 */
+.footer-bottom p + p {
+    margin-top: 4px;
+}
+
+/* Module 카드 */
+.module-card {
+    background: var(--color-gray-50);
+    border-left: 3px solid var(--color-accent);
+    padding: 20px 24px;
+    margin-bottom: 16px;
+}
+
+.module-card h4 {
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: var(--color-navy);
+}
+
+.module-card p {
+    font-size: 14px;
+    color: var(--color-gray-700);
+}
+
+/* 추천 리스트 */
+.recommend-list {
+    list-style: none;
+    padding: 0;
+}
+
+.recommend-list li {
+    padding: 10px 0;
+    padding-left: 20px;
+    position: relative;
+    font-size: 15px;
+    border-bottom: 1px solid var(--color-gray-100);
+}
+
+.recommend-list li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--color-accent);
+    font-weight: 700;
+}
+
+/* MO 갤러리 반응형 */
+@media (max-width: 768px) {
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+    .gallery-grid.books-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px;
+    }
+    .sub-sidebar.sidebar-narrow {
+        min-width: unset;
+        max-width: unset;
+    }
+}

@@ -131,12 +131,13 @@ function renderReviewsMain(data) {
     items.forEach(function(r) {
         html += '<div class="review-card">';
         if (r.thumbImage) {
-            html += '<div class="review-thumb"><img src="' + PAGES_BASE + r.thumbImage + '" alt="' + r.title + '" style="width:100%;height:100%;object-fit:cover;"></div>';
+            html += '<div class="review-thumb"><img src="' + r.thumbImage + '" alt="' + r.title + '" style="width:100%;height:100%;object-fit:cover;"></div>';
         } else {
-            html += '<div class="review-thumb">' + r.thumb + '</div>';
+            html += '<div class="review-thumb">' + (r.thumb || '') + '</div>';
         }
+        if (r.category) html += '<span class="review-category">' + r.category + '</span>';
         html += '<h4>' + r.title + '</h4>';
-        html += '<p>' + r.desc + '</p>';
+        html += '<p>' + (r.desc || '').split('\n')[0].substring(0, 80) + '…</p>';
         html += '</div>';
     });
     container.innerHTML = html;
@@ -149,14 +150,15 @@ function renderReviewsSub(data) {
     data.forEach(function(r) {
         html += '<div class="review-item" data-aos="fade-up">';
         if (r.thumbImage) {
-            html += '<div class="review-thumb"><img src="' + r.thumbImage + '" alt="' + r.title + '" style="width:100%;height:100%;object-fit:cover;"></div>';
+            html += '<div class="review-thumb"><img src="../' + r.thumbImage + '" alt="' + r.title + '" style="width:100%;height:100%;object-fit:cover;"></div>';
         } else {
-            html += '<div class="review-thumb">' + r.thumb + '</div>';
+            html += '<div class="review-thumb">' + (r.thumb || '') + '</div>';
         }
         html += '<div class="review-body">';
-        html += '<span class="review-date">' + (r.date || '날짜 영역') + '</span>';
+        if (r.category) html += '<span class="review-category">' + r.category + '</span>';
         html += '<h4>' + r.title + '</h4>';
-        html += '<p>' + r.desc + '</p>';
+        html += '<p>' + (r.desc || '').replace(/\n/g, '<br>') + '</p>';
+        if (r.contact) html += '<p class="review-contact">' + r.contact + '</p>';
         html += '</div>';
         html += '</div>';
     });
