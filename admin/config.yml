@@ -2,7 +2,8 @@ backend:
   name: github
   repo: jklee199809-png/vichea-leaders-forum
   branch: main
-  base_url: https://darling-snickerdoodle-c84e83.netlify.app
+  base_url: https://api.netlify.com
+  site_id: darling-snickerdoodle-c84e83.netlify.app
 
 media_folder: "assets/images"
 public_folder: "/assets/images"
